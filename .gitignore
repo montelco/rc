@@ -1,2 +1,8 @@
-/packages/**
+/packages/*
+!/packages/mega-site-navigation/js
+!/packages/mega-site-navigation/scss
+!/packages/mega-site-navigation/css
+!/packages/mega-site-navigation/partials
+/packages/mega-site-navigation/scss/.sass-cache/**
+/packages/mega-site-navigation/scss/bourbon/**
 /.sass-cache/**
