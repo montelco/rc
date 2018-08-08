@@ -1,0 +1,225 @@
+/*
+  Oh Hello!
+
+  These are some base styles so that our tutorial looks good.
+
+  Let's go through the important bits real quick
+*/
+:root {
+  --yellow: #ffc600;
+  --black: #272727;
+  --blue: #29568f;
+  --lightblue: #e0e5eb;
+  --white: #fff;
+  --darkblue: #264f82;
+}
+
+html {
+  /* border-box box model allows us to add padding and border to our elements without increasing their size */
+  box-sizing: border-box;
+  /* A system font stack so things load nice and quick! */
+  font-family: -apple-system, BlinkMacSystemFont, "Arial", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--black);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+}
+
+/*
+  WAT IS THIS?!
+  We inherit box-sizing: border-box; from our <html> selector
+  Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
+*/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-image: url("topography.svg"),
+    linear-gradient(110deg, #f93d66, #6d47d9);
+  background-size: 340px, auto;
+  min-height: calc(100vh - 100px);
+  margin: 0px;
+  /* background: white; */
+  background-attachment: fixed;
+  letter-spacing: -1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 5px 0;
+}
+/* Each item in our grid will contain numbers */
+.row>div {
+  /* We center the contents of these items. You can also do this with flexbox too! */
+  display: -ms-grid;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  font-size: 35px;
+}
+
+.row p {
+  margin: 0 0 5px 0;
+}
+
+
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1440px;
+}
+.row{
+  min-height: 1px;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 30px;
+  -ms-grid-columns: (minmax(0, 1fr))[12];
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+.row>*{
+  width: 100%;
+}
+.md-span-3 {
+  grid-column: span 3;
+  -ms-grid-column-span: 3;
+}
+.md-span-4 {
+  grid-column: span 4;
+  -ms-grid-column-span: 4;
+}
+.md-span-5 {
+  grid-column: span 5;
+  -ms-grid-column-span: 5;
+}
+.md-span-6 {
+  grid-column: span 6;
+  -ms-grid-column-span: 6;
+}
+.md-span-7 {
+  grid-column: span 7;
+  -ms-grid-column-span: 7;
+}
+.md-span-8 {
+  grid-column: span 8;
+  -ms-grid-column-span: 8;
+}
+.md-span-9 {
+  grid-column: span 9;
+  -ms-grid-column-span: 9;
+}
+.md-span-10 {
+  grid-column: span 10;
+  -ms-grid-column-span: 10;
+}
+.md-span-11 {
+  grid-column: span 11;
+  -ms-grid-column-span: 11;
+}
+.md-span-12 {
+  grid-column: span 12;
+  -ms-grid-column-span: 12;
+}
+.md-offset-1 {
+  grid-column-start: 2/6;
+}
+.md-offset-2 {
+  grid-column-start: 3/7;
+}
+.md-offset-3 {
+  grid-column-start: 4/8;
+}
+.md-offset-4 {
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 4;
+  grid-column: 5/9;
+}
+.md-offset-5 {
+  grid-column-start: 6/10;
+}
+.md-offset-6 {
+  grid-column-start: 7/11;
+}
+.md-offset-7 {
+  grid-column-start: 8/12;
+}
+.md-offset-8 {
+  grid-column-start: 9/13;
+}
+.md-offset-9 {
+  -ms-grid-column: 10;
+      grid-column-start: 10;
+}
+.md-offset-10 {
+  -ms-grid-column: 11;
+      grid-column-start: 11;
+}
+.md-offset-11 {
+  -ms-grid-column: 12;
+      grid-column-start: 12;
+}
+.md-float-end {
+  grid-column-end: 10/-1; 
+}
+.blue, .light, .white{
+  padding: 24px 0;
+}
+.card {
+  background: var(--white);
+  border-radius: 4px;
+  box-shadow: 0 2px 2px 2px rgba(25,25,25,0.08);
+}
+.no-padding {
+  padding: 0;
+}
+.blue{
+  background: #29568f;
+  background: var(--blue);
+}
+.light{
+  background: #e0e5eb;
+  background: var(--lightblue);
+}
+.white{
+  background: white;
+  background: var(--white);
+}
+.navblue{
+  background: #264f82;
+  background: var(--darkblue);
+}
+nav>ul, ul li{
+  list-style-type: none;
+  display: inline-block;
+  color: white;;
+  margin: 0;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+  -o-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+section.slider{
+  padding: 0;
+  margin-bottom: -5px;
+}
+nav>ul{
+  display: flex;
+  padding: 12px 0;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+.logo img {
+  margin-left: -20px;
+}

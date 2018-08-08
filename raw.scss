@@ -1,0 +1,24 @@
+// First, the reset ia loaded to account for browser styling differences.
+@import 'mixins/hover';
+@import 'functions/functions-color';
+@import 'variables';
+@import 'reset';
+
+// In this block, the Bootstrap 4 Grid is imported. It is done directly in our code so it can be swapped out should the case arise. 
+// This also allows for the  framework to have variables changed and the files minified.
+
+@import 'packages/bootstrap-4-grid/scss/grid';
+@import 'functions/flex';
+
+// Buidling out the page with various styles
+@import 'global';
+@import 'colors';
+@import 'padding';
+// Colors should be rewritten to use functions rather than declarations.
+@import 'search';
+@import 'navigation';
+@import 'cards';
+// TBI: Slider Styles
+// Card Styles
+// Content Areas
+// Sidebars

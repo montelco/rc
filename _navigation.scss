@@ -1,0 +1,87 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 5px 0;
+}
+.fbZone{padding: 32px;}
+.no-padding {
+  padding: 0;
+}
+.padding-tb-12 {
+  padding: 12px 0;
+}
+div[data-name="SearchBox"] .ms-srch-sb.ms-srch-sb-border{
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+}
+nav>ul, ul li{
+  list-style-type: none;
+  display: inline-block;
+  color: white;
+  margin: 0;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+  -o-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  font-size: 18px;
+  letter-spacing: 0;
+}
+.logo{
+  padding: 14px 0;
+}
+nav>ul>li[class^="top-level-"]::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width .175s;
+}
+
+nav>ul>li[class^="top-level-"]:hover::after {
+    width: 100%;
+    transition: width .175s;
+}
+.offset-md-half{
+  margin-left: calc(8.3333333333%/2);
+}
+section.slider{
+  padding: 0;
+  margin-bottom: -5px;
+}
+nav>ul{display: flex;}
+img{
+  max-width: 100%;
+  height: auto;
+}
+.quicklinks{
+  text-align: right;
+  font-size: 13px;
+  color: white;
+  font-weight: light;
+}
+.quicklinks a, .quicklinks a:hover, .quicklinks a:visited, .quicklinks a:active{
+  color: white;
+  text-decoration: none;
+}
+.quicklinks span, .quicklinks div.d-inline-block a:not(.last){
+  padding-right: 1.125em;
+}
+.quicklinks .txt-grey{
+  color: #ccc;
+  font-weight: lighter;
+}
+.txt-grey {
+  color: #a8b6c6;
+}
