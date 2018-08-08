@@ -1,0 +1,14 @@
+{
+  "name": "heroicons-ui",
+  "homepage": "https://github.com/sschoger/heroicons-ui",
+  "_release": "580113878c",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "580113878c0a17fa2d2790dbb6b788720ea5d44f"
+  },
+  "_source": "https://github.com/sschoger/heroicons-ui.git",
+  "_target": "*",
+  "_originalSource": "sschoger/heroicons-ui",
+  "_direct": true
+}

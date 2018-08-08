@@ -1,0 +1,14 @@
+{
+  "name": "mega-site-navigation",
+  "homepage": "https://github.com/CodyHouse/mega-site-navigation",
+  "_release": "207ea22b9d",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "207ea22b9dea8412bdd50555fbba60577c1d271f"
+  },
+  "_source": "https://github.com/CodyHouse/mega-site-navigation.git",
+  "_target": "*",
+  "_originalSource": "CodyHouse/mega-site-navigation",
+  "_direct": true
+}
