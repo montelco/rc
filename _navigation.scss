@@ -4,8 +4,13 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 5px 0;
+  margin: 0 0 5px;
 }
+
+header.cd-main-content{
+  z-index: 4;
+}
+
 .fbZone{padding: 32px;}
 .no-padding {
   padding: 0;
