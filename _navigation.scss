@@ -11,7 +11,7 @@ header.cd-main-content{
   z-index: 4;
 }
 
-.fbZone{padding: 32px;}
+.fbZone{padding: 32px 0;}
 .no-padding {
   padding: 0;
 }
@@ -43,13 +43,12 @@ nav>ul, ul li{
 
 .logo { padding: 14px 0;}
 
-nav>ul>li>a{
-  &:hover{
+nav>ul>li>a {
+
+  &:hover { 
     text-decoration: none;
   }
-  &.selected{
-    text-decoration: underline;
-  }
+
 }
 
 // nav>ul>li>a::after {
