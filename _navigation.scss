@@ -14,7 +14,6 @@ h6 {
   padding: 12px 0;
 }
 div[data-name="SearchBox"] .ms-srch-sb.ms-srch-sb-border{
-  display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;
@@ -36,22 +35,33 @@ nav>ul, ul li{
   font-size: 18px;
   letter-spacing: 0;
 }
-.logo{
-  padding: 14px 0;
-}
-nav>ul>li[class^="top-level-"]::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    transition: width .175s;
+
+.logo { padding: 14px 0;}
+
+nav>ul>li>a{
+  &:hover{
+    text-decoration: none;
+  }
+  &.selected{
+    text-decoration: underline;
+  }
 }
 
-nav>ul>li[class^="top-level-"]:hover::after {
-    width: 100%;
-    transition: width .175s;
-}
+// nav>ul>li>a::after {
+//     content: '';
+//     display: block;
+//     width: 0;
+//     height: 2px;
+//     background: #fff;
+//     transition: width .175s;
+// }
+
+// nav>ul>li>a:hover::after,
+// nav>ul>li>a.selected::after {
+//   width: 100%;
+//   transition: width .175s;
+// }
+
 .offset-md-half{
   margin-left: calc(8.3333333333%/2);
 }
@@ -83,4 +93,48 @@ img{
 }
 .txt-grey {
   color: #a8b6c6;
+}
+
+@include media(md) {
+  .cd-primary-nav {
+    display: flex;
+    float: none;
+    // overflow-x: hidden;
+    padding: 0;
+    position: initial;
+    > li {
+      position: initial;
+      float: none;
+      margin-left: 0;
+      &.has-children {
+        display: block;
+        ul {padding: 0;}
+      }
+      .cd-secondary-nav {
+        // display: inline-block;
+        &:nth-of-type(1) {padding: 15px;}
+        // position: fixed;
+        width: 100%;
+        li {
+          position: initial;
+          &.see-all {background: $white;}
+        }
+      }
+    }
+  }
+}
+
+@include media(mm) {
+  .cd-primary-nav,
+  .cd-secondary-nav {overflow-x: hidden;}
+
+  .cd-primary-nav {
+    display: block;
+    padding: 0;
+  }
+
+  .cd-secondary-nav {
+    padding: 0;
+    ul {padding: 0;}
+  }
 }
