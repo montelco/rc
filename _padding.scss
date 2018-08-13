@@ -5,3 +5,15 @@
   &-lg{padding: 0.750rem 0}
   &-xl{padding: 0.875rem 0}
 }
+
+$padding: 0;
+$plist: top left bottom right;
+
+@while ($padding < 120) {
+    @each $direction in $plist {
+        .p-#{$direction}\:#{$padding} {
+            padding-#{$direction}: #{$padding}px;
+        }
+    }
+    $padding: $padding + 5;
+}

@@ -1,0 +1,39 @@
+.evergreen {
+  &__accent {
+    height: 8px;
+    margin-bottom: 8px;
+    width: 64px;
+    &.a {background: #426492;}
+    &.b {background: #92c4c5;}
+    &.c {background: #8ca1bc;}
+    &.d {background: #b7c1cb;}
+  }
+
+  h3 {
+    color: black;
+    font: {
+      size: 24px;
+      weight: 600;
+    }
+    margin-bottom: 16px;
+  }
+
+  h4 {
+    color: black;
+    font: {
+      size: 15px;
+      weight: 400;
+    }
+    margin-top: 8px;
+    margin-bottom: 24px;
+  }
+
+  a {
+    color: black;
+    font: {
+      size: 16px;
+      weight: 600;
+    }
+    &:after {content: "»"}
+  }
+}
