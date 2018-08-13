@@ -37,6 +37,9 @@
       &>li:last-child {
         padding: 0;
       }
+      @media screen and (max-width: $wl - 1) {
+        &>li:nth-of-type(n+7) {display: none;}
+      }
     }
   }
 
@@ -93,12 +96,14 @@
 
     h2 {
       font-size: 36px;
+      @media screen and (max-width: $wl - 1) {font-size: 32px;}
       font-weight: 600;
       padding-bottom: 32px;
     }
 
     h3 {
       font-size: 26px;
+      @media screen and (max-width: $wl - 1) {font-size: 24px;}
       font-weight: 400;
       padding-bottom: 48px;
 

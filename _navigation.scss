@@ -99,6 +99,19 @@ img{
   color: #a8b6c6;
 }
 
+@include media(nml) {
+  .cd-primary-nav {
+    flex-wrap: wrap !important;
+    justify-content: flex-start;
+    > li {
+      width: 24%;
+      font: {
+        size: 14px;
+      } 
+    } 
+  }
+}
+
 @include media(md) {
   .cd-primary-nav {
     display: flex;

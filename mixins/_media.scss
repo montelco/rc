@@ -3,17 +3,20 @@ $mm: 767px;
 $md: 768px;
 $lg: 992px;
 $xl: 1199px;
+$wl: 1500px;
 
 @mixin media($canvas) {
   @if $canvas == sm {
    @media only screen and (min-width: $sm) {@content;}
   } @else if $canvas == mm {
-   @media only screen and (max-width: $md) {@content;}
+   @media only screen and (max-width: $mm) {@content;}
   } @else if $canvas == md {
    @media only screen and (min-width: $md) {@content;}
   } @else if $canvas == lg {
    @media only screen and (min-width: $lg) {@content;}
   } @else if $canvas == xl {
    @media only screen and (max-width: $xl) {@content;}
+  } @else if $canvas == nml {
+    @media only screen and (min-width: $md) and (max-width: $xl) {@content;}
   }
 }
