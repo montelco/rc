@@ -129,7 +129,11 @@ img{
       }
       .cd-secondary-nav {
         // display: inline-block;
-        &:nth-of-type(1) {padding: 15px;}
+        &:nth-of-type(1) {
+          padding: 15px; 
+          padding-bottom: 95px; 
+          display: flex; 
+          flex-wrap: wrap;}
         // position: fixed;
         width: 100%;
         li {
