@@ -27,12 +27,22 @@
   }
 
   &__thumbnail {
-    flex-basis: calc(210px);
-    height: 210px;
+    flex-basis: calc(200px);
+    height: 200px;
     padding: 0;
     margin: 0;
     flex-grow: 0;
     flex-shrink: 0;
+    width: 200px;
+
+    @include media(mm) {
+      width: 140px;
+      height: 140px;
+    }
+    @include media(nml) {
+      width: 100%;
+      height: auto;
+    }
 
     img {
       object-fit: cover;

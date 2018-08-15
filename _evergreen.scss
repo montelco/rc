@@ -1,7 +1,7 @@
 .evergreen {
+  margin-bottom: 32px;
   &__accent {
     height: 8px;
-    margin-bottom: 8px;
     width: 64px;
     &.a {background: #426492;}
     &.b {background: #92c4c5;}
@@ -15,7 +15,6 @@
       size: 24px;
       weight: 600;
     }
-    margin-bottom: 16px;
   }
 
   h4 {
@@ -27,6 +26,8 @@
     margin-top: 8px;
     margin-bottom: 24px;
   }
+
+  img {width: 100%;}
 
   a {
     color: black;

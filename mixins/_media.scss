@@ -1,3 +1,4 @@
+$xs: 00px;
 $sm: 575px;
 $mm: 767px;
 $md: 768px;
@@ -6,7 +7,9 @@ $xl: 1199px;
 $wl: 1500px;
 
 @mixin media($canvas) {
-  @if $canvas == sm {
+  @if $canvas == xs {
+   @media only screen and (max-width: $sm) {@content;}
+  } @else if $canvas == sm {
    @media only screen and (min-width: $sm) {@content;}
   } @else if $canvas == mm {
    @media only screen and (max-width: $mm) {@content;}
