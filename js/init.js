@@ -3,16 +3,17 @@ jQuery('.tp-banner').show().revolution(
 {
 dottedOverlay:"none",
 delay:16000,
-startwidth:1170,
-startheight:700,
+startwidth:1200,
+startheight:650,
 hideThumbs:200,
+lazyLoad:"on",
 
 thumbWidth:100,
 thumbHeight:50,
 thumbAmount:5,
 
 navigationType:"bullet",
-navigationArrows:"solo",
+navigationArrows:"none",
 navigationStyle:"preview2",
 
 touchenabled:"on",

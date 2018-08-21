@@ -10,7 +10,6 @@
 
 @import 'packages/bootstrap-4-grid/scss/grid';
 @import 'functions/flex';
-
 // In this block, CodyHouse MegaMenu is imported. We can swap this out later.
 // @import 'packages/mega-site-navigation/scss/style';
 @import 'packages/mega-site-navigation/scss/style';
@@ -25,6 +24,7 @@
 @import 'search';
 @import 'navigation';
 @import 'slider';
+@import 'flyout';
 @import 'typography';
 @import 'cards';
 @import 'evergreen';

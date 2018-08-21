@@ -11,3 +11,11 @@
 .mb-32 {
   margin-bottom: 32px;
 }
+
+@each $key, $value in $weights {
+  .fw-#{$key} {
+    font: {
+      weight: $value;
+    }
+  }
+}

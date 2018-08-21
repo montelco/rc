@@ -43,6 +43,7 @@ $grays: map-merge(
   $grays
 );
 
+$break-vals: xs sm md lg xl wl;
 
 $blue:    #29568f !default;
 $ltBlue:  #e0e5eb !default;
@@ -136,6 +137,14 @@ $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
 $font-weight-litebold:        600 !default;
 $font-weight-bold:            700 !default;
+
+$weights: (
+  lt: $font-weight-light,
+  nm: $font-weight-normal,
+  md: $font-weight-litebold,
+  hv: $font-weight-bold
+);
+
 $font-weight-base:            $font-weight-normal !default;
 $line-height-base:            1.5 !default;
 
