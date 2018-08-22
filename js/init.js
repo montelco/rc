@@ -28,7 +28,7 @@ parallax:"mouse",
 parallaxBgFreeze:"on",
 parallaxLevels:[7,4,3,2,5,4,3,2,1,0],
 
-keyboardNavigation:"off",
+keyboardNavigation:"on",
 
 navigationHAlign:"center",
 navigationVAlign:"bottom",

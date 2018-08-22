@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<title>Grid Test</title>
   <link rel="stylesheet" href="compiled.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
 </head>
 <body>
   <header class="blue cd-main-content">
@@ -13,25 +14,26 @@
         <div class="quicklinks col-md-12 no-padding">
           <!-- <span class="txt-grey">Classes:</span> -->
           <div class="d-inline-block">
-            <a href="1">Courses</a>
-            <a href="2">Athletics</a>
-            <a href="4" class="last">Internships</a>
+            <a href="https://rcgc.edu/Courses">Courses</a>
+            <a href="https://rcgc.edu/Athletics">Athletics</a>
+            <a href="https://www.rcgc.edu/General/Pages/Directions.aspx">Maps & Directions</a>
+            <a href="https://rcgc.edu/Coop" class="last">Internships</a>
           </div>
         </div>
       </div>
     </section>
     <div class="container">
       <div class="row">
-        <div class="logo col-md-3">
+        <div class="logo col-7 col-md-3">
           <img src="logo-wbg.png" alt="">
         </div>
-        <ul class="cd-header-buttons">
+        <ul class="cd-header-buttons col-5 d-md-none">
           <li><a class="cd-nav-trigger" href="#cd-primary-nav">Menu<span></span></a></li>
         </ul> <!-- cd-header-buttons -->
-        <div class="search offset-md-1 col-md-8 d-flex justify-content-end align-items-center no-padding">
+        <div class="search col-12 offset-md-1 col-md-8 d-flex justify-content-between justify-content-md-end align-items-center no-padding flex-wrap">
           <button>Portal Login</button>
           <button>Apply Now</button>
-          <div class="search__box col-md-4 no-padding">
+          <div class="search__box col-12 col-md-4 no-padding order-first order-sm-first order-md-2 order-lg-2">
             <div data-name="SearchBox"><!--CS: Start Search Box Snippet--><!--SPM:<%@Register Tagprefix="SearchWC" Namespace="Microsoft.Office.Server.Search.WebControls" Assembly="Microsoft.Office.Server.Search, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"%>--><!--MS:<SearchWC:SearchBoxScriptWebPart UseSiteCollectionSettings="true" EmitStyleReference="false" ShowQuerySuggestions="false" ChromeType="None" UseSharedSettings="true" TryInplaceQuery="false" ServerInitialRender="true" runat="server">--><!--PS: Start of READ-ONLY PREVIEW (do not modify)--><div class="ms-webpart-chrome ms-webpart-chrome-fullWidth "><div WebPartID="00000000-0000-0000-0000-000000000000" HasPers="true" id="WebPart" width="100%" class="ms-WPBody noindex " OnlyForMePart="true" allowDelete="false" style=""><div componentid="ctl00_ctl03_csr" id="ctl00_ctl03_csr"><div id="SearchBox" name="Control"><div class="ms-srch-sb ms-srch-sb-border" id="ctl00_ctl03_csr_sboxdiv"><input type="text" value="Search..." maxlength="2048" accessKey="S" title="Search..." id="ctl00_ctl03_csr_sbox" autocomplete="on" autocorrect="on" onkeypress="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {if (Srch.U.isEnterKey(String.fromCharCode(event.keyCode))) {$find('ctl00_ctl03_csr').search($get('ctl00_ctl03_csr_sbox').value);return Srch.U.cancelEvent(event);}})" onkeydown="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {var ctl = $find('ctl00_ctl03_csr');ctl.activateDefaultQuerySuggestionBehavior();})" onfocus="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {var ctl = $find('ctl00_ctl03_csr');ctl.hidePrompt();ctl.setBorder(true);})" onblur="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {var ctl = $find('ctl00_ctl03_csr'); if (ctl){ ctl.showPrompt(); ctl.setBorder(false);}})" class="ms-textSmall ms-srch-sb-prompt ms-helperText" /><a title="Search" class="ms-srch-sb-searchLink" id="ctl00_ctl03_csr_SearchLink" onclick="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {$find('ctl00_ctl03_csr').search($get('ctl00_ctl03_csr_sbox').value);})" href="javascript: {}"><img src="https://www.rcgc.edu/_layouts/15/images/searchresultui.png?rev=23" class="ms-srch-sb-searchImg" id="searchImg" alt="Search" /></a></div></div></div><noscript><div id="ctl00_ctl03_noscript">It looks like your browser does not have JavaScript enabled. Please turn on JavaScript and try again.</div></noscript><div id="ctl00_ctl03"></div><div class="ms-clear"></div></div></div><!--PE: End of READ-ONLY PREVIEW--><!--ME:</SearchWC:SearchBoxScriptWebPart>--><!--CE: End Search Box Snippet-->
             </div>
           </div>
@@ -400,11 +402,11 @@
             </li>
 
             <li class="has-children">
-              <a href="/Current">Parents</a>
+              <a href="/Current">Transfer</a>
 
               <ul class="cd-secondary-nav is-hidden">
                 <li class="go-back"><a href="#0">Menu</a></li>
-                <li class="see-all"><a href="https://Portal.rcgc.edu/">RCGC Portal Login</a></li>
+                <li class="see-all"><a href="https://Portal.rcgc.edu/">Transfer Services</a></li>
                 <li class="has-children">
                   <a href="https://www.rcgc.edu/Admissions">Campus Services</a>
                   <ul class="is-hidden">
@@ -476,7 +478,7 @@
             </li>
 
             <li class="has-children">
-              <a href="/Transfer">Transfer</a>
+              <a href="/Transfer">Athletics</a>
 
               <ul class="cd-secondary-nav is-hidden">
                 <li class="go-back"><a href="#0">Menu</a></li>
@@ -751,7 +753,7 @@
                 data-elementdelay="0"
                 data-endelementdelay="0"
                 data-endspeed="300">
-                <h2>SJ's <strong>Only</strong> Physical Therapy Assistant Program</h2>
+                <h2>SJ's Only Physical Therapy Assistant Program</h2>
                 <p>Two-year degree offers competitive salary and career opportunites.</p>
                 <a href="#">Learn More »</a>
               </div>
@@ -760,7 +762,7 @@
         </li>
         <li data-transition="fade" data-slotamount="7" data-masterspeed="2000" data-delay="15000"  data-saveperformance="on"  data-title="Campus Visits">
           <!-- MAIN IMAGE -->
-          <img src="img/DJC_5799_thumb.jpg"  alt="laptopmockup_sliderdy" data-lazyload="img/DJC_5799.jpg" data-bgposition="left top" data-kenburns="on" data-duration="35000" data-ease="Power0.easeInOut" data-bgfit="110" data-bgfitend="100" data-bgpositionend="right bottom">
+          <img src="img/DJC_5799_thumb.jpg"  alt="laptopmockup_sliderdy" data-lazyload="img/DJC_5799.jpg" data-bgposition="right center" data-kenburns="on" data-duration="35000" data-ease="Power0.easeInOut" data-bgfit="110" data-bgfitend="100" data-bgpositionend="left top">
           <div class="container flyout">
             <div class="row flyout__container">
               <div class="fadein fadeout flyout__box"
@@ -773,7 +775,7 @@
                 data-elementdelay="0"
                 data-endelementdelay="0"
                 data-endspeed="300">
-                <h2>Discover the <strong>Difference</strong></h2>
+                <h2>Discover the Difference</h2>
                 <p>Schedule a campus visit and discover the difference at RCGC.</p>
                 <a href="#">Learn More »</a>
               </div>
@@ -805,7 +807,7 @@
         </li>
         <li data-transition="fade" data-slotamount="7" data-masterspeed="2000" data-delay="15000"  data-saveperformance="on"  data-title="Ryder Scholarship" style="position: relative;">
           <!-- MAIN IMAGE -->
-          <img src="img/DJC_9422_thumb.jpg"  alt="laptopmockup_sliderdy" data-lazyload="img/DJC_9422.jpg" data-bgposition="center center" data-kenburns="off" data-duration="15000" data-ease="Power0.easeInOut" data-bgfit="100" data-bgfitend="100" data-bgpositionend="top right">
+          <img src="img/DJC_9422_thumb.jpg"  alt="laptopmockup_sliderdy" data-lazyload="img/DJC_9422.jpg" data-bgposition="center top" data-kenburns="on" data-duration="15000" data-ease="Power0.easeInOut" data-bgfit="110" data-bgfitend="100" data-bgpositionend="center top">
           <div class="container flyout right">
             <div class="row flyout__container">
               <div class="fadein fadeout flyout__box"
@@ -818,8 +820,8 @@
                 data-elementdelay="0"
                 data-endelementdelay="0"
                 data-endspeed="300">
-                <h2>Henry Ryder Economics Scholarship</h2>
-                <p>RCGC Economics scholarship encourages student growth.</p>
+                <h2>Register for the Fall Semester</h2>
+                <p>It's not too late to register for Fall. Classes start September 4.</p>
                 <a href="#">Learn More »</a>
               </div>
             </div>
@@ -857,7 +859,7 @@
   <main class="fbZone light cd-main-content">
     <div class="container">
       <div class="row">
-        <div class="col-sm-12 d-flex justify-content-center"><h1 class="md-bold mb-32 dark">What's New at RCGC?</h1></div>
+        <div class="col-sm-12 d-flex justify-content-center"><h1 class="md-bold mb-32 dark zTitle">What's New at RCGC?</h1></div>
       </div>
       <div class="row d-flex">
         <div class="col-md-6 col-lg-4 flex-lg" id="Calendar">
@@ -940,9 +942,9 @@
         </div>
         <div class="col-md-12 col-lg-4 order-first order-sm-first order-md-first order-lg-2 flex-lg">
           <section class="card" id="pushContent">
-            <h2>Fall Semester Bill Due on August 15th</h2>
-            <h3>Be sure to check your <a href="#">portal</a> and <a href="#">self-service banner</a> accounts for your semester bill. A hold will be placed on your account until it is paid in full.</h3>
-            <a href="" class="pushCTA">View Semester Bill »</a>
+            <h2>Register for Fall Classes</h2>
+            <h3>It's not too late to <a href="#">register</a> for your Fall semester at RCGC. Classes begin on September 4. Whether hybrid, <a href="">online</a>, or on-campus, there are plenty of options to fit your schedule.</h3>
+            <a href="" class="pushCTA">Register Now »</a>
           </section>
         </div>
         <div class="col-md-6 col-lg-4 order-last flex-lg">
@@ -974,81 +976,93 @@
   <div class="fbZone p-top:64 p-bottom:64 blue cd-main-content">
     <div class="container">
       <div class="row">
-        <div class="col-sm-12 d-flex justify-content-center"><h1 class="md-bold mb-32 textWhite">RCGC Highlights</h1></div>
+        <div class="col-sm-12 d-flex justify-content-center"><h1 class="md-bold mb-32 textWhite zTitle">RCGC Highlights</h1></div>
       </div>
       <div class="row mb-32">
         <div class="col-md-4">
-          <div class="card d-flex flex-sm-row flex-md-column flex-lg-column flex-xl-row">
-            <div class="card__thumbnail">
-              <img src="hl-1.jpg" alt="TED Talk Tuesday">
+          <a href="https://www.rcgc.edu/FinancialAid">
+            <div class="card d-flex flex-sm-row flex-md-column flex-lg-column flex-xl-row">
+              <div class="card__thumbnail">
+                <img src="https://www.rcgc.edu/PublishingImages/RCGC_Highlight_Summer_FinAid-slider-concept.png" alt="TED Talk Tuesday">
+              </div>
+              <div class="card__body lp">
+                <h3>FAFSA Tuesdays</h3>
+                <p>Learn more about financial aid and other options every Tuesday.</p>
+                <!-- <a href="#">View Details</a> -->
+              </div>
             </div>
-            <div class="card__body lp">
-              <h3>TED Talk Tuesday</h3>
-              <p>Learn more about this month's TED Talk Tuesday event. August 14 in IC 430.</p>
-              <a href="#">View Details</a>
-            </div>
-          </div>
+          </a>
         </div>
         <div class="col-md-4">
-          <div class="card d-flex flex-sm-row flex-md-column flex-lg-column flex-xl-row">
-            <div class="card__thumbnail">
-              <img src="hl-2.jpg" alt="Student in Gown">
+          <a href="https://www.rcgc.edu/CAP/jobs/Pages/Roadrunner-Connections.aspx">
+            <div class="card d-flex flex-sm-row flex-md-column flex-lg-column flex-xl-row">
+              <div class="card__thumbnail">
+                <img src="hl-2.jpg" alt="Student in Gown">
+              </div>
+              <div class="card__body lp">
+                <h3>Roadrunner Connection</h3>
+                <p>Free online system for RCGC students to search for jobs & internships.</p>
+                <!-- <a href="#">View Internships</a> -->
+              </div>
             </div>
-            <div class="card__body lp">
-              <h3>Roadrunner Connection</h3>
-              <p>FREE online system for students to search for jobs & internships</p>
-              <a href="#">View Internships</a>
-            </div>
-          </div>
+          </a>
         </div>
         <div class="col-md-4">
-          <div class="card d-flex flex-sm-row flex-md-column flex-lg-column flex-xl-row">
-            <div class="card__thumbnail">
-              <img src="hl-3.png" alt="Police Academy Shield Logo">
+          <a href="https://www.rcgc.edu/Courses">
+            <div class="card d-flex flex-sm-row flex-md-column flex-lg-column flex-xl-row">
+              <div class="card__thumbnail">
+                <img src="https://www.rcgc.edu/PublishingImages/Icons/rcgc-icon-thumb.jpg" alt="Police Academy Shield Logo">
+              </div>
+              <div class="card__body lp">
+                <h3>Student Services Closing</h3>
+                <p>The Student Services Building will be close Aug 23 from 10AM-12PM.</p>
+                <!-- <a href="#">Download Application</a> -->
+              </div>
             </div>
-            <div class="card__body lp">
-              <h3>Alternate Route Application</h3>
-              <p>Gloucester Co Police Academy opens Alternate Route Process.</p>
-              <a href="#">Download Application</a>
-            </div>
-          </div>
+          </a>
         </div> 
         <div class="col-md-4">
-          <div class="card d-flex flex-sm-row flex-md-column flex-lg-column flex-xl-row">
-            <div class="card__thumbnail">
-              <img src="hl-1.jpg" alt="TED Talk Tuesday">
+          <a href="https://www.rcgc.edu/Today">
+            <div class="card d-flex flex-sm-row flex-md-column flex-lg-column flex-xl-row">
+              <div class="card__thumbnail">
+                <img src="https://www.rcgc.edu/PublishingImages/Icons/rcgc-icon-thumb.jpg" alt="Logo">
+              </div>
+              <div class="card__body lp">
+                <h3>RCGC Today</h3>
+                <p>Learn more about what's happening around your campus with RCGC Today.</p>
+                <!-- <a href="#">View Details</a> -->
+              </div>
             </div>
-            <div class="card__body lp">
-              <h3>TED Talk Tuesday</h3>
-              <p>Learn more about this month's TED Talk Tuesday event. August 14 in IC 430.</p>
-              <a href="#">View Details</a>
-            </div>
-          </div>
+          </a>
         </div>
         <div class="col-md-4">
-          <div class="card d-flex flex-sm-row flex-md-column flex-lg-column flex-xl-row">
-            <div class="card__thumbnail">
-              <img src="hl-2.jpg" alt="Student in Gown">
+          <a href="https://portal.rcgc.edu/mycampus">
+            <div class="card d-flex flex-sm-row flex-md-column flex-lg-column flex-xl-row">
+              <div class="card__thumbnail">
+                <img src="https://ucarecdn.com/d3953aa7-8028-4dc5-ae57-0bd1c21ebe1a/-/scale_crop/380x380/center/-/progressive/yes/notetaker.jpg" alt="Student in Gown">
+              </div>
+              <div class="card__body lp">
+                <h3>Notetakers Needed</h3>
+                <p>Learn how you can make extra cash in the RCGC Portal MyCampus tab.</p>
+                <!-- <a href="#">View Internships</a> -->
+              </div>
             </div>
-            <div class="card__body lp">
-              <h3>Roadrunner Connection</h3>
-              <p>FREE online system for students to search for jobs & internships</p>
-              <a href="#">View Internships</a>
-            </div>
-          </div>
+          </a>
         </div>
         <div class="col-md-4">
-          <div class="card d-flex flex-sm-row flex-md-column flex-lg-column flex-xl-row">
-            <div class="card__thumbnail">
-              <img src="hl-3.png" alt="Police Academy Shield Logo">
+          <a href="https://www.rcgc.edu/Diversity/Pages/Ted-Talk-Tuesdays.aspx">
+            <div class="card d-flex flex-sm-row flex-md-column flex-lg-column flex-xl-row">
+              <div class="card__thumbnail">
+                <img src="hl-1.jpg" alt="TED Talk Tuesday">
+              </div>
+              <div class="card__body lp">
+                <h3>TED Talk Tuesday</h3>
+                <p>Learn more about this TED Talk Tuesday event. August 14 in IC 430.</p>
+                <!-- <a href="#">View Details</a> -->
+              </div>
             </div>
-            <div class="card__body lp">
-              <h3>Alternate Route Application</h3>
-              <p>Gloucester Co Police Academy opens Alternate Route Process.</p>
-              <a href="#">Download Application</a>
-            </div>
-          </div>
-        </div> 
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -1119,12 +1133,11 @@
         </div>
       </div>
   </footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/jquery.themepunch.tools.min.js"></script>   
-  <script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
-  <script src="packages/mega-site-navigation/js/jquery.mobile.custom.min.js"></script>
-  <script src="packages/mega-site-navigation/js/main.js"></script>
-  <script type="text/javascript" src="js/init.js"></script>
+  <script type="text/javascript" src="js/jquery.themepunch.tools.min.js" type="text/javascript"></script>   
+  <script type="text/javascript" src="js/jquery.themepunch.revolution.min.js" type="text/javascript"></script>
+  <!-- <script src="packages/mega-site-navigation/js/jquery.mobile.custom.min.js"></script> -->
+  <script src="packages/mega-site-navigation/js/main.js" type="text/javascript"></script>
+  <script type="text/javascript" src="js/init.js" type="text/javascript"></script>
   <span style="display: none;" class="nav-start"></span>
 </body>
 </html>

@@ -34,6 +34,12 @@
     -ms-flex-align: center;
     align-items: center;
     max-width: 930px;
+    @include media (lg) {
+      width: 930px;
+    }
+    @include media (xs) {
+      min-width: 100%;
+    }
   }
   &__box {
     
@@ -48,6 +54,10 @@
     border-top-right-radius: 7px;
     max-height: auto;
     padding: 8px;
+    @include media(xs) {
+      width: 100%;
+      padding: 4px;
+    }
     white-space: normal;
     word-wrap: break-word;
     z-index: 1;
@@ -59,13 +69,38 @@
         size: 20px;
         weight: 600;
       }
+      text-align: center;
+      @include media(xs) {
+        font: {
+          size: 14px;
+        }
+        margin-bottom: 0;
+      }
+      @include media(lg) {
+        font: {
+          size: 24px;
+        }
+      }
     }
 
     p {
       color: #2c2d2f;
+      text-align: center;
       font: {
         weight: 400;
         size: 12px;
+      }
+      @include media(xs) {
+        font: {
+          size: 10px;
+        }
+        margin-bottom: 0.5rem;
+      }
+      @include media(lg) {
+        font: {
+          size: 16px;
+        }
+        margin-bottom: 1.1rem;
       }
     }
 

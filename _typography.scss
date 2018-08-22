@@ -12,6 +12,14 @@
   margin-bottom: 32px;
 }
 
+.zTitle {
+  @include media(mm) {
+    font: {
+      size: 22px;
+    }
+  }
+}
+
 @each $key, $value in $weights {
   .fw-#{$key} {
     font: {

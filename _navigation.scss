@@ -23,26 +23,101 @@ div[data-name="SearchBox"] .ms-srch-sb.ms-srch-sb-border{
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   -ms-align-items: center;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 nav>ul, ul li{
   list-style-type: none;
   color: white;
   margin: 0;
-  justify-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-align-items: center;
-  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -o-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   font-size: 18px;
   letter-spacing: 0;
 }
 
-.logo { padding: 14px 0;}
+.logo { 
+  padding: 14px 0;
+  @include media(mm){
+    padding: 0;
+  }
+}
+
+ul.cd-header-buttons {
+  display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  right: unset;
+  top: 4px;
+  margin: 0;
+  position: relative;
+  &>li{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    a {
+      background: $yellow;
+      border-radius: 4px;
+      &:hover,
+      &:focus,
+      &:active {
+        background: #dab62a;
+      }
+    }
+    .cd-nav-trigger span,
+    .cd-nav-trigger span::before,
+    .cd-nav-trigger span::after {
+      background: $coal;
+    }
+    .cd-nav-trigger.nav-is-visible span {
+      background: rgba(0,0,0,0);
+    }
+  }
+}
 
 nav>ul>li>a {
 
@@ -52,20 +127,20 @@ nav>ul>li>a {
 
 }
 
-// nav>ul>li>a::after {
-//     content: '';
-//     display: block;
-//     width: 0;
-//     height: 2px;
-//     background: #fff;
-//     transition: width .175s;
-// }
+/* nav>ul>li>a::after {*/
+/*     content: '';*/
+/*     display: block;*/
+/*     width: 0;*/
+/*     height: 2px;*/
+/*     background: #fff;*/
+/*     transition: width .175s;*/
+/* }*/
 
-// nav>ul>li>a:hover::after,
-// nav>ul>li>a.selected::after {
-//   width: 100%;
-//   transition: width .175s;
-// }
+/* nav>ul>li>a:hover::after,*/
+/* nav>ul>li>a.selected::after {*/
+/*   width: 100%;*/
+/*   transition: width .175s;*/
+/* }*/
 
 .offset-md-half{
   margin-left: calc(8.3333333333%/2);
@@ -74,7 +149,7 @@ section.slider{
   padding: 0;
   margin-bottom: -5px;
 }
-nav>ul{display: flex;}
+nav>ul{display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;}
 img{
   max-width: 100%;
   height: auto;
@@ -102,8 +177,13 @@ img{
 
 @include media(nml) {
   .cd-primary-nav {
-    flex-wrap: wrap !important;
-    justify-content: flex-start;
+    -webkit-flex-wrap: wrap !important;
+        -ms-flex-wrap: wrap !important;
+            flex-wrap: wrap !important;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     > li {
       width: 24%;
       font: {
@@ -115,9 +195,12 @@ img{
 
 @include media(md) {
   .cd-primary-nav {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     float: none;
-    // overflow-x: hidden;
+    /* overflow-x: hidden;*/
     padding: 0;
     position: initial;
     > li {
@@ -129,13 +212,18 @@ img{
         ul {padding: 0;}
       }
       .cd-secondary-nav {
-        // display: inline-block;
+        /* display: inline-block;*/
         &:nth-of-type(1) {
           padding: 15px; 
           padding-bottom: 95px; 
+          display: -webkit-box; 
+          display: -webkit-flex; 
+          display: -ms-flexbox; 
           display: flex; 
-          flex-wrap: wrap;}
-        // position: fixed;
+          -webkit-flex-wrap: wrap; 
+              -ms-flex-wrap: wrap; 
+                  flex-wrap: wrap;}
+        /* position: fixed;*/
         width: 100%;
         li {
           position: initial;
