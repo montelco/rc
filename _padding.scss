@@ -37,6 +37,7 @@ $break-vals: xs sm md lg xl wl;
 
 .pd {
   &-xs {padding: .125rem 0}
+  &-xs-xs {@include media(xs) {padding: .125rem 0}}
   &-sm {padding: .250rem 0}
   &-md {padding: .375rem 0}
   &-lg {padding: .500rem 0}

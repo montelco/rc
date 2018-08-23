@@ -187,8 +187,13 @@
     padding: 24px;
 
     h2 {
-      font-size: 36px;
-      @media screen and (max-width: $wl - 1) {font-size: 32px;}
+      font-size: 1.25em;
+      @media screen and (max-width: $wl - 1) {font-size: 1.15em;}
+      @include media(mm) {
+        font-size: 1em;
+        padding-bottom: 1em;
+        margin: 0;
+      }
       font-weight: 600;
       padding-bottom: 32px;
     }
@@ -197,6 +202,10 @@
       font-size: 26px;
       @media screen and (max-width: $wl - 1) {font-size: 24px;}
       @media screen and (max-width: $lg - 1) {font-size: 22px;}
+      @include media(mm) {
+        font-size: .75em;
+        padding-bottom: 1em;
+      }
       font-weight: 400;
       padding-bottom: 48px;
 
