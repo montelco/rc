@@ -6,14 +6,7 @@ body,
 .ms-status-msg,
 .js-callout-body
 {
-/* [ReplaceFont(themeFont:"body")] */ font-family:"Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;
-font-size:13px;
-}
-body,
-.ms-core-defaultFont,
-.js-callout-body
-{
-/* [ReplaceColor(themeColor:"BodyText")] */ color:#444;
+/* [ReplaceFont(themeFont:"body")] */ font-family: Helvetica,Arial,sans-serif;
 }
 .ms-core-defaultFont
 {
@@ -42,60 +35,6 @@ html > .ms-core-needIEFilter
 #s4-ribbonrow
 {
 position:relative;
-}
-#s4-workspace
-{
-overflow:auto;
-position:relative;
-}
-#s4-bodyContainer
-{
-padding-bottom:35px;
-}
-h1,h2,h3,h4,h5,h6,.ms-h1,.ms-h2,.ms-h3,.ms-h4,.ms-h5,.ms-h6
-{
-margin:auto;
-font-weight:normal;
-}
-h1,
-.ms-h1
-{
-/* [ReplaceFont(themeFont:"large-heading")] */ font-family:"Segoe UI Light","Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;
-font-size:2.3em;
-/* [ReplaceColor(themeColor:"SubtleBodyText")] */ color:#777;
-font-weight:200;
-}
-h2,h3,.ms-h2,.ms-h3,
-.ms-headerFont
-{
-/* [ReplaceFont(themeFont:"heading")] */ font-family:"Segoe UI Semilight","Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;
-/* [ReplaceColor(themeColor:"StrongBodyText")] */ color:#262626;
-font-weight:300;
-}
-h2,.ms-h2
-{
-font-size:1.46em;
-}
-h3,.ms-h3
-{
-font-size:1.15em;
-}
-h4,h5,h6,.ms-h4,.ms-h5,.ms-h6
-{
-/* [ReplaceFont(themeFont:"small-heading")] */ font-family:"Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;
-}
-h4,.ms-h4
-{
-font-size:1em;
-/* [ReplaceColor(themeColor:"StrongBodyText")] */ color:#262626;
-}
-h5,.ms-h5
-{
-font-size:1em;
-}
-h6,.ms-h6
-{
-font-size:1em;
 }
 img
 {
@@ -663,64 +602,6 @@ position:absolute;
 {
 /* [ReplaceColor(themeColor:"Lines")] */ border:1px solid #ababab;
 padding:4px;
-}
-#searchInputBox
-{
-margin-bottom:12px;
-float:right;
-}
-.ms-srch-sb
-{
-display:inline-block;
-}
-.ms-core-header .ms-srch-sb
-{
-/* [ReplaceColor(themeColor:"HeaderBackground",opacity:"1")] */ background-color:#fff;
-/* [ReplaceColor(themeColor:"HeaderBackground")] */ background-color:rgba( 255,255,255,0.85 );
-}
-.ms-srch-sb-border
-{
-/* [ReplaceColor(themeColor:"Lines")] */ border:1px solid #ababab;
-}
-.ms-core-header .ms-srch-sb-border
-{
-/* [ReplaceColor(themeColor:"HeaderLines")] */ border:1px solid #ababab;
-}
-.ms-srch-sb-border:hover
-{
-/* [ReplaceColor(themeColor:"StrongLines")] */ border:1px solid #92c0e0;
-}
-.ms-core-header .ms-srch-sb-border:hover
-{
-/* [ReplaceColor(themeColor:"HeaderStrongLines")] */ border:1px solid #92c0e0;
-}
-.ms-srch-sb-borderFocused
-{
-/* [ReplaceColor(themeColor:"AccentLines")] */ border:1px solid #2a8dd4;
-}
-.ms-core-header .ms-srch-sb-borderFocused
-{
-/* [ReplaceColor(themeColor:"HeaderAccentLines")] */ border:1px solid #2a8dd4;
-}
-.ms-srch-sb>input
-{
-display:inline-block;
-border-style:none;
-outline-style:none;
-height:18px;
-margin:0px 0px 0px 5px;
-padding:0px 1px 0px 0px;
-width:200px;
-background-color:transparent;
-}
-.ms-core-header .ms-srch-sb>input
-{
-/* [ReplaceColor(themeColor:"HeaderText")] */ color:#444;
-}
-.ms-srch-sb>input:focus
-{
-border-style:none;
-outline-style:none;
 }
 .ms-srch-sb>input[type=text]::-ms-clear
 {
@@ -10232,6 +10113,7 @@ margin-left:4px;
 }
 .ms-cui-ribbon a img,.ms-cui-menu a img,.ms-cui-QAT a img,.ms-cui-toolbar-toolbar a img{
 border:0px;
+max-width: none !important;
 }
 .ms-cui-modalDiv-ie,.ms-cui-modalDiv-ff{
 display:block;
@@ -10877,6 +10759,7 @@ vertical-align:middle;
 }
 .ms-cui-ctl-largelabel,
 .ms-cui-ctl-mediumlabel{
+font-size: 65%;
 color:#23272c;
 }
 .ms-cui-groupBody input[type=text]{
@@ -11706,7 +11589,7 @@ padding-bottom:6px !important;
 }
 .ms-cui-smenu-inner
 {
-width:100%;
+max-width:100%;
 }
 .ms-cui-tabContainer
 {

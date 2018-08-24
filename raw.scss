@@ -13,7 +13,6 @@
 // In this block, CodyHouse MegaMenu is imported. We can swap this out later.
 // @import 'packages/mega-site-navigation/scss/style';
 @import 'packages/mega-site-navigation/scss/style';
-@import 'sharepoint';
 // Buidling out the page with various styles
 @import 'global';
 
@@ -29,5 +28,6 @@
 @import 'cards';
 @import 'evergreen';
 @import 'footer';
-// Content Areas
+@import 'content';
+@import 'sharepoint';
 // Sidebars

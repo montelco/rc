@@ -1,3 +1,116 @@
+#ms-designer-ribbon,
+.ms-cui-ctl-label,
+.ms-dlgContent,
+.ms-dlgOverlay {
+  line-height: 1;
+  box-sizing: content-box;
+}
+
 #ms-designer-ribbon {
-  @import 'corev15';
+  width: 100%;
+  background: #EFEFEF;
+}
+
+.ms-cui-smenu-inner {
+  position: fixed;
+  z-index: 9999999;
+  width: auto;
+  border: solid 1px #CFD8E4;
+}
+
+.ms-cui-tt-span {
+  font-size: 8pt;
+}
+
+.ms-cui-ribbon, .ms-cui-menu, .ms-cui-toolbar-toolbar {
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-size: 8pt;
+  color: rgb(108, 110, 112);
+}
+
+.ms-core-menu-buttonIcon {
+  max-width: initial;
+}
+
+.ms-cui-dd-arrow-button {
+  height: 19px;
+  width: 9px;
+  padding-left: 4px;
+  margin-left: -1px;
+  border-color: rgb(211, 214, 217) rgb(211, 214, 217) rgb(211, 214, 217) transparent;
+  border-style: solid;
+  border-width: 1px;
+  border-image: none 100% / 1 / 0 stretch;
+  display: block;
+  float: left;
+  outline: currentcolor none medium;
+  cursor: default;
+  line-height: 1;
+}
+
+.ms-cui-gallerybutton-a .ms-rte-stylePreviewBoxInner {
+  background: white !important;
+  h1 {
+    color: #414F5A;
+    font-weight: 600;
+  }
+
+  h2 {
+    color: #414F5A;
+    font-weight: 400;
+  }
+
+  h3,
+  h4 {
+    color: #333;
+  }
+}
+
+#Ribbon img, .ms-cui-menu img {
+  max-width: initial !important;
+}
+
+.ms-cui-ctl-largelabel,
+.ms-cui-ctl-mediumlabel {
+  font-size: 10pt;
+}
+
+.ms-cui-groupTitle {
+  font-size: 10px;
+}
+
+.ms-dlgOverlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  background-color: rgb(153, 153, 153);
+  display: none;
+}
+
+.ms-dlgContent {
+  border: 1px solid rgb(198, 198, 198);
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 30px 0px;
+}
+
+.ms-srch-sb-borderFocus {
+  width: 100% !important;
+}
+
+// @import 'corev15';
+
+footer {
+  @import 'variables';
+  @import 'reset';
+  h1, h2, h3, h4, h5, h6, .ms-h1, .ms-h2, .ms-h3, .ms-h4, .ms-h5, .ms-h6 {
+    margin: 0 0 5px !important;
+    color: white;
+  }
+  p {
+    margin: 0 0 1rem !important;
+  }
 }
