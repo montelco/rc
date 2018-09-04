@@ -19,3 +19,26 @@ body {
   margin: 0px;
   min-height: calc(100vh - 100px);
 }
+
+.ms-accessible, .ms-hidden, a.ms-skip, a:hover.ms-skip, a:visited.ms-skip, a.ms-TurnOnAcc, a.ms-SkiptoMainContent, a.ms-SkiptoNavigation {
+    position: absolute;
+    top: -2000px;
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    display: block;
+}
+
+a:active.ms-skip, a:focus.ms-skip, a:focus.ms-acc-button, a:active.ms-acc-button {
+    position: absolute;
+    top: 2px;
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000;
+    padding: 2px 4px;
+    z-index: 12;
+    height: auto;
+    width: auto;
+}
+
+

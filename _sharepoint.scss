@@ -9,6 +9,7 @@
 #ms-designer-ribbon {
   width: 100%;
   background: #EFEFEF;
+  margin-bottom: -16px;
 }
 
 .ms-cui-smenu-inner {
@@ -106,7 +107,7 @@
 footer {
   @import 'variables';
   @import 'reset';
-  h1, h2, h3, h4, h5, h6, .ms-h1, .ms-h2, .ms-h3, .ms-h4, .ms-h5, .ms-h6 {
+  h1, h2, h3, h4, h5, h6, .ms-h1, .ms-h2, .ms-h3, .ms-h4, .ms-h5, .ms-h6, a {
     margin: 0 0 5px !important;
     font-weight: 600;
     color: white;

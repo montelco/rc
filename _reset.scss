@@ -128,6 +128,9 @@ a {
     color: $link-hover-color;
     text-decoration: $link-hover-decoration;
   }
+  &:visited {
+    color: inherit;
+  }
 }
 
 a:not([href]):not([tabindex]) {

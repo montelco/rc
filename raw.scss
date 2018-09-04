@@ -14,7 +14,9 @@
 // @import 'packages/mega-site-navigation/scss/style';
 @import 'packages/mega-site-navigation/scss/style';
 // Buidling out the page with various styles
+// Also pulls in any styles that are specific to accessibility.
 @import 'global';
+@import 'ada';
 
 // Colors should be rewritten to use functions rather than declarations.
 @import 'colors';

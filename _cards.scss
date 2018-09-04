@@ -2,6 +2,10 @@
   background: var(--white);
   border-radius: 4px;
   box-shadow: 0 2px 2px 2px rgba(25, 25, 25, .08);
+  font: {
+    family: $font-family-base !important;
+    size: $font-size-base !important;
+  }
   @media screen and (max-width: $lg) {margin-bottom: 30px;}
   @media screen and (min-width: $lg + 1) {margin-bottom: 15px;}
 
@@ -11,6 +15,7 @@
     font-size: 22px;
     padding: 5px 12px;
     h3 {
+      color: inherit;
       font: {
         weight: 600;
       }
@@ -123,7 +128,11 @@
       &>li{
         padding-bottom: 24px;
         line-height: 1;
-        &>a{font-size: 14px;}
+        &>a{
+          @include hover-focus-active{color: $link-color !important;}
+          font-size: 14px;
+          color: $link-color !important;
+        }
       }
       &>li:last-child {
         padding: 0;
@@ -132,8 +141,9 @@
         &>li:nth-of-type(n+7) {display: none;}
       }
     }
-
   }
+
+  strong a:visited {color: $link-color;}
 
   &__date{
     padding: 0;
@@ -182,8 +192,8 @@
 
   &#pushContent {
     background: $pcBlue;
-    color: $white;
-    font-size: 1.6rem;
+    color: $white !important;
+    font-size: 1.6rem !important;
     padding: 24px;
 
     h2 {
@@ -196,12 +206,15 @@
       }
       font-weight: 600;
       padding-bottom: 32px;
+      color: inherit !important;
     }
 
     h3 {
+      color: inherit !important;
       font-size: 26px;
       @media screen and (max-width: $wl - 1) {font-size: 24px;}
       @media screen and (max-width: $lg - 1) {font-size: 22px;}
+      @include media(lg) {flex: 1;}
       @include media(mm) {
         font-size: .75em;
         padding-bottom: 1em;
@@ -219,7 +232,7 @@
       display: block;
       width: 100%;
       background: $yellow;
-      color: $body-color;
+      color: $body-color !important;
       font-size: 16px;
       padding: 16px 0;
       text-align: center;
