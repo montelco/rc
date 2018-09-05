@@ -65,6 +65,7 @@
       width: 100%;
     }
     h2 {
+      color: inherit !important;
       font: {
         size: 20px;
         weight: 600;
@@ -84,7 +85,7 @@
     }
 
     p {
-      color: #2c2d2f;
+      color: #2c2d2f !important;
       text-align: center;
       font: {
         weight: 400;
@@ -104,19 +105,19 @@
       }
     }
 
-    a {
-      display: none;
-      width: 100%;
-      text-align: right;
-      font: {
-        style: italic;
-        weight: 600;
-      }
-      text-decoration: underline;
-      color: #d8a60f;
-      @include hover-focus-active {
-        color: #d8a60f;
-      }
-    }
+    // a {
+    //   display: none;
+    //   width: 100%;
+    //   text-align: right;
+    //   font: {
+    //     style: italic;
+    //     weight: 600;
+    //   }
+    //   text-decoration: underline;
+    //   color: #d8a60f;
+    //   @include hover-focus-active {
+    //     color: #d8a60f;
+    //   }
+    // }
   }
 }

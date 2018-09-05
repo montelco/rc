@@ -182,7 +182,7 @@
 
             _toggleExpandedEventHandlers.call(this, true);
             _log("Checking for hide flag");
-            if (hide || panel.hasClass("nevershow")) {
+            if (hide || !$('.has-children').children('ul.cd-secondary-nav').hasClass("is-hidden")) {
 
                 _log("Hide flagged: Hiding all panels");
                 topli = menu.find('.' + settings.topNavItemClass + ' .' + settings.openClass + ':first').closest('.' + settings.topNavItemClass);
@@ -193,6 +193,9 @@
                     .attr('aria-expanded', 'false')
                     .removeClass(settings.openClass)
                     .attr('aria-hidden', 'true');
+                var selected = $('.has-children').children('ul.cd-secondary-nav');
+                selected.removeClass('selected').next('ul').addClass('is-hidden').end().parent('.has-children').parent('ul').removeClass('moves-out');
+                $('.cd-overlay').removeClass('is-visible');
 
                 // end rcgc
 
