@@ -3,34 +3,80 @@
 
     div[id^='ct100_PlaceHolderMain'],
     div[webpart] {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
-      flex: 1;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
     }
 
     & > div {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
-      flex: 1;
-      flex-direction: column;
-      // div[id^='ct100_PlaceHolderMain'] {
-      //   display: flex;
-      //   flex: 1;
-      // }
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      /* div[id^='ct100_PlaceHolderMain'] {*/
+      /*   display: flex;*/
+      /*   flex: 1;*/
+      /* }*/
       .card {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
-        flex: 1;
-        flex-direction: column;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
         width: 100%;
         &__body {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
           display: flex;
-          flex: 1;
-          flex-direction: column;
+          -webkit-box-flex: 1;
+          -webkit-flex: 1;
+              -ms-flex: 1;
+                  flex: 1;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+              -ms-flex-direction: column;
+                  flex-direction: column;
           &.np a {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
             display: flex;
-            flex: 1;
-            flex-direction: column;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+                -ms-flex: 1;
+                    flex: 1;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                    flex-direction: column;
           }
         }
-        &__event {flex: 1;}
+        &__event {-webkit-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;}
       }
     }
   }

@@ -1,7 +1,8 @@
 .card {
   background: var(--white);
   border-radius: 4px;
-  box-shadow: 0 2px 2px 2px rgba(25, 25, 25, .08);
+  -webkit-box-shadow: 0 2px 2px 2px rgba(25, 25, 25, .08);
+          box-shadow: 0 2px 2px 2px rgba(25, 25, 25, .08);
   font: {
     family: $font-family-base !important;
     size: $font-size-base !important;
@@ -28,21 +29,31 @@
     } 
   }
 
-  #Calendar &__body a{
+  #Calendar &__body a,
+  #Highlights &__body {
     color: $body-color !important;
   }
 
   &__thumbnail {
-    flex-basis: calc(150px);
+    -webkit-flex-basis: calc(150px);
+        -ms-flex-preferred-size: calc(150px);
+            flex-basis: calc(150px);
     height: 150px;
     padding: 0;
     margin: 0;
-    flex-grow: 0;
-    flex-shrink: 0;
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
     width: 150px;
 
     @include media(mm) {
-      flex-basis: 120px;
+      -webkit-flex-basis: 120px;
+          -ms-flex-preferred-size: 120px;
+              flex-basis: 120px;
       height: 120px;
     }
     @include media(nml) {
@@ -51,7 +62,8 @@
     }
 
     img {
-      object-fit: cover;
+      -o-object-fit: cover;
+         object-fit: cover;
       width: 100%;
       height: 100%;
       border-top-left-radius: 4px;
@@ -185,7 +197,8 @@
 
   &__event {
     margin: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     border-bottom: 1px solid $gray-300;
     line-height: 1.125;
   }
@@ -214,7 +227,7 @@
       font-size: 26px;
       @media screen and (max-width: $wl - 1) {font-size: 24px;}
       @media screen and (max-width: $lg - 1) {font-size: 22px;}
-      @include media(lg) {flex: 1;}
+      @include media(lg) {-webkit-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;}
       @include media(mm) {
         font-size: .75em;
         padding-bottom: 1em;
