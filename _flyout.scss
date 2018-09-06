@@ -20,6 +20,9 @@
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      z-index: 6731478625698;
+    }
 
   &.right {
     // -webkit-box-pack: end;
