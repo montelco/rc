@@ -81,3 +81,153 @@
     }
   }
 }
+
+@include media(md) {
+  // IE gets punished for existing. We're okay with giving a slightly worse experience since it's not a major piece.
+  // Everyone else gets nicely sized cards.
+  @supports not (-ms-high-contrast: none){
+    #Highlights {
+      .card__body.lp {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        &>a:nth-of-type(1){
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-flex: 1;
+          -webkit-flex: 1 1 auto;
+              -ms-flex: 1 1 auto;
+                  flex: 1 1 auto;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+        }
+      }
+      .card__body.lp a{
+        @include hover-focus-active{color: $body-color !important;}
+        h3 {
+          font-size: 100%;
+          color: $body-color;
+        }
+        p {
+          font-size: 85%;
+          color: $body-color;
+        }
+        a strong {
+          @include hover-focus-active{color: $body-color}
+          font-size: 80%;
+        }
+      }
+      .row .col-md-4 {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        .card {
+          -webkit-box-flex: 1;
+          -webkit-flex: 1 1 auto;
+              -ms-flex: 1 1 auto;
+                  flex: 1 1 auto;
+        }
+      }
+    }
+  }
+}
+
+@include media(lg) {
+  #Calendar {
+
+    div[id^='ct100_PlaceHolderMain'],
+    div[webpart] {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-flex: 1 1 auto;
+      -webkit-flex: 1 1 auto;
+          -ms-flex: 1 1 auto;
+              flex: 1 1 auto;
+    }
+
+    & > div {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-flex: 1 1 auto;
+      -webkit-flex: 1 1 auto;
+          -ms-flex: 1 1 auto;
+              flex: 1 1 auto;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      /* div[id^='ct100_PlaceHolderMain'] {*/
+      /*   display: flex;*/
+      /*   flex: 1 1 auto;*/
+      /* }*/
+      &.card {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1 1 auto;
+        -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        width: 100%;
+        &__body {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-flex: 1 1 auto;
+          -webkit-flex: 1 1 auto;
+              -ms-flex: 1 1 auto;
+                  flex: 1 1 auto;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          &.np a {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-flex: 1 1 auto;
+            -webkit-flex: 1 1 auto;
+                -ms-flex: 1 1 auto;
+                    flex: 1 1 auto;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+          }
+        }
+        &__event {-webkit-box-flex: 1 1 auto;-webkit-flex: 1 1 auto;-ms-flex: 1 1 auto;flex: 1 1 auto;}
+      }
+    }
+  }
+}
