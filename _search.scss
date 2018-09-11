@@ -24,7 +24,7 @@
   background-color: white !important;
   transition: 0.25s ease-in-out !important;
 }
-.search .button {
+.search .button{
   border-style: none !important;
   font-weight: 600 !important;
   border-radius: 4px !important;
@@ -44,6 +44,14 @@
   background-color: #ebc944 !important;
   transition: 0.25s ease-in-out !important;
 }
+
+.search .button li a {
+  text-transform: uppercase !important;
+  color: #373d3f !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
 .search .button:hover {
   background: #dab62a !important;
   transition: 0.25s ease-in-out !important;
