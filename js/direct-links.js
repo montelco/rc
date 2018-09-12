@@ -1,20 +1,22 @@
 jQuery(document).ready(function() {
-  var $direct = "Direct Links";
 
-  if($("#d-links ul").length > 0 ) {  
-    $("#d-links").css("left", -25); 
-    $("#dir-active").text($direct);
-    $(".essentials li:contains(Portal)").text($direct).addClass("iconer");
-    
+  if($("#dir-active").length > 0 ) {
+    var button = $("#d-link");
+    button.show();
+    $('#p-link').remove();
+
+    var contents = $("#dir-active");
+    contents.detach();
+    contents.insertAfter('#dl-end');
+
     var myTimeout;
-    $("#binder").on('mouseenter', function(){
-      myTimeout = setTimeout(function () {
-        $("#d-links").show(10);
-        $(".link-to-portal").css("opacity", 1); 
-      }, 200);
-    }).mouseleave(function () { 
-      $('#d-links').hide(50); 
-      clearTimeout(myTimeout);
+    $("#d-link").on('click', function(){
+      $("#dir-active").toggle(10);
     });
+  }
+  if (!$("#dir-active").length > 0) {
+    $('#frame-links').hide();
+    var button = $("#p-link");
+    button.show();
   }
 });
