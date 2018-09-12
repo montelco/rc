@@ -7,12 +7,13 @@ Created by: Cory Monteleone
 ***
 ##Documentation Navigation
 
-- [Setup](#Setup)
-- [Style Guide](#Style-Guide)
-- [Version control management](#Git)
-- [Code Paradigms](#Paradigms)
-- [Review Processes](#Reviews)
-- [File Documentation](#Files)
+- [Setup](#setup)
+- [Steps to a Prepared Environment](#steps-to-a-prepared-environment)
+- [Style Guide](#style-guide)
+- [Version control management](#git)
+- [Code Paradigms](#paradigms)
+- [Review Processes](#reviews)
+- [File Documentation](#files)
 
 #Setup
 
@@ -40,7 +41,7 @@ The codebase for the Rowan College site requires several packages which make the
 4. The developer should then install the Sublime packages in the following order: Git, Emmet, Color Highlighter, SASS, and SASS Linter. Follow the steps that each package outlines as they are updated frequently and instructions may change.
 5. Finally, the developer should install the two browsers. Firefox Developer has the best support for CSS4 Grid and has the best Javascript debugger. Blisk allows for device spoofing for testing various displays.
 
-#Style-Guide
+#Style Guide
 Every developer has his or her own style, but to make the code as readable and predictable as possible, the following guidelines should be followed. There are always exceptions to the rules, particularly when dealing with code from outside sources such as that which the CMS requires or any other third party service. Original code, however, should follow the below as often as possible.
 
 Most of the guidelines are adapted from __[Airbnb's styleguide](https://github.com/airbnb/css/blob/master/README.md)__ which has a great deal of overlap. Generally speaking, a developer should follow BEM when there are elements that depend on the Block and have modifiers. You can read more about BEM [here](http://getbem.com/).
@@ -101,7 +102,7 @@ The files below are organized by category (language and scope). There are some c
 
 | __File Name__         | __Description (Optional)__                                                  | __Language__  |
 |---------------------- |-------------------------------------------------------------------------------  |---------- |
-| _ada.scss             | Features needed for ADA compliant skip links                                    | SCSS      |
+| [`_ada.scss`](ada.html)             | Features needed for ADA compliant skip links                                    | SCSS      |
 | _alerts.scss          | Alert banner code for site announcements                                        | SCSS      |
 | _cards.scss           | Any element with a card-style layout or banner header                           | SCSS      |
 | _colors.scss          | Atomic classes for assigning colors to items or text                            | SCSS      |
