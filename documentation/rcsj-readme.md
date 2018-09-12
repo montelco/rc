@@ -103,7 +103,7 @@ The files below are organized by category (language and scope). There are some c
 | __File Name__         | __Description (Optional)__                                                  | __Language__  |
 |---------------------- |-------------------------------------------------------------------------------  |---------- |
 | [`_ada.scss`](ada.html)             | Features needed for ADA compliant skip links                                    | SCSS      |
-| _alerts.scss          | Alert banner code for site announcements                                        | SCSS      |
+| [`_alerts.scss`](alerts.html)          | Alert banner code for site announcements                                        | SCSS      |
 | _cards.scss           | Any element with a card-style layout or banner header                           | SCSS      |
 | _colors.scss          | Atomic classes for assigning colors to items or text                            | SCSS      |
 | _container.scss       | (Deprecated v0.3) file for the containing elements. Removing in v1.1            | SCSS      |
