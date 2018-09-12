@@ -7,3 +7,4 @@
 /packages/mega-site-navigation/scss/bourbon/**
 /.sass-cache/**
 /img/*
+font-awesome.min.css

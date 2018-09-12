@@ -19,11 +19,13 @@
 @import 'ada';
 
 // TO-DO: Colors should be rewritten to use functions rather than declarations.
+// TO-DO: Remove all colors from the alerts. This was ported from old codebase at last second.
 // TO-DO: Refactor Alerts; Look at Bootstrap styles for any additional hinting if already written.
 // TO-DO: Implement jQuery/JS cookies
 @import 'colors';
 @import 'padding';
 @import 'flex';
+@import 'alerts';
 @import 'search';
 @import 'navigation';
 @import 'slider';
