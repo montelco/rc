@@ -109,7 +109,7 @@ The files below are organized by category (language and scope). There are some c
 | _container.scss       | (Deprecated v0.3) file for the containing elements. Removing in v1.1            | SCSS      |
 | _content.scss         | Sets basis for the content (text) areas                                         | SCSS      |
 | _corev15.scss         | SharePoint 2013 styles imported for sandboxing                                  | SCSS      |
-| _eqHeight.scss        | Adds equal height fixes for the cards and related                               | SCSS      |
+| [`_eqHeight.scss`](eqHeight.html)        | Adds equal height fixes for the cards and related                               | SCSS      |
 | _evergreen.scss       | Styles the evergreen feature content with text, etc                             | SCSS      |
 | _flex.scss            | (Deprecating in v1.1) Adds atomic utility flex class                            | SCSS      |
 | _flyout.scss          | Flyout on the home slider customisations                                        | SCSS      |
