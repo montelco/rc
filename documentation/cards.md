@@ -121,7 +121,7 @@ Refer to the documentation for the media mixin for more on the operation and use
   }
 ```
 
-
+The `.card__thumbnail` contains the `img` which is adjusted to cover the containing element and is sized at 100% the width and height of the container (where cover will appropriately maintain proportions and use percentage as a fallback on older devices). Additionally, the borders are set to be rounded and fit with the look and feel of the card.
 
 ```
   &__body {
@@ -129,30 +129,50 @@ Refer to the documentation for the media mixin for more on the operation and use
     background: $white;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
+```
 
+A `.card`, in addition to having a thumbnail, may also have a `.card__body` which is generally a white field with 25px of padding and a radius to adhere to card designs. 
+
+```
     &.np{padding:0;}
+```
 
+Some cases may arise where a `.card__body` does not need padding. For this reason, `.card__body.np` allows for this use case. Note that this will be depreacted in v1.2, preferring an atomic class. Use will not change (still being `.np`) but will no longer be tied to the block.
+
+```
     &.lp{
       padding: 0 8px;
       border-top-left-radius: 0px;
       border-top-right-radius: 4px;
       border-bottom-left-radius: 0px;
       border-bottom-right-radius: 4px;
+```
 
+Some cases may arise where a `.card__body` may need light padding. For this reason, `.card__body.lp` allows for this use case. Note that this will be depreacted in v1.2, preferring an atomic class. Use will not change (still being `.lp`) but will no longer be tied to the block. 
+
+```
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
       -webkit-box-flex: 1;
       -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
               flex: 1 1 auto;
     }
+```
 
+This block allows a device using the Internet Explorer render engine to access features enabled with the flex code as used on the `.card__body`.
+
+```
     @include media (nml) {
       border-top-left-radius: 0px;
       border-top-right-radius: 0px;
       border-bottom-left-radius: 4px;
       border-bottom-right-radius: 4px;
     }
+```
 
+On smaller desktops and tablets, a `.card__body` will have a border radius on the bottom but not top.
+
+```
     h3 {
       @include media(mm) {
         font: {
@@ -170,6 +190,11 @@ Refer to the documentation for the media mixin for more on the operation and use
         }
       }
     }
+```
+
+The title of the card body, `.card__body h3` will have font sizing of 1em at anything less than a tablet, 1.05em at tablet or greater, and 1.15em at a desktop or greater.
+
+```
     @include media(mm) {
       font: {
         size: 0.725em;
@@ -189,7 +214,11 @@ Refer to the documentation for the media mixin for more on the operation and use
     }
 
   }
+```
 
+The text content of the card body (assumed to be `span` or `p`) will have font sizing of .725em at anything less than a tablet, .75em at tablet or greater, and .85em at a desktop or greater.
+
+```
     ul{
       padding-left: 0;
       &>li{
@@ -209,9 +238,17 @@ Refer to the documentation for the media mixin for more on the operation and use
       }
     }
   }
+```
 
+For a list of items on a card, the `ul`'s padding is reduced to zero instead of the standard 2x (24px,25px) padding applied. This keeps the content easier to read. However, to allow for whitespace, its `li` is give a padding on the bottom. Any anchors within the `.card`'s `ul li` use the mixin for appending state transformations to keep appearance consistent. With the last `li`, there is no padding so as to not overstep the impact of using this code. For clarity on smaller devices, a list is limited to seven items. This, will be deprecated in v1.2 as it is an assumed modifier and is broad in scope.
+
+```
   strong a:visited {color: $link-color;}
+```
 
+Any bolded anchor will assume the application's default link color.
+
+```
   &__date{
     padding: 0;
     border-left: 4px solid $qnBlue;
@@ -236,7 +273,11 @@ Refer to the documentation for the media mixin for more on the operation and use
       }
     }
   }
+```
 
+A `.card` is often used for discrete information such as an event with its pertinent information. Hence, the `.card__date` can be used to create an element which has no padding and an accent color on the left. Within the element, the month and day are give uppercasing and are centered. The date number is at 32px font and the month is at half that, 18px. In v1.1 this will be dynamically written with variables.
+
+```
   &__details {
     h2 {
       font: {
@@ -249,7 +290,11 @@ Refer to the documentation for the media mixin for more on the operation and use
       weight: 600;
     }
   }
+```
 
+A `.card` which is used for discrete events may need to have `.card__details` which default to 12px font and may have a title which defaults to twice the before. In v1.1 this will be dynamically written with variables.
+
+```
   &__event {
     margin: 0;
     -webkit-box-sizing: border-box;
@@ -257,7 +302,11 @@ Refer to the documentation for the media mixin for more on the operation and use
     border-bottom: 1px solid $gray-300;
     line-height: 1.125;
   }
+```
 
+A `.card` which is used for discrete events may need to have information about the occurence. For this, `.card__event` has no margins. A `.card__event` is the "row" which then contains a `.card__date` and `.card__details`. As this is a containing element, there is a bottom border to distinguish its area and it is sized with border-box to prevent adding height where not needed.
+
+```
   &#pushContent {
     background: $pcBlue;
     color: $white !important;
@@ -310,3 +359,4 @@ Refer to the documentation for the media mixin for more on the operation and use
   }
 }
 ```
+A `.card` may also be a "Push Content Box" which promotes a specific piece of actionable information. A `.card#pushContent` will be an accent color variable with white text and will have a title `h2` that inherits its color from the container, a body `h3` and an actionable link `.card#pushContent a.pushCTA` which is accented to contrast the background of the container and thus prompt attention.
