@@ -15,7 +15,12 @@
 }
 
 .alert-box {
-  .container{padding: 15px 0;}
+  .container{
+    padding: 15px 0;
+    @include media(xs) {
+      padding: 15px;
+    }
+  }
   &.yellow  {
     background-color: #FCF8E3;  
     color: #D83F26;
