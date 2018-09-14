@@ -22,9 +22,12 @@
 // TO-DO: Remove all colors from the alerts. This was ported from old codebase at last second.
 // TO-DO: Refactor Alerts; Look at Bootstrap styles for any additional hinting if already written.
 // TO-DO: Implement jQuery/JS cookies
+// TO-DO: Check documentation for the information regarding any refactors considered as it was being written.
 @import 'colors';
 @import 'padding';
 @import 'flex';
+@import 'fab';
+@import 'lightbox';
 @import 'alerts';
 @import 'search';
 @import 'navigation';

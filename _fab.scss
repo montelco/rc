@@ -1,0 +1,38 @@
+fab{
+  font-size: 2em;
+  font-weight: 400;
+  position: fixed;
+  height: 2em;
+  width: 2em;
+  right: 1em;
+  bottom: 1em;
+  cursor: pointer;
+  background-color: $blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsla(214, 32%, 97%, 0.96);
+  z-index: 12;
+  border-radius: 1.25em;
+  box-shadow: 1px 8px 16px 0px rgba(0,0,0,0.25);
+}
+@media screen and (max-width: 767px) {
+  fab{
+    font-size: 2em;
+    font-weight: 400;
+    position: fixed;
+    height: 3.5rem;
+    width: 3.5rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    cursor: pointer;
+    background-color: $blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsla(214, 32%, 97%, 0.96);
+    z-index: 12;
+    border-radius: 1.25em;
+    box-shadow: 1px 8px 16px 0px rgba(0,0,0,0.25);
+  }
+}
