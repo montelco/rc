@@ -53,6 +53,17 @@
   font-weight: 600 !important;
 }
 
+#d-link {
+  .brt-none {
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+  }
+  &.brb-none {
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+}
+
 ul#dir-active {
   display: none;
   width: 100%!important;

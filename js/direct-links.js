@@ -12,6 +12,8 @@ jQuery(document).ready(function() {
     var myTimeout;
     $("#d-link").on('click', function(){
       $("#dir-active").toggle(10);
+      $("#d-link").toggleClass('brb-none');
+      $("#dir-active").toggleClass('brt-none');
     });
   }
   if (!$("#dir-active").length > 0) {
