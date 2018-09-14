@@ -1056,7 +1056,7 @@ body .markdown-body
 .codehilite .il{color:#009999}
 .codehilite .gc{color:#999;background-color:#EAF2F5}
 </style><title>rcsj-readme</title></head><body><article class="markdown-body"><h1 id="rowan-college-website-documentation">Rowan College Website Documentation<a class="headerlink" href="#rowan-college-website-documentation" title="Permanent link"></a></h1>
-<div class="codehilite"><pre>Version 0.9
+<div class="codehilite"><pre>Version 0.9.1
 Last Updated: September 14, 2018
 Created by: Cory Monteleone
 </pre></div>
@@ -1075,19 +1075,19 @@ Created by: Cory Monteleone
 <h1 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link"></a></h1>
 <p>The codebase for the Rowan College site requires several packages which make the development process much easier. Using technology that promotes better practices makes better code conformity and better development cycles. All pacakages and resources below have their own comprehensive documentation and the developer would benefit from reading through as this documentation assumes a moderate understanding of the stack tools used. You will need to use the following resources to prepare your development environment (this documentation assumes a Windows development box, so some steps may not be required on Mac):</p>
 <ul>
-<li><a href="https://www.sublimetext.com/3">Sublime Text 3</a>  </li>
+<li><a href="https://www.sublimetext.com/3">Sublime Text 3</a></li>
+<li><a href="https://git-scm.com/download/win">Git Bash</a></li>
+<li><a href="https://sass-lang.com/install">SASS Compiler</a></li>
+<li><a href="https://blisk.io/download">Blisk Testing Browser</a></li>
+<li><a href="https://www.mozilla.org/en-US/firefox/developer/">Firefox Developer</a>  </li>
 </ul>
 <p><strong>And these Sublime packages</strong>:<br />
-<a href="https://packagecontrol.io/installation">Package Control</a><br />
-<a href="https://packagecontrol.io/packages/Sass">PC:IP SASS</a><br />
-<a href="https://packagecontrol.io/packages/Git">PC:IP Git</a><br />
-<a href="https://packagecontrol.io/packages/Color%20Highlighter">PC:IP Color Highlighter</a><br />
-<a href="https://github.com/skovhus/SublimeLinter-contrib-sass-lint">SASS Linter</a><br />
-<a href="https://github.com/sergeche/emmet-sublime#readme">Emmet</a><br />
-- <a href="https://git-scm.com/download/win">Git Bash</a>
-- <a href="https://sass-lang.com/install">SASS Compiler</a>
-- <a href="https://blisk.io/download">Blisk Testing Browser</a>
-- <a href="https://www.mozilla.org/en-US/firefox/developer/">Firefox Developer</a></p>
+  - <a href="https://packagecontrol.io/installation">Package Control</a><br />
+  - <a href="https://packagecontrol.io/packages/Sass">PC:IP SASS</a><br />
+  - <a href="https://packagecontrol.io/packages/Git">PC:IP Git</a><br />
+  - <a href="https://packagecontrol.io/packages/Color%20Highlighter">PC:IP Color Highlighter</a><br />
+  - <a href="https://github.com/skovhus/SublimeLinter-contrib-sass-lint">SASS Linter</a><br />
+  - <a href="https://github.com/sergeche/emmet-sublime#readme">Emmet</a>  </p>
 <h2 id="steps-to-a-prepared-environment">Steps to a Prepared Environment<a class="headerlink" href="#steps-to-a-prepared-environment" title="Permanent link"></a></h2>
 <ol>
 <li>The developer should install Sublime Text 3. The default installation is powerful, but can be improved later.</li>
@@ -1183,6 +1183,11 @@ put blank lines between rule declarations. Thanks to the way that SASS compiles 
 <td>SCSS</td>
 </tr>
 <tr>
+<td>_fab.scss</td>
+<td>Adds floating action button to the UX</td>
+<td>SCSS</td>
+</tr>
+<tr>
 <td>_flex.scss</td>
 <td>(Deprecating in v1.1) Adds atomic utility flex class</td>
 <td>SCSS</td>
@@ -1205,6 +1210,11 @@ put blank lines between rule declarations. Thanks to the way that SASS compiles 
 <tr>
 <td>_grid.scss</td>
 <td>(Deprecating in v1.1) Functions for creating grid</td>
+<td>SCSS</td>
+</tr>
+<tr>
+<td>_lightbox.scss</td>
+<td>Contains the actionable item triggered by the FAB</td>
 <td>SCSS</td>
 </tr>
 <tr>

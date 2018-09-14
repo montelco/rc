@@ -1,6 +1,6 @@
 #Rowan College Website Documentation
 ```
-Version 0.9
+Version 0.9.1
 Last Updated: September 14, 2018
 Created by: Cory Monteleone
 ```
@@ -19,19 +19,19 @@ Created by: Cory Monteleone
 
 The codebase for the Rowan College site requires several packages which make the development process much easier. Using technology that promotes better practices makes better code conformity and better development cycles. All pacakages and resources below have their own comprehensive documentation and the developer would benefit from reading through as this documentation assumes a moderate understanding of the stack tools used. You will need to use the following resources to prepare your development environment (this documentation assumes a Windows development box, so some steps may not be required on Mac):
 
-- [Sublime Text 3](https://www.sublimetext.com/3)  
-
-   __And these Sublime packages__:  
-    [Package Control](https://packagecontrol.io/installation)  
-    [PC:IP SASS](https://packagecontrol.io/packages/Sass)  
-    [PC:IP Git](https://packagecontrol.io/packages/Git)  
-    [PC:IP Color Highlighter](https://packagecontrol.io/packages/Color%20Highlighter)  
-    [SASS Linter](https://github.com/skovhus/SublimeLinter-contrib-sass-lint)  
-    [Emmet](https://github.com/sergeche/emmet-sublime#readme)  
+- [Sublime Text 3](https://www.sublimetext.com/3)
 - [Git Bash](https://git-scm.com/download/win)
 - [SASS Compiler](https://sass-lang.com/install)
 - [Blisk Testing Browser](https://blisk.io/download)
-- [Firefox Developer](https://www.mozilla.org/en-US/firefox/developer/)
+- [Firefox Developer](https://www.mozilla.org/en-US/firefox/developer/)  
+
+   __And these Sublime packages__:  
+  - [Package Control](https://packagecontrol.io/installation)  
+  - [PC:IP SASS](https://packagecontrol.io/packages/Sass)  
+  - [PC:IP Git](https://packagecontrol.io/packages/Git)  
+  - [PC:IP Color Highlighter](https://packagecontrol.io/packages/Color%20Highlighter)  
+  - [SASS Linter](https://github.com/skovhus/SublimeLinter-contrib-sass-lint)  
+  - [Emmet](https://github.com/sergeche/emmet-sublime#readme)  
 
 ##Steps to a Prepared Environment
 1. The developer should install Sublime Text 3. The default installation is powerful, but can be improved later.
@@ -111,11 +111,13 @@ The files below are organized by category (language and scope). There are some c
 | [`_corev15.scss`](corev15.html)         | SharePoint 2013 styles imported for sandboxing                                  | SCSS      |
 | [`_eqHeight.scss`](eqHeight.html)        | Adds equal height fixes for the cards and related                               | SCSS      |
 | [`_evergreen.scss`](evergreen.html)       | Styles the evergreen feature content with text, etc                             | SCSS      |
+| _fab.scss             | Adds floating action button to the UX                                           | SCSS      |
 | _flex.scss            | (Deprecating in v1.1) Adds atomic utility flex class                            | SCSS      |
 | _flyout.scss          | Flyout on the home slider customisations                                        | SCSS      |
 | _footer.scss          | Positions the social icons for the footer (Deprecating the atomic text class)   | SCSS      |
 | _global.scss          | Sets bordering systems and the inheritance of the box bordering                 | SCSS      |
 | _grid.scss            | (Deprecating in v1.1) Functions for creating grid                               | SCSS      |
+| _lightbox.scss        | Contains the actionable item triggered by the FAB                               | SCSS      |
 | _navigation.scss      | Customisations to the CodyHouse/mega-site-navigation package                    | SCSS      |
 | _padding.scss         | (Deprecating in v1.1) Custom atomics and functions for padding elements         | SCSS      |
 | _reset.scss           | Adapted version of Eric Meyer's browser reset to set staging                    | SCSS      |
