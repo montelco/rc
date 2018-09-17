@@ -19,11 +19,17 @@ $wl: 1500px;
    @media only screen and (min-width: $md) and (max-width: $lg - 1) {@content;}
   } @else if $canvas == lg {
    @media only screen and (min-width: $lg) {@content;}
+  } @else if $canvas == lx {
+   @media only screen and (min-width: $lg) and (max-width: $xl) {@content;}
   } @else if $canvas == xl {
    @media only screen and (max-width: $xl) {@content;}
   } @else if $canvas == nml {
     @media only screen and (min-width: $md) and (max-width: $xl) {@content;}
   } @else if $canvas == mx {
     @media only screen and (min-width: $md) and (max-width: $wl) {@content;}
+  } @else if $canvas == lwl {
+    @media only screen and (min-width: $xl + 1) and (max-width: $wl - 1) {@content;}  
+  } @else if $canvas == wl {
+    @media only screen and (min-width: $wl) {@content;}
   }
 }

@@ -161,8 +161,22 @@ nav>ul>li>a {
 
 .cd-primary-nav .cd-secondary-nav>li {
   @include media(md) {
-    width: 24%;
     border-right: none;
+  }
+}
+
+.cd-primary-nav .collapsible>li.has-children:nth-of-type(n+4) {
+  @include media(lwl) {
+    width: 24%;
+  }
+  @include media(lx) {
+    width: 24%;
+  }
+}
+
+.cd-primary-nav .collapsible>li.has-children:nth-of-type(n+3) {
+  @include media(wl) {
+    width: 24%;
   }
 }
 

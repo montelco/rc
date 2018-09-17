@@ -111,7 +111,7 @@ The files below are organized by category (language and scope). There are some c
 | [`_corev15.scss`](corev15.html)         | SharePoint 2013 styles imported for sandboxing                                  | SCSS      |
 | [`_eqHeight.scss`](eqHeight.html)        | Adds equal height fixes for the cards and related                               | SCSS      |
 | [`_evergreen.scss`](evergreen.html)       | Styles the evergreen feature content with text, etc                             | SCSS      |
-| _fab.scss             | Adds floating action button to the UX                                           | SCSS      |
+| [`_fab.scss`](fab.html)             | Adds floating action button to the UX                                           | SCSS      |
 | _flex.scss            | (Deprecating in v1.1) Adds atomic utility flex class                            | SCSS      |
 | _flyout.scss          | Flyout on the home slider customisations                                        | SCSS      |
 | _footer.scss          | Positions the social icons for the footer (Deprecating the atomic text class)   | SCSS      |
