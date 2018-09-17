@@ -11,6 +11,13 @@ header.cd-main-content{
   z-index: 4;
 }
 
+.mobile-glue {
+  @include media(mm) {
+    position: sticky;
+    top: 0;
+  }
+}
+
 .fbZone {padding: 32px 0;}
 
 .no-padding {
@@ -150,7 +157,7 @@ nav>ul>li>a {
 
 .d-mm-none {
   @include media(mm) {
-    display: none;
+    display: none !important;
   }
 }
 .d-ml-none {
