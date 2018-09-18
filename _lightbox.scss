@@ -42,12 +42,13 @@
     border-radius: 4px;  
     position: relative;  
     max-height: 2000px;
-    max-width: 500px;
+    max-width: 530px;
     background: #edf0f2;
     padding: 1.25ch; 
+    
     section.wufoo {
       padding: 1ch;
-      min-height: 515px;
+      min-height: 590px;
       h2 + div {height: 100%;}
       .wufoo-form-container {height: 100%;}
     }
