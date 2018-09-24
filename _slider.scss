@@ -1,5 +1,6 @@
 #rsSlider{
   z-index: 0 !important;
+  overflow: hidden;
 }
 
 .slidearrow {
@@ -37,11 +38,13 @@
   width:100%;
   position:relative;
   padding:0;
+  overflow: hidden;
 }
 
 .tp-banner{
   width:100%;
   position:relative;
+  overflow: hidden;
 }
 
 .tp-banner-fullscreen-container {
@@ -431,11 +434,13 @@ img.tp-slider-alternative-image { width:100%; height:auto;}
   list-style:none !important;
   overflow-x: visible;
   overflow-y: visible;
+  overflow: hidden;
   background-image:none
 }
 
 
 .tp-simpleresponsive >ul >li{
+  overflow: hidden;
   list-style:none;
   position:absolute;
   visibility:hidden

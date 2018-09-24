@@ -11,6 +11,8 @@
   padding: 13px !important;
   width: 100% !important;
   background-color: #4f74a3 !important;
+  -webkit-transition: 0.25s ease-in-out !important;
+  -o-transition: 0.25s ease-in-out !important;
   transition: 0.25s ease-in-out !important;
   margin: 0 !important;
   height: 100% !important;
@@ -22,8 +24,15 @@
 .ms-srch-sb>input:focus {
   color: black !important;
   background-color: white !important;
+  -webkit-transition: 0.25s ease-in-out !important;
+  -o-transition: 0.25s ease-in-out !important;
   transition: 0.25s ease-in-out !important;
 }
+
+.search #ctl00_g_1b889a18_7b62_41dd_9d92_4216a29f2d77{
+  display: none;
+}
+
 .search .button{
   border-style: none !important;
   font-weight: 600 !important;
@@ -34,8 +43,17 @@
   text-align: center !important;
   position: relative;
   @include media(mm) {
+    @media all and (-ms-high-contrast: none){
+      display: inline-block;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 15px 0px !important;
-    flex: 1 !important;
+    -webkit-box-flex: 1 !important;
+    -webkit-flex: 1 !important;
+        -ms-flex: 1 !important;
+            flex: 1 !important;
     &:nth-of-type(1) {
       margin-right: 30px !important;
     }
@@ -43,6 +61,8 @@
   text-transform: uppercase !important;
   color: #373d3f !important;
   background-color: #ebc944 !important;
+  -webkit-transition: 0.25s ease-in-out !important;
+  -o-transition: 0.25s ease-in-out !important;
   transition: 0.25s ease-in-out !important;
 }
 
@@ -96,6 +116,8 @@ ul#dir-active {
     margin: 0;
     text-align: center!important;
     width: 100%;
+    -webkit-transition: all 2s;
+    -o-transition: all 2s;
     transition: all 2s;
     z-index: 201;
     a {color: #373d3f !important;}
@@ -105,6 +127,8 @@ ul#dir-active {
       opacity: .8;
     }
     &:hover  {
+      -webkit-transition: all 2s;
+      -o-transition: all 2s;
       transition: all 2s;  
     }
     &:not(:last-of-type) {
@@ -124,10 +148,14 @@ ul#dir-active {
 
 .search .button:hover {
   background: #dab62a !important;
+  -webkit-transition: 0.25s ease-in-out !important;
+  -o-transition: 0.25s ease-in-out !important;
   transition: 0.25s ease-in-out !important;
 }
 .search .button:focus {
   background: #b59724 !important;
+  -webkit-transition: 0.25s ease-in-out !important;
+  -o-transition: 0.25s ease-in-out !important;
   transition: 0.25s ease-in-out !important;
 }
 .ms-srch-sb-navLink, .ms-srch-sb-searchLink {

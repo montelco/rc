@@ -75,8 +75,14 @@ nav>ul, ul li{
 
 .logo { 
   padding: 14px 0;
+  display: block;
   @include media(mm){
     padding: 0;
+  }
+}
+.pd-dt-sm {
+  @include media(md) {
+    padding-bottom: 6px;
   }
 }
 

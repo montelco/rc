@@ -25,6 +25,9 @@ fab{
     width: 3.5rem;
     right: 0.75rem;
     bottom: 0.75rem;
+    @supports (-webkit-overflow-scrolling: touch) {
+      bottom: 50px;
+    }
     cursor: pointer;
     background-color: $blue;
     display: flex;
