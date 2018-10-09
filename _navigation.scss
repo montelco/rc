@@ -10,6 +10,16 @@ h6 {
 header.cd-main-content{
   z-index: 4;
 }
+nav.subsite {
+  .textBlack li{
+    color: $coal;
+  }
+  li {
+    font: {
+      weight: $font-weight-litebold;
+    }
+  }
+}
 .cd-search-trigger {
   margin-right: 15px;
 }
