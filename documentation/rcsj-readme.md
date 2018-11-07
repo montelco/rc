@@ -112,23 +112,23 @@ The files below are organized by category (language and scope). There are some c
 | [`_eqHeight.scss`](eqHeight.html)        | Adds equal height fixes for the cards and related                               | SCSS      |
 | [`_evergreen.scss`](evergreen.html)       | Styles the evergreen feature content with text, etc                             | SCSS      |
 | [`_fab.scss`](fab.html)             | Adds floating action button to the UX                                           | SCSS      |
-| _flex.scss            | (Deprecating in v1.1) Adds atomic utility flex class                            | SCSS      |
-| _flyout.scss          | Flyout on the home slider customisations                                        | SCSS      |
-| _footer.scss          | Positions the social icons for the footer (Deprecating the atomic text class)   | SCSS      |
-| _global.scss          | Sets bordering systems and the inheritance of the box bordering                 | SCSS      |
-| _grid.scss            | (Deprecating in v1.1) Functions for creating grid                               | SCSS      |
-| _lightbox.scss        | Contains the actionable item triggered by the FAB                               | SCSS      |
-| _navigation.scss      | Customisations to the CodyHouse/mega-site-navigation package                    | SCSS      |
-| _padding.scss         | (Deprecating in v1.1) Custom atomics and functions for padding elements         | SCSS      |
-| _reset.scss           | Adapted version of Eric Meyer's browser reset to set staging                    | SCSS      |
-| _search.scss          | (Refactor in v1.1) Adds theming to the search area                              | SCSS      |
-| _sharepoint.scss      | (Refactor in v1.1) Fixes broad selection in management console                  | SCSS      |
-| _slider.scss          | (Refactor in v1.2) Import of the themepunch slider                              | SCSS      |
-| _typography.scss      | (Deprecating/Refactor v1.2) Atomic utility for type margins, size, and color    | SCSS      |
-| _variables.scss       | (Refactor v1.0) Variables for the application like breakpoints, fonts, colors   | SCSS      |
+| [`_flex.scss`](flex.html)            | (Deprecating in v1.1) Adds atomic utility flex class                            | SCSS      |
+| [`_flyout.scss`](flyout.html)          | Flyout on the home slider customisations                                        | SCSS      |
+| [`_footer.scss`](footer.html)          | Positions the social icons for the footer (Deprecating the atomic text class)   | SCSS      |
+| [`_global.scss`](global.html)          | Sets bordering systems and the inheritance of the box bordering                 | SCSS      |
+| [`_grid.scss`](grid.scss)            | (Deprecating in v1.1) Functions for creating grid                               | SCSS      |
+| [`_lightbox.scss`](lightbox.html)        | Contains the actionable item triggered by the FAB                               | SCSS      |
+| [`_navigation.scss`](navigation.html)      | Customisations to the CodyHouse/mega-site-navigation package                    | SCSS      |
+| [`_padding.scss`](padding.html)         | (Deprecating in v1.1) Custom atomics and functions for padding elements         | SCSS      |
+| [`_reset.scss`](reset.html)           | Adapted version of Eric Meyer's browser reset to set staging                    | SCSS      |
+| [`_search.scss`](search.html)          | (Refactor in v1.1) Adds theming to the search area                              | SCSS      |
+| [`_sharepoint.scss`](sharepoint.html)      | (Refactor in v1.1) Fixes broad selection in management console                  | SCSS      |
+| [`_slider.scss`](slider.html)          | (Refactor in v1.2) Import of the themepunch slider                              | SCSS      |
+| [`_typography.scss`](typography.html)      | (Deprecating/Refactor v1.2) Atomic utility for type margins, size, and color    | SCSS      |
+| [`_variables.scss`](variables.html)       | (Refactor v1.0) Variables for the application like breakpoints, fonts, colors   | SCSS      |
 | compiled.min.css      | __DO NOT EDIT:__ Automatically compiled and minified styles for old browsers    | CSS       |
 | compiled.min.css.map  | __DO NOT EDIT:__ Maps new browsers to SCSS imports                              | MAP       |
-| raw.scss              | Master file where new extensions should be imported. NO DIRECT EDITING.         | SCSS      |
+| [`raw.scss`](raw.html)              | Master file where new extensions should be imported. NO DIRECT EDITING.         | SCSS      |
 
 #Recap
 
