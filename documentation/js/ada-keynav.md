@@ -609,7 +609,9 @@ See inline comments.
         };
 ```
 
+This section maintains the actions taken on the mega menu when the mouseDown Handler is applied. This is aliasing the key press actions of interest when being applied. For instance, the application settings are loaded, the element is located within the DOM, etc. A switch operation is implemented to locate and handle each event within the keyboard action set. The logic also runs a REGEX filter over the DOM if none of the switch cases are matched.
 
+This code is likely a candidate for a feature enhancement with the next release cycle.
 
 ```
         /**
@@ -652,6 +654,12 @@ See inline comments.
             // }, this.settings.openDelay);
         };
 
+```
+
+Due to time constraints in the initial application launch this code was left as a vestige. Slated for removal in the next release cycle.
+
+```
+
         /**
          * @name jQuery.fn.accessibleMegaMenu~_mouseOutHandler
          * @desc Handle mouseout event on mega menu.
@@ -675,6 +683,12 @@ See inline comments.
             // }
         };
 
+```
+
+Due to time constraints in the initial application launch this code was left as a vestige. Slated for removal in the next release cycle.
+
+```
+
         _toggleExpandedEventHandlers = function (hide) {
             _log("Expanded Event Handler Called");
             var menu = this.menu;
@@ -697,6 +711,12 @@ See inline comments.
             }
 
         };
+
+```
+
+Due to time constraints in the initial application launch this code was left as a vestige. Slated for removal in the next release cycle.
+
+```
 
         /* public attributes and methods ------------------------- */
         return {
@@ -773,7 +793,11 @@ See inline comments.
                     $(document.activeElement).trigger("focusin.accessible-megamenu");
                 }
             },
+```
 
+The function begins the application and the labels for uniqueness are applied. The proxy handler for DOM mouse event listeners is activated based on the application variables.
+
+```
             /**
              * @desc Get default values
              * @example $(selector).accessibleMegaMenu("getDefaults");
@@ -825,7 +849,11 @@ See inline comments.
             }
         };
     }());
+```
 
+The parameter bag is passed into the application and is initialized.
+
+```
     $.fn[pluginName] = function (options) {
         return this.each(function () {
             if (!$.data(this, "plugin_" + pluginName)) {
