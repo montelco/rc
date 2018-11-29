@@ -1,3 +1,9 @@
+%svg {
+  margin-top: -4px;
+  vertical-align: middle;
+  fill: currentColor; 
+}
+
 a.classic {
   color: $link-color;
   text-decoration: $link-hover-decoration;
@@ -7,9 +13,12 @@ a.classic {
     color: $link-hover-color;
     text-decoration: $link-hover-decoration;
   }
+
   &:visited {
     color: $link-color;
   }
+
+  svg{@extend %svg}
 }
 
 a.blend {
@@ -22,4 +31,14 @@ a.blend {
   &:visited {
     color: $link-color;
   }
+  svg{@extend %svg}
+}
+
+a.accent {
+  font: {
+    weight: $font-weight-litebold;
+  }
+  color: $yellow;
+  text-decoration: underline;
+  svg{@extend %svg}
 }

@@ -1,0 +1,35 @@
+$font-em-max: 12;
+$font-rm-max: 16;
+$font-pt-max: 48;
+$font-pe-max: 150;
+
+$font-units: () !default;
+$font-units: map-merge(
+  (
+    "em": $font-em-max,
+    "rm": $font-rm-max,
+    "pt": $font-pt-max,
+    "pe": $font-pe-max
+  ),
+  $font-units
+);
+
+@each $name, $value in $font-units {
+  $max: $value;
+  $unit: $name;
+  $i: 1;
+  @for $i from 1 to $max {
+    .font-size-#{$unit}-#{$i} {
+      @if($unit == 'pe') {
+        font: {
+          size: #{$i}#{'%'};
+        }
+      } @else {
+        font: {
+          size: #{$i}#{$unit};
+        }
+      }
+    }
+    $i: $i+1;
+  }
+}
