@@ -1,0 +1,25 @@
+a.classic {
+  color: $link-color;
+  text-decoration: $link-hover-decoration;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  @include hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+  &:visited {
+    color: $link-color;
+  }
+}
+
+a.blend {
+  color: inherit;
+  text-decoration: $link-hover-decoration;
+  @include hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+  &:visited {
+    color: $link-color;
+  }
+}
