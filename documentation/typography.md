@@ -1,13 +1,21 @@
 #`_typography.scss`
 ```
-Version 1.0
-Last Updated: October 14, 2018
+Version 2.0
+Last Updated: December 3, 2018
 Created by: Cory Monteleone
 ```
 ***
 ##Using the Typography File
 
 The Typography file allows for control over the styles of the text on the page. This is primarily used for paragraph content and not for navigational content or other structural features. The delineation therein provides for a better visual heirarchy. The file is awaiting refactor for best practices and may be included in a subsequent patch.
+
+```
+@import 'links';
+@import 'sizing';
+
+```
+
+Added Dec 2018, this import function extends typography by adding atomic utility classes to the framework. This allows for easier references when changing typography. A future refactor may include changes to the logic structure to make the available classes adhere to a rigid typographical heirarachy.
 
 ```
 .md-bold {

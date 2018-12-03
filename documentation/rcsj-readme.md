@@ -1,7 +1,7 @@
 #Rowan College Website Documentation
 ```
-Version 0.9.1
-Last Updated: September 14, 2018
+Version 1.0.1
+Last Updated: December 3, 2018
 Created by: Cory Monteleone
 ```
 ***
@@ -118,11 +118,14 @@ The files below are organized by category (language and scope). There are some c
 | [`_global.scss`](global.html)          | Sets bordering systems and the inheritance of the box bordering                 | SCSS      |
 | [`_grid.scss`](grid.scss)            | (Deprecating in v1.1) Functions for creating grid                               | SCSS      |
 | [`_lightbox.scss`](lightbox.html)        | Contains the actionable item triggered by the FAB                               | SCSS      |
+| [`_lightbox.scss`](lightbox.html)        | Contains the actionable item triggered by the FAB                               | SCSS      |
+| [`_links.scss`](links.html)        | Available utility classes for styling links                               | SCSS      |
 | [`_navigation.scss`](navigation.html)      | Customisations to the CodyHouse/mega-site-navigation package                    | SCSS      |
 | [`_padding.scss`](padding.html)         | (Deprecating in v1.1) Custom atomics and functions for padding elements         | SCSS      |
 | [`_reset.scss`](reset.html)           | Adapted version of Eric Meyer's browser reset to set staging                    | SCSS      |
 | [`_search.scss`](search.html)          | (Refactor in v1.1) Adds theming to the search area                              | SCSS      |
 | [`_sharepoint.scss`](sharepoint.html)      | (Refactor in v1.1) Fixes broad selection in management console                  | SCSS      |
+| [`_sizing.scss`](sizing.html)        | Atomic classes for text sizing                               | SCSS      |
 | [`_slider.scss`](slider.html)          | (Refactor in v1.2) Import of the themepunch slider                              | SCSS      |
 | [`_typography.scss`](typography.html)      | (Deprecating/Refactor v1.2) Atomic utility for type margins, size, and color    | SCSS      |
 | [`_variables.scss`](variables.html)       | (Refactor v1.0) Variables for the application like breakpoints, fonts, colors   | SCSS      |

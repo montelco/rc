@@ -1055,70 +1055,54 @@ body .markdown-body
 .codehilite .vi{color:teal}
 .codehilite .il{color:#009999}
 .codehilite .gc{color:#999;background-color:#EAF2F5}
-</style><title>typography</title></head><body><article class="markdown-body"><h1 id="_typographyscss"><code>_typography.scss</code><a class="headerlink" href="#_typographyscss" title="Permanent link"></a></h1>
-<div class="codehilite"><pre>Version 2.0
+</style><title>sizing</title></head><body><article class="markdown-body"><h1 id="_sizingscss"><code>_sizing.scss</code><a class="headerlink" href="#_sizingscss" title="Permanent link"></a></h1>
+<div class="codehilite"><pre>Version 1.0
 Last Updated: December 3, 2018
 Created by: Cory Monteleone
 </pre></div>
 
 <hr />
-<h2 id="using-the-typography-file">Using the Typography File<a class="headerlink" href="#using-the-typography-file" title="Permanent link"></a></h2>
-<p>The Typography file allows for control over the styles of the text on the page. This is primarily used for paragraph content and not for navigational content or other structural features. The delineation therein provides for a better visual heirarchy. The file is awaiting refactor for best practices and may be included in a subsequent patch.</p>
-<div class="codehilite"><pre>@import &#39;links&#39;;
-@import &#39;sizing&#39;;
+<h2 id="using-the-sizing-file">Using the Sizing File<a class="headerlink" href="#using-the-sizing-file" title="Permanent link"></a></h2>
+<p>This file is used for th atomic text sizing within the codebase. The classes here are universal but will be refactored in a later version to have values which adequately represent the needs of each unit selected whilst adhering to the visual heirarchy and the typography standards.</p>
+<div class="codehilite"><pre>$font-em-max: 12;
+$font-rm-max: 16;
+$font-pt-max: 48;
+$font-pe-max: 150;
 </pre></div>
 
-<p>Added Dec 2018, this import function extends typography by adding atomic utility classes to the framework. This allows for easier references when changing typography. A future refactor may include changes to the logic structure to make the available classes adhere to a rigid typographical heirarachy.</p>
-<div class="codehilite"><pre>.md-bold {
-  font: {
-    weight: 600;
-  }
-}
+<p>Variable maximum values are set in this first block.</p>
+<div class="codehilite"><pre>$font-units: () !default;
+$font-units: map-merge(
+  (
+    &quot;em&quot;: $font-em-max,
+    &quot;rm&quot;: $font-rm-max,
+    &quot;pt&quot;: $font-pt-max,
+    &quot;pe&quot;: $font-pe-max
+  ),
+  $font-units
+);
+</pre></div>
 
-.mb-16 {
-  margin-bottom: 16px;
-}
-
-.mb-32 {
-  margin-bottom: 32px;
-}
-
-.zTitle {
-  @include media(mm) {
-    font: {
-      size: 22px;
+<p>The previously set values are now merged with the unit map which references the unit type directly and will be used further on in the application.</p>
+<div class="codehilite"><pre>@each $name, $value in $font-units {
+  $max: $value;
+  $unit: $name;
+  $i: 1;
+  @for $i from 1 to $max {
+    .font-size-#{$unit}-#{$i} {
+      @if($unit == &#39;pe&#39;) {
+        font: {
+          size: #{$i}#{&#39;%&#39;};
+        }
+      } @else {
+        font: {
+          size: #{$i}#{$unit};
+        }
+      }
     }
+    $i: $i+1;
   }
 }
 </pre></div>
 
-<p>Slated for refactor, atomic margins are created for whitespacing in paragraphs or title blocks. The title of the article is printed in a larger size at the table size to leverage space.</p>
-<div class="codehilite"><pre>@each $key, $value in $weights {
-  .fw-#{$key} {
-    font: {
-      weight: $value;
-    }
-  }
-}
-</pre></div>
-
-<p>This will be moved, but the function will remain in a future version, where atomic elements are created for the various weights.</p>
-<div class="codehilite"><pre>main .ms-rtestate-field {
-  h1 {
-    color: #414F5A;
-    font-weight: 600;
-  }
-
-  h2 {
-    color: #414F5A;
-    font-weight: 400;
-  }
-
-  h3,
-  h4 {
-    color: #333;
-  }
-}
-</pre></div>
-
-<p>Headers are set. Colors will be refactored to move into variable usage.</p></article></body></html>
+<p>For every unit in the map where there is a set value, iterate through and create a style which is equal to the current iterative value relative to its maximum. However, if it is a percentage, the escaped percentage is isolated into its own condition.</p></article></body></html>
