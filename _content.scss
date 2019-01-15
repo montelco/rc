@@ -12,7 +12,7 @@ header + main {
 
 .hero{
   overflow: hidden;
-  z-index: 10;
+  z-index: 2;
   text-shadow: 0px 0px 8px rgba(20, 20, 20, 0.8);
 
   &:before {
@@ -87,5 +87,26 @@ header + main {
     }
 
     .container {position: relative}    
+  }
+}
+
+.article {
+  h1 {
+    font: {
+      weight: 600;
+      size: 20pt;
+    }
+  }
+  
+  p {
+    font: {
+      size: 16pt;
+    }
+    line-height: 1.65;
+  }
+
+  &__img {
+    border-radius: 10px;
+    margin: 2em 0;
   }
 }

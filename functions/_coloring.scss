@@ -1,0 +1,36 @@
+@import "luminance";
+
+@each $name, $value in $colors {
+  // if count < 500, lighten by map-merge percent
+  // else if count >= 600, darken by map-merge percent
+  // count += 100
+  $base: $value;
+  $color: $name;
+  $i: 100;
+  @while $i < 1000 {
+    .color-bg-#{$color}-#{$i} {
+      @if($i < 500) {
+        background: lighten($base, luminance(unquote($i))#{'%'});
+      }
+      @else if($i == 500) {
+        background: #{$base};
+      }
+      @else {
+        background: darken($base, luminance(unquote($i))#{'%'});
+      }
+    }
+
+    .color-tx-#{$color}-#{$i} {
+      @if($i < 500) {
+        color: lighten($base, luminance(unquote($i))#{'%'});
+      }
+      @else if($i == 500) {
+        color: $base;
+      }
+      @else {
+        color: darken($base, luminance(unquote($i))#{'%'});
+      }
+    }
+    $i : $i + 100;
+  }
+}

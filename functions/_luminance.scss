@@ -1,0 +1,3 @@
+@function luminance($key: "0") {
+  @return map-get($luminance, $key);
+}

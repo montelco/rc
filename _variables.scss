@@ -107,6 +107,23 @@ $theme-colors: map-merge(
   $theme-colors
 );
 
+// Lighten/Darken Percentages for the new Colors function
+$luminance: () !default;
+$luminance: map-merge(
+  (
+    "0":          50,
+    "100":        40,
+    "200":        30,
+    "300":        20,
+    "400":        10,
+    "600":        10,
+    "700":        20,
+    "800":        30,
+    "900":        40,
+  ),
+  $luminance
+);
+
 // Global Theme
 $body-color:                $gray-900 !default;
 $body-bg:                   $white !default;
