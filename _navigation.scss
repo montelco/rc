@@ -20,6 +20,20 @@ nav.subsite {
     }
   }
 }
+
+.subsite-navigation {
+  &__top {
+    position: relative;
+  } 
+  &__drop {
+    position: absolute;
+    width: 100%;
+    background: $yellow;
+    padding: ($spacer / 2);
+    z-index: 1;
+  }
+}
+
 .cd-search-trigger {
   margin-right: 15px;
 }
