@@ -22,8 +22,8 @@ header + main {
     display: block;
     width: 100%;
     height: 100%;
-    background: $qnBlue;
-    opacity: 0.85;
+    background: darken($qnBlue, 15%);
+    opacity: 0.95;
     mix-blend-mode: hard-light;
   }
 
@@ -53,12 +53,16 @@ header + main {
     width: 100%;
     background: $qnBlue;
 
+    @include media(xs) {
+      display: none;
+    } 
+
     h1 {
       z-index: 10;
       color: $ltBlue;
       font: {
         family: $font-family-sans-serif;
-        size: $font-size-base*1.5;
+        size: $font-size-base*2.25;
         weight: $font-weight-litebold;
       }
       text-align: center;
@@ -70,7 +74,7 @@ header + main {
       color: lighten($ltBlue, 5%);
       font: {
         family: $font-family-sans-serif;
-        size: $font-size-base*1.25;
+        size: $font-size-base*1.75;
         weight: $font-weight-litebold;
       }
       text-align: center;
@@ -81,7 +85,7 @@ header + main {
   .over {margin-top: -100px;}
 
   section.page_area {
-    background: $white;
+    background: $ltBlue;
     .page {
       min-height: 15vh;
     }
@@ -91,6 +95,8 @@ header + main {
 }
 
 .article {
+  padding: 1rem 0;
+
   h1 {
     font: {
       weight: 600;
@@ -107,6 +113,6 @@ header + main {
 
   &__img {
     border-radius: 10px;
-    margin: 2em 0;
+    margin: 1rem 0;
   }
 }
