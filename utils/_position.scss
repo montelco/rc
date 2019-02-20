@@ -7,7 +7,13 @@ $bps: xs sm mm md lg xl wl;
   @each $breakpoint in $bps {
     .position-#{$breakpoint}-#{$position} {
       @include media(#{$breakpoint}) {
-        position: $position !important; 
+        position: $position !important;
+        @if $position ==  'sticky'{
+          @supports (position: sticky) {
+            position: sticky;
+            top: 0;
+          } 
+        } 
       }
     }
   }
