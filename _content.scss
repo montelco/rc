@@ -86,6 +86,23 @@ header + main {
 
   section.page_area {
     background: $ltBlue;
+
+    .title_ribbon{
+      padding: 1.25rem;
+      background: $coal;
+      text-align: center;
+      display: inline-block;
+      margin-top: calc(-10pt + -1.25rem);
+
+      h1 {
+        color: $white;
+        font: {
+          weight: 600;
+          size: 20pt;
+        }
+      }
+    }
+
     .page {
       min-height: 15vh;
     }
