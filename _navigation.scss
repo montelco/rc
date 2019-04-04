@@ -243,7 +243,7 @@ section.slider{
   padding: 0;
   margin-bottom: -5px;
 }
-nav>ul{display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;}
+nav>ul, .ms-breadcrumb-top, #DeltaTopNavigation, #zz1_TopNavigationMenu, #zz1_TopNavigationMenu>ul{display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;}
 img{
   max-width: 100%;
   height: auto;
@@ -275,7 +275,8 @@ img{
 }
 
 @include media(nml) {
-  .cd-primary-nav {
+  .cd-primary-nav,
+  .root {
     -webkit-flex-wrap: wrap !important;
         -ms-flex-wrap: wrap !important;
             flex-wrap: wrap !important;
