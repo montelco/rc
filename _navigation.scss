@@ -21,17 +21,58 @@ nav.subsite {
   }
 }
 
+.subnav__topLevel {
+  @include media(mm) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  &-listItems > span.menu-item {
+    @include media(md) {
+      padding: 0.375rem 2rem;
+      display: block;
+    }
+  }
+}
+
 .subsite-navigation {
+  @include media(mm) {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 4px;
+  }
+
   &__top {
     position: relative;
+
+    &-link .menu-item-text {
+
+    }
   } 
+
   &__drop {
     position: absolute;
     width: 100%;
-    background: $yellow;
+    background: lighten($yellow, 5%);
     padding: ($spacer / 2);
     z-index: 1;
+    border-radius: 0 0 4px 4px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    list-style: none;
   }
+}
+
+.static.dropdown__menu-list-items {
+  padding: 0.25rem 0;
+}
+li.dropdown__menu-list-items a.static {
+  color: inherit;
 }
 
 .cd-search-trigger {
