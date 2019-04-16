@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
+  <title>Rowan College South Jersey</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <meta http-equiv="Expires" content="0" />
@@ -38,15 +39,22 @@
 <body>
   <header class="blue cd-main-content mobile-glue">
       <section id="secondaryNavigation" class="navblue d-none d-sm-block pd-sm">
-          <div class="container d-flex justify-content-end no-padding">
-              <div class="quicklinks col-md-12 no-padding">
+          <div class="container d-flex justify-content-space-between no-padding">
+              <div class="quicklinks col-md-3 no-padding text-align-left">
                   <div class="d-inline-block">
+                      <a href="#" id="GloucesterCampusSelector">Gloucester</a>
+                      <a href="#" id="CumberlandCampusSelector">Cumberland</a>
+                  </div>
+              </div>
+              <div class="quicklinks col-md-9 no-padding">
+                  <div class="d-inline-block">
+                      <a href="/CurrentStudents">Current Students</a>
+                      <a href="/Parents">Parents</a>
+                      <a href="#">|</a>
                       <a href="/Courses">Courses</a>
-                      <a href="/People/Pages/Directory.aspx">Directory</a>
-                      <a href="https://rcroadrunners.com">Athletics</a>
-                      <a href="/Workforce">Community</a>
-                      <a href="/General/Pages/Directions.aspx">Directions</a>
-                      <a href="/Foundation/Pages/Donate.aspx">Give</a>
+                      <a href="/Directory">Directory</a>
+                      <a href="/CampusMap">Directions</a>
+                      <a href="/Foundation/Donate">Give</a>
                       <a href="/Internships" class="last">Internships</a>
                   </div>
               </div>
@@ -103,6 +111,464 @@
       </div>
       <div class="qnBlue">
           <div class="container no-padding">
+            <nav class="cd-nav">
+              <ul id="cd-primary-nav" class="nav-menu cd-primary-nav is-fixed">
+                <li class="top-nav-item"><a href="https://www.rcgc.edu"><strong>Home</strong></a></li>
+                <!-- <li class="has-children d-block d-sm-none">
+                  <a href="#"><strong class="TextQnBlue">Quicklinks</strong></a>
+                  <ul class="cd-nav-icons is-hidden">
+                    <li class="go-back"><a href="#">Menu</a></li>
+                    <li>
+                      <a class="cd-nav-item ico" href="/Courses">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M7 5H5v14h14V5h-2v10a1 1 0 0 1-1.45.9L12 14.11l-3.55 1.77A1 1 0 0 1 7 15V5zM5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2zm4 2v8.38l2.55-1.27a1 1 0 0 1 .9 0L15 13.38V5H9z"/></svg>
+                        <h4>Courses</h4>
+                        <p>View registration info, dates, and more</p>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a class="cd-nav-item ico" href="/People/Pages/Directory.aspx">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2zm16 3.38V6H4v1.38l8 4 8-4zm0 2.24l-7.55 3.77a1 1 0 0 1-.9 0L4 9.62V18h16V9.62z"/></svg>
+                        <h4>Directory</h4>
+                        <p>A list of faculty, staff, and departments</p>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a class="cd-nav-item ico" href="/Athletics">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M11 20v-2.08a6 6 0 0 1-4.24-3A4.02 4.02 0 0 1 2 11V6c0-1.1.9-2 2-2h2c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2h2a2 2 0 0 1 2 2v5a4 4 0 0 1-4.76 3.93A6 6 0 0 1 13 17.92V20h4a1 1 0 0 1 0 2H7a1 1 0 0 1 0-2h4zm6.92-7H18a2 2 0 0 0 2-2V6h-2v6c0 .34-.03.67-.08 1zM6.08 13A6.04 6.04 0 0 1 6 12V6H4v5a2 2 0 0 0 2.08 2zM8 4v8a4 4 0 1 0 8 0V4H8z"/></svg>
+                        <h4>Athletics</h4>
+                        <p>View Men's and Women's Athletics site</p>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a class="cd-nav-item ico" href="/Workforce">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M9 12A5 5 0 1 1 9 2a5 5 0 0 1 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 11a1 1 0 0 1-2 0v-2a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v2a1 1 0 0 1-2 0v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2zm1-5a1 1 0 0 1 0-2 5 5 0 0 1 5 5v2a1 1 0 0 1-2 0v-2a3 3 0 0 0-3-3zm-2-4a1 1 0 0 1 0-2 3 3 0 0 0 0-6 1 1 0 0 1 0-2 5 5 0 0 1 0 10z"/></svg>
+                        <h4>Community</h4>
+                        <p>View community events, courses, and more</p>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a class="cd-nav-item ico" href="/General/Pages/Directions.aspx">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M14 5.62l-4 2v10.76l4-2V5.62zm2 0v10.76l4 2V7.62l-4-2zm-8 2l-4-2v10.76l4 2V7.62zm7 10.5L9.45 20.9a1 1 0 0 1-.9 0l-6-3A1 1 0 0 1 2 17V4a1 1 0 0 1 1.45-.9L9 5.89l5.55-2.77a1 1 0 0 1 .9 0l6 3A1 1 0 0 1 22 7v13a1 1 0 0 1-1.45.89L15 18.12z"/></svg>
+                        <h4>Directions</h4>
+                        <p>Find parking info, directions, and more</p>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a class="cd-nav-item ico" href="/Coop">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M8 7V5c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2v2h4a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9c0-1.1.9-2 2-2h4zm8 2H8v10h8V9zm2 0v10h2V9h-2zM6 9H4v10h2V9zm4-2h4V5h-4v2z"/></svg>
+                        <h4>Internships</h4>
+                        <p>Learn about the various intern programs</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li> -->
+                <li class="has-children top-nav-item">
+                  <a href="/About">About</a>
+                  <ul class="cd-secondary-nav is-hidden sub-nav">
+                    <li class="go-back"><a href="#">Menu</a></li>
+                    <li class="see-all"><a href="/General/Pages/Contact.aspx">Contact Us</a></li>
+
+                    <li class="sub-nav-group">
+                      <a class="featured" href="/CollegeOverview" style="padding-right: 0;">
+                        <img src="https://via.placeholder.com/325x160" alt="" style="padding-bottom: 0.5rem;">
+                        <span>Rowan College Overview</span>
+                        <p style="color: #2e3233; font-weight: 400;" class="d-mm-none"><br/>Rowan College is redefining what higher education looks like. Learn how below.</p>
+                        <section class="button d-mm-none" style="padding: 0.5rem; border: 1px solid #4f74a3; border-radius: 4px; color: #4f74a3; font-weight: 400; display: inline-block;">Learn About Us</section>
+                      </a>
+                    </li>
+
+                    <li class="sub-nav-group">
+                      <a class="featured" href="/CollegeOverview" style="padding-right: 0;">
+                        <img src="https://via.placeholder.com/325x160" alt="" style="padding-bottom: 0.5rem;">
+                        <span>Map & Directions</span>
+                        <p style="color: #2e3233; font-weight: 400;" class="d-mm-none"><br/>Two campuses. One college. Greater Possibilities. See how you can get to Rowan College. </p>
+                        <section class="button d-mm-none" style="padding: 0.5rem; border: 1px solid #4f74a3; border-radius: 4px; color: #4f74a3; font-weight: 400; display: inline-block;">Visit Us</section>
+                      </a>
+                    </li>
+
+                    <li class="sub-nav-group">
+                      <a class="featured" href="/CollegeOverview" style="padding-right: 0;">
+                        <img src="https://via.placeholder.com/325x160" alt="" style="padding-bottom: 0.5rem;">
+                        <span>Catalogs & Publications</span>
+                        <p style="color: #2e3233; font-weight: 400;" class="d-mm-none"><br/>View the Rowan College catalog, handbook, newsletter, new, and more.</p>
+                        <section class="button d-mm-none" style="padding: 0.5rem; border: 1px solid #4f74a3; border-radius: 4px; color: #4f74a3; font-weight: 400; display: inline-block;">View All Publications</section>
+                      </a>
+                    </li>
+
+                    <li class="has-children sub-nav-group">
+                      <a href="/Publications">More About RowanSJ</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">About</a></li>
+                        <li class="nav-item d-md-none"><a href="/Publications"><strong>More About RowanSJ</strong></a></li>
+                        <li><a href="/student-right-to-know">Student Right to Know</a></li>
+                        <li><a href="/board-of-trustees">Board of Trustees</a></li>
+                        <li><a href="/human-resources">HR & Employment</a></li>
+                        <li><a href="/security">Safety & Security</a></li>
+                        <li><a href="/policies">College Policies</a></li>
+                        <li><a href="/security/clery-crime-log">Clery Crime Log</a></li>
+                        <li><a href="/diversity">Diversity</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="has-children top-nav-item">
+                  <a href="h/Academics">Academic & Career Programs</a>
+                  <ul class="cd-secondary-nav is-hidden sub-nav">
+                    <li class="go-back"><a href="#">Menu</a></li>
+                    <li class="see-all"><a href="/Future">Apply Now</a></li>
+                    
+                    <li class="sub-nav-group">
+                      <a class="featured" href="/CollegeOverview" style="padding-right: 0;">
+                        <img src="https://via.placeholder.com/325x160" alt="" style="padding-bottom: 0.5rem;">
+                        <span>Academic Degrees</span>
+                        <p style="color: #2e3233; font-weight: 400;" class="d-mm-none"><br/>Rowan College is redefining what higher education looks like. Learn how below.</p>
+                        <section class="button d-mm-none" style="padding: 0.5rem; border: 1px solid #4f74a3; border-radius: 4px; color: #4f74a3; font-weight: 400; display: inline-block;">Learn About Us</section>
+                      </a>
+                    </li>
+
+                    <li class="sub-nav-group">
+                      <a class="featured" href="/CollegeOverview" style="padding-right: 0;">
+                        <img src="https://via.placeholder.com/325x160" alt="" style="padding-bottom: 0.5rem;">
+                        <span>Workforce & Continuing Ed</span>
+                        <p style="color: #2e3233; font-weight: 400;" class="d-mm-none"><br/>Rowan College is redefining what higher education looks like. Learn how below.</p>
+                        <section class="button d-mm-none" style="padding: 0.5rem; border: 1px solid #4f74a3; border-radius: 4px; color: #4f74a3; font-weight: 400; display: inline-block;">Learn About Us</section>
+                      </a>
+                    </li>
+
+                    <li class="sub-nav-group">
+                      <a class="featured" href="/CollegeOverview" style="padding-right: 0;">
+                        <img src="https://via.placeholder.com/325x160" alt="" style="padding-bottom: 0.5rem;">
+                        <span>The Rowan Connection</span>
+                        <p style="color: #2e3233; font-weight: 400;" class="d-mm-none"><br/>Rowan College is redefining what higher education looks like. Learn how below.</p>
+                        <section class="button d-mm-none" style="padding: 0.5rem; border: 1px solid #4f74a3; border-radius: 4px; color: #4f74a3; font-weight: 400; display: inline-block;">Learn About Us</section>
+                      </a>
+                    </li>
+
+                    <li class="has-children sub-nav-group">
+                      <a href="/AlternativePrograms">Additional Options</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">Additional Options</a></li>
+                        <li><a href="/FireAcademy">High School Option</a></li>
+                        <li><a href="/FireAcademy">Selective Admissions</a></li>
+                        <li><a href="/FireAcademy">Online Degrees</a></li>
+                        <li><a href="/FireAcademy">Certificates</a></li>
+                        <li><a href="/Workforce/Pages/default.aspx">Workforce & Professional Development Institute</a></li>
+                        <li><a href="/FireAcademy">Fire Academy</a></li>
+                        <li><a href="/PolicAcademy">Police Academy</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="has-children top-nav-item">
+                  <a href="/Future">Admissions & Aid</a>
+                  <ul class="cd-secondary-nav is-hidden sub-nav">
+                    <li class="go-back"><a href="#">Menu</a></li>
+                    <li class="see-all"><a href="/Future">Apply Now</a></li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/Admissions">Admissions</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">Future Students</a></li>
+                        <li class="nav-item d-md-none"><a href="/Admissions"><strong>Admissions</strong></a></li>
+                        <li>
+                          <a href="/Apply">Apply to Rowan College</a>
+                        </li>
+                        <li>
+                          <a href="/Admissions/Pages/Request-Information.aspx">Request Information</a>
+                          <!-- <ul class="is-hidden">
+                            <li class="go-back"><a href="#">Accessories</a></li>
+                            <li class="see-all"><a href="#">All Caps &amp; Hats</a></li>
+                            <li><a href="#">Beanies</a></li>
+                            <li><a href="#">Caps</a></li>
+                            <li><a href="#">Hats</a></li>
+                          </ul> -->
+                        </li>
+                        <li><a href="/SelectiveAdmissions">Selective Admissions</a></li>
+                        <li><a href="/OpenHouse">Open House</a></li>
+                        <li><a href="/Testing/Placement">Placement Test</a></li>
+                        <li><a href="/SpecialServices">Special Services</a></li>
+                        <li><a href="/Appointments">Make an Appointment</a></li>
+                        <li><a href="/CampusVisit">Campus Visit</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/Courses">Course Registration</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">Future Students</a></li>
+                        <li class="nav-item d-md-none"><a href="/Courses"><strong>Course Registration</strong></a></li>
+                        <li><a href="https://ssbprod.rcgc.edu:9000/prod_ssb/bwckschd.p_disp_dyn_sched">Find a Course</a></li>
+                        <li><a href="/Courses/Pages/Register-for-a-Class.aspx">Register for a Class</a></li>
+                        <li><a href="/Advisement/Pages/Advisors.aspx">See an Advisor</a></li>
+                        <li class="nav-item"><a href="/Courses/Pages/Drop-Audit-Withdrawal-Deadlines.aspx">Drop &amp; Withdrawal Dates</a></li>
+                        <li class="nav-item"><a href="/StudentRecords">Student Records </a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/PayingForCollege">Paying for College</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">Future Students</a></li>
+                        <li class="nav-item d-md-none"><a href="/PayingForCollege"><strong>Paying for College</strong></a></li>
+                        <li class="nav-item"><a href="/PayingForCollege/Pages/Tuition-and-Fees.aspx">Tuition &amp; Fees</a></li>
+                        <li class="nav-item"><a href="/PayingForCollege/Pages/CalculateCosts.aspx">Calculate Your Costs</a></li>
+                        <li class="nav-item"><a href="/BusinessOffice">Pay My Bill (Business Office)</a></li>
+                        <li class="nav-item"><a href="/FinancialAid">Financial Aid</a></li>
+                        <li class="nav-item"><a href="/Scholarships">Scholarships</a></li>
+                        <li class="nav-item"><a href="/NJSTARS">NJ STARS</a></li>
+                        <li class="nav-item"><a href="/EOF">EOF</a></li>
+                        <li class="nav-item"><a href="/Veterans">Veterans</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/Apply/Pages/Apply-Now.aspx">New Students</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">Future Students</a></li>
+                        <li class="nav-item d-md-none"><a href="/Apply/Pages/Apply-Now.aspx"><strong>New Students</strong></a></li>
+                        <li><a href="/HighSchool">High School Programs</a></li>
+                        <li><a href="/International">International</a> </li>
+                        <li><a href="/DACA">Deferred Action for Childhood Arrivals</a></li>
+                        <li><a href="Transfer">Transfer Students</a></li>
+                        <li><a href="/Apply/Pages/Apply-Now.aspx">Visiting Students</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/Transfer/RowanUniversity/Pages/default.aspx">Rowan University Center</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">Future Students</a></li>
+                        <li class="nav-item d-md-none"><a href="/Transfer/RowanUniversity/Pages/default.aspx"><strong>Rowan University Center</strong></a></li>
+                        <li class="cd-nav-item d-mm-none">
+                          <a style="min-height: 30px; max-height: 60px;" href="/Transfer/RowanUniversity" aria-label="link">
+                            <img class="d-mm-none" src="https://www.rowan.edu/home/sites/all/themes/rowan/imgs/rowan_logo_horizontal_rgb.svg" style="width: 100%; height: auto;" alt="Rowan U Logo">
+                          </a>
+                        </li>
+                        <li><a href="/3plus1">3 + 1</a></li>
+                        <li><a href="http://rowanchoice.com/">Rowan Choice</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/Publications">Publications</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#6">Future Students</a></li>
+                        <li class="nav-item d-md-none"><a href="/Publications"><strong>Publications</strong></a></li>
+                        <li><a href="/Publications/Pages/Catalog.aspx">Catalogs & Couriers</a></li>
+                        <li><a href="/Publications/Pages/Campus.aspx">Campus Publications</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/General">General Information</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#7">Future Students</a></li>
+                        <li class="nav-item d-md-none"><a href="/General"><strong>General Information</strong></a></li>
+                        <li><a href="/General/Pages/Directions.aspx">Maps & Directions</a></li>
+                        <li><a href="/ContactUs">Contact Us</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="has-children top-nav-item">
+                  <a href="/Current">Student Services</a>
+                  <ul class="cd-secondary-nav collapsible is-hidden sub-nav">
+                    <li class="go-back"><a href="#">Menu</a></li>
+                    <li class="see-all"><a href="https://Portal.rcgc.edu/">RCGC Portal Login</a></li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/CampusServices">Campus Services</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">Current Students</a></li>
+                        <li class="nav-item d-md-none"><a href="/CampusServices"><strong>Campus Services</strong></a></li>
+                        <li class="nav-item"><a href="/ASC">Academic Support Center</a></li>
+                        <li class="nav-item"><a href="/Advisement">Advisement</a></li>
+                        <li class="nav-item"><a href="http://rcgc.bncollege.com/">Bookstore</a></li>
+                        <li class="nav-item"><a href="/CAP">Career Advancement &amp; Planning (CAP) Center</a></li>
+                        <li class="nav-item"><a href="/CWS">Counseling &amp; Wellness Services</a></li>
+                        <li class="nav-item"><a href="/ISP">Gloucester County Internship Scholarship Program (ISP)</a></li>
+                        <li class="nav-item"><a href="/InformationCenter">Information Center</a></li>
+                        <li class="nav-item"><a href="/Library">Library</a></li>
+                        <li class="nav-item"><a href="/Security">Safety &amp; Security</a></li>
+                        <li class="nav-item"><a href="/SpecialServices">Special Services</a></li>
+                        <li class="nav-item"><a href="/StudentRecords">Student Records</a></li>
+                        <li class="nav-item"><a href="/Testing">Testing Services</a></li>
+                        <li class="nav-item"><a href="/Transfer/FromRowanCollege">Transfer Services</a></li>
+                        <li class="nav-item"><a href="/Veterans">Veteran Affairs</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/Courses">Course Registration</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">Current Students</a></li>
+                        <li class="nav-item d-md-none"><a href="/Courses"><strong>Course Registration</strong></a></li>
+                        <li><a href="https://ssbprod.rcgc.edu:9000/prod_ssb/bwckschd.p_disp_dyn_sched">Find a Course</a></li>
+                        <li><a href="/Courses/Pages/Register-for-a-Class.aspx">Register for a Class</a></li>
+                        <li><a href="/Advisement/Pages/Advisors.aspx">See an Advisor</a></li>
+                        <li class="nav-item"><a href="/Courses/Pages/Drop-Audit-Withdrawal-Deadlines.aspx">Drop &amp; Withdrawal Dates</a></li>
+                        <li class="nav-item"><a href="/StudentRecords">Student Records </a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/PayingForCollege">Paying for College</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">Current Students</a></li>
+                        <li class="nav-item d-md-none"><a href="/PayingForCollege"><strong>Paying for College</strong></a></li>
+                        <li class="nav-item"><a href="/PayingForCollege/Pages/Tuition-and-Fees.aspx">Tuition &amp; Fees</a></li>
+                        <li class="nav-item"><a href="/PayingForCollege/Pages/CalculateCosts.aspx">Calculate Your Costs</a></li>
+                        <li class="nav-item"><a href="/BusinessOffice">Pay My Bill (Business Office)</a></li>
+                        <li class="nav-item"><a href="/FinancialAid">Financial Aid</a></li>
+                        <li class="nav-item"><a href="/Scholarships">Scholarships</a></li>
+                        <li class="nav-item"><a href="/NJSTARS">NJ STARS</a></li>
+                        <li class="nav-item"><a href="/EOF">EOF</a></li>
+                        <li class="nav-item"><a href="/Veterans">Veterans</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/Technology">Innovation and Technology</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">Current Students</a></li>
+                        <li class="nav-item d-md-none"><a href="/Technology"><strong>Innovation and Technology</strong></a></li>
+                        <li class="nav-item"><a href="/Technology/Pages/Computer-Labs.aspx">Computer Labs</a></li>
+                        <li class="nav-item"><a href="/eLearning">eLearning Support</a></li>
+                        <li class="nav-item"><a href="/Technology/Pages/Email.aspx">Email</a></li>
+                        <li class="nav-item"><a href="/Technology/Pages/Technical-Support.aspx">Technical Support</a></li>
+                        <li class="nav-item"><a href="/Technology/Pages/Wireless-Access.aspx">Wireless Access</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children sub-nav-group d-mm-none"></li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/CampusLife">Campus Life</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">Current Students</a></li>
+                        <li class="nav-item d-md-none"><a href="/CampusLife"><strong>Campus Life</strong></a></li>
+                        <li class="nav-item"><a href="/StudentLife">Student Life</a></li>
+                        <li class="nav-item"><a href="/StudentLife/Pages/Upcoming-Events.aspx">Upcoming Events</a></li>
+                        <li class="nav-item"><a href="/StudentLife/Pages/Student-Clubs.aspx">Student Clubs</a></li>
+                        <li class="nav-item"><a href="/Organizations">Organizations </a></li>
+                        <li class="nav-item"><a href="/CampusLife/Pages/Campus-Food.aspx">Food on Campus</a></li>
+                        <li class="nav-item"><a href="/SGA">Student Government Association (SGA)</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="has-children top-nav-item">
+                  <a href="/Transfer">Transfer</a>
+                  <ul class="cd-secondary-nav is-hidden sub-nav">
+                    <li class="go-back"><a href="#">Menu</a></li>
+                    <li class="see-all"><a href="https://rcgc.edu/Transfer">Transfer Services</a></li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/Transfer/ToRowanCollege">Transfer to Rowan College</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">Transfer Services</a></li>
+                        <li class="nav-item d-md-none"><a href="/Transfer/ToRowanCollege"><strong>Transfer to Rowan College</strong></a></li>
+                        <li class="nav-item"><a href="/Transfer/ToRowanCollege/Pages/Getting-Started.aspx">Getting Started</a></li>
+                        <li class="nav-item"><a href="/Transfer/ToRowanCollege/Pages/Send-Transcripts-to-Rowan-College.aspx">Send Transcripts to Rowan College</a></li>
+                        <li class="nav-item"><a href="/ReverseTransfer">Reverse Transfer</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/Transfer/RowanUniversity">Rowan University Center</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">Transfer Services</a></li>
+                        <li class="cd-nav-item d-mm-none">
+                          <a style="min-height: 30px; max-height: 60px;" href="/Transfer/RowanUniversity" aria-label="link">
+                            <img class="d-mm-none" src="https://www.rowan.edu/home/sites/all/themes/rowan/imgs/rowan_logo_horizontal_rgb.svg" style="width: 100%; height: auto;" alt="Rowan U Logo">
+                          </a>
+                        </li>
+                        <li class="nav-item d-md-none"><a href="/Transfer/RowanUniversity"><strong>Rowan University Center</strong></a></li>
+                        <li class="nav-item"><a href="/3Plus1">3 + 1</a></li>
+                        <li class="nav-item"><a href="/RowanChoice">Rowan Choice</a></li>
+                        <li class="nav-item"><a href="/Transfer/RowanUniversity/Pages/Earn-a-Degree-on-Campus.aspx">Degree Completion</a></li>
+                        <li class="nav-item"><a href="/Transfer/RowanUniversity/Pages/Transfer-Advising-.aspx">Traditional Transfer</a></li>
+                        <li class="nav-item"><a href="/Transfer/RowanUniversity/Pages/Undergraduate-Degree-Programs.aspx">Undergraduate Degree Programs</a></li>
+                        <li class="nav-item"><a href="/Transfer/RowanUniversity/Pages/Make-an-Appointment.aspx">Make an Appointment</a></li>
+                        <li class="nav-item"><a href="/Transfer/RowanUniversity/Pages/Contact-Us.aspx">Contact Us</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/Transfer/FromRowanCollege">Transfer From Rowan College</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">Transfer Services</a></li>
+                        <li class="nav-item d-md-none"><a href="/Transfer/FromRowanCollege"><strong>Transfer From Rowan College</strong></a></li>
+                        <li class="nav-item"><a href="https://rcgctransferservices.setmore.com/resourcebookingpage/re7911502993045300" aria-label="Make an Appointment link">Make an Appointment</a></li>
+                          <li class="nav-item"><a href="/Transfer/FromRowanCollege/Pages/Transfer-Research.aspx" aria-label="Transfer Research link">Transfer Research</a></li>
+                          <li class="nav-item"><a href="/Transfer/FromRowanCollege/Pages/Transfer-Events.aspx" aria-label="Transfer Events link">Transfer Events</a></li>
+                          <li class="nav-item"><a href="/Transfer/FromRowanCollege/Pages/Transfer-Research.aspx" aria-label="Transfer Planning Tools link">Transfer Planning Tools</a></li>
+                          <li class="nav-item"><a href="/Transfer/CollegePartnerships/Pages/default.aspx" aria-label="College Partnerships link">College Partnerships</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="has-children top-nav-item">
+                  <a href="/WPDI">Community Services</a>
+                  <ul class="cd-secondary-nav is-hidden sub-nav">
+                    <li class="go-back"><a href="#">Menu</a></li>
+                    <li class="see-all"><a href="/WPDI">Career Training & Workforce Development</a></li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/WPDI">Workforce & Professional Development Institute</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">Career Training</a></li>
+                        <li class="nav-item d-md-none"><a href="/WPDI"><strong>Workforce & Professional Development Institute</strong></a></li>
+                        <li class="nav-item"><a href="https://workforce.rcgc.edu/wconnect/ShowGroups.awp" aria-label="Register for a Course link">Register for a Course</a></li>
+                        <li class="nav-item"><a href="/Workforce/Pages/Catalog.aspx" aria-label="Catalog link">Catalog</a></li>
+                        <li class="nav-item"><a href="/Workforce/Pages/Contact-Us.aspx" aria-label="Contact Us link">Contact Us</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/WPDI">Community Services</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">Career Training</a></li>
+                        <li class="nav-item d-md-none"><a href="/WPDI"><strong>Community Services</strong></a></li>
+                        <li class="nav-item"><a href="/ACT" aria-label="Adult Center for Transition link">Adult Center for Transition </a></li>
+                        <li class="nav-item"><a href="/Workforce/AdultEducation" aria-label="Adult Education Programs link">Adult Education Programs </a></li>
+                        <li class="nav-item"><a href="/CAP" aria-label="Career Advancement &amp; Planning link">Career Advancement &amp; Planning </a></li>
+                        <li class="nav-item"><a href="https://www.facebook.com/GCchorus/" target="blank" aria-label="College/Community Chorus of Rowan College at Gloucester Countylink">College/Community Chorus of Rowan College at Gloucester County</a></li>
+                        <li class="nav-item"><a href="/Cultural" aria-label="Cultural &amp; Heritage Commission link">Cultural &amp; Heritage Commission </a></li>
+                        <li class="nav-item"><a href="/Workforce/AdultEducation" aria-label="HSE Testing / ESL Classeslink">HSE Testing / ESL Classes</a></li>
+                        <li class="nav-item"><a href="https://www.gcls.org/make/innovationstudio" aria-label="InnovationStudio link">InnovationStudio </a></li>
+                        <li class="nav-item"><a href="/Library" aria-label="Library link">Library </a></li>
+                        <li class="nav-item"><a href="/PIT" aria-label="People in Transition link">People in Transition </a></li>
+                        <li class="nav-item"><a href="/Workforce/SeniorCorps" aria-label="Senior Corps link">Senior Corps </a></li>
+                        <li class="nav-item"><a href="http://www.sjvolunteers.org/" aria-label="Volunteer Center of South Jersey link">Volunteer Center of South Jersey </a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/CommunityCareer">Career Programs</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">Career Training</a></li>
+                        <li class="nav-item d-md-none"><a href="/CommunityCareer"><strong>Career Programs</strong></a></li>
+                        <li class="nav-item"><a href="/Workforce/ALL" aria-label="Academy of Lifelong Learning link">Academy of Lifelong Learning </a></li>
+                        <li class="nav-item"><a href="/Workforce/AHCareerTraining" aria-label="Allied Health Career Training link">Allied Health Career Training </a></li>
+                        <li class="nav-item"><a href="/Workforce/CareerTraining" aria-label="Career Training link">Career Training </a></li>
+                        <li class="nav-item"><a href="/Workforce/ComputerTraining" aria-label="Computer Training link">Computer Training </a></li>
+                        <li class="nav-item"><a href="/Workforce/ProfessionalDevelopment" aria-label="Professional Development link">Professional Development </a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/AlternativePrograms">Alternative Programs</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">Career Training</a></li>
+                        <li class="nav-item d-md-none"><a href="/AlternativePrograms"><strong>Alternative Programs</strong></a></li>
+                        <li class="nav-item"><a href="/FireAcademy" aria-label="Fire Academy link">Fire Academy </a></li>
+                        <li class="nav-item"><a href="/PoliceAcademy" aria-label="Police Academy link">Police Academy </a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children sub-nav-group">
+                      <a href="/CommunityCareer">For Businesses</a>
+                      <ul class="is-hidden">
+                        <li class="go-back"><a href="#">Career Training</a></li>
+                        <li class="nav-item d-md-none"><a href="/CommunityCareer"><strong>For Businesses</strong></a></li>
+                        <li class="nav-item"><a href="/Workforce/BusinessWorkforce">Business Workforce Development</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul> <!-- primary-nav -->
+            </nav> <!-- cd-nav -->
+            <span style="display: none;" class="nav-end"></span>
           </div>
       </div>
   </header>
@@ -187,36 +653,14 @@
       </div>
     </div>
     <section class="content-page white">
-            <hero class="no_overlay_hero">
-                
-                
-                <div id="ctl00_PlaceHolderMain_ctl00_label" style="display:none">Page Image</div><div id="ctl00_PlaceHolderMain_ctl00__ControlWrapper_RichImageField" class="ms-rtestate-field" style="display:inline" aria-labelledby="ctl00_PlaceHolderMain_ctl00_label"><div class="ms-rtestate-field"><img alt="" src="https://images.unsplash.com/photo-1540569222266-a08afebb00b0?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=99" style="BORDER:0px solid;"></div></div>
-                
-            </hero>
-            <div data-name="QuickLaunch"><div id="currentSiteNav" class="ms-dialogHidden ms-forceWrap ms-noList"><div id="SubsiteNavigation" class="navigation">
-  <div><designertempnode name="PlaceHolderLeftNavBarTop"><designertempnode name="PlaceHolderQuickLaunchTop"><designertempnode name="PlaceHolderLeftNavBarDataSource"><designertempnode name="PlaceHolderCalendarNavigator"><designertempnode name="PlaceHolderLeftActions"><div id="ctl00_PlaceHolderMain_QuickLaunchNavigationManager">
-    <div id="zz1_V4QuickLaunchMenu" class=" noindex ms-core-listMenu-verticalBox">
-      <ul id="zz2_RootAspMenu" class="root ms-core-listMenu-root static">
-        <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="/asc" accesskey="q"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Academic Support Center</span></span></a><ul class="static">
-          <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="/asc/becoming-a-tutor"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Becoming a Tutor</span></span></a></li><li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="/asc/dummy"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Dummy</span></span></a><ul class="static">
-            <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="/asc/dummy/dummy-1"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Dummy 1</span></span></a></li>
-          </ul></li><li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="/asc/home"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Home</span></span></a></li>
-        </ul></li><li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="/student-life"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Student Life</span></span></a><ul class="static">
-          <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="/student-life/news"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">News</span></span></a></li><li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="/student-life/home"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Home</span></span></a></li>
-        </ul></li>
-      </ul>
-    </div>
-  </div><designertempnode name="PlaceHolderQuickLaunchBottom"></designertempnode></designertempnode></designertempnode></designertempnode></designertempnode></designertempnode></div>
-</div></div>
-</div>
             <section class="page_area">
-                <div class="container">
+                <!-- <div class="container">
                     <div class="row justify-content-center">
                         <section class="title_ribbon">
                             <h1>Pretzel Sales</h1>
                         </section>
                     </div>
-                </div>
+                </div> -->
               <div class="page container">
                 <div class="content row">
                   <div class="col-sm-6 offset-sm-3 article">

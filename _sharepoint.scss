@@ -6,6 +6,10 @@
   box-sizing: content-box;
 }
 
+a#ctl00_ctl68_ExplicitLogin[href*="www"]{
+  display: none;
+}
+
 #ms-designer-ribbon {
   width: 100%;
   background: #EFEFEF;
