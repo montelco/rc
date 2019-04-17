@@ -6,8 +6,8 @@
   box-sizing: content-box;
 }
 
-a#ctl00_ctl68_ExplicitLogin[href*="www"]{
-  display: none;
+a[id*="ExplicitLogin"][href*="www"]{
+  display: none !important;
 }
 
 #ms-designer-ribbon {

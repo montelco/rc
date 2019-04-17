@@ -21,6 +21,10 @@ nav.subsite {
   }
 }
 
+li.subnav__topLevel-listItems a, a.subsite-navigation__top-link .menu-item-text {
+  color: #373d3f;
+}
+
 .subnav__topLevel {
   @include media(mm) {
     -webkit-box-orient: vertical;
