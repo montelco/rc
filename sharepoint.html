@@ -27,7 +27,10 @@
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="160" />
   <meta property="og:image:height" content="160" />
+  <link href="packages/featherlight/src/featherlight.css" type="text/css" rel="stylesheet" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript">
+  </script>
+  <script src="packages/featherlight/src/featherlight.js" type="text/javascript">
   </script>
  <!--  <script src="/_catalogs/masterpage/cookie/jquery.cookie.js" type="text/javascript">
   </script> -->
@@ -37,25 +40,44 @@
   </script>
 </head>
 <body>
+  <div id="pickerDialogue" class="cd-main-content lightbox modal" style="display: none;">
+    <div class="lightbox-container">
+        <div class="lightbox-content">
+            <div class="video-container">
+                <button onclick="document.getElementById('pickerDialogue').style.display='none'; return false;">✕
+                
+                </button>
+                <section class="wufoo">
+                    <h2 class="t-center">
+                    </h2>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
   <header class="blue cd-main-content mobile-glue">
-      <section id="secondaryNavigation" class="navblue d-none d-sm-block pd-sm">
-          <div class="container d-flex justify-content-space-between no-padding">
-              <div class="quicklinks col-md-3 no-padding text-align-left">
+      <section id="secondaryNavigation" class="navblue d-block pd-sm">
+          <div class="container d-flex justify-content-end no-padding">
+              <div class="quicklinks col-md-4 col-sm-6 col-xs-12 no-padding text-align-left" style="text-align: left;">
                   <div class="d-inline-block">
-                      <a href="#" id="GloucesterCampusSelector">Gloucester</a>
-                      <a href="#" id="CumberlandCampusSelector">Cumberland</a>
+                      <span class="textWhite d-mm-none">Choose your campus: </span>
+                      <a href="#" onclick="createPreferred('gloucester')" id="GloucesterCampusSelector">Gloucester</a>
+                      <a href="#" onclick="createPreferred('cumberland')" id="CumberlandCampusSelector">Cumberland</a>
                   </div>
               </div>
-              <div class="quicklinks col-md-9 no-padding">
+              <div class="quicklinks d-none d-sm-block col-sm-6 col-md-8 no-padding">
                   <div class="d-inline-block">
+                      <a href="/CommunityServices">Community</a>
                       <a href="/CurrentStudents">Current Students</a>
                       <a href="/Parents">Parents</a>
-                      <a href="#">|</a>
-                      <a href="/Courses">Courses</a>
-                      <a href="/Directory">Directory</a>
-                      <a href="/CampusMap">Directions</a>
-                      <a href="/Foundation/Donate">Give</a>
-                      <a href="/Internships" class="last">Internships</a>
+                      <div class="d-mm-none d-inline-block">
+                        <a href="#">|</a>
+                        <a href="/Courses">Courses</a>
+                        <a href="/Directory">Directory</a>
+                        <a href="/CampusMap">Directions</a>
+                        <a href="/Internships" class="last">Internships</a>
+                      </div>
+                        
                   </div>
               </div>
           </div>
@@ -63,7 +85,7 @@
       <div class="container">
           <div class="row mlr-0 cannot-hide">
               <a href="/Pages/Home.aspx" class="logo col-7 col-md-3 mlr-15">
-                  <img src="logo-wbg.png" alt="RCGC Logo" />
+                  <img src="../logo-wbg.png" alt="Rowan College Logo" />
               </a>
               <ul class="cd-header-buttons col-5 pr-0 d-md-none">
                   <li>
@@ -83,7 +105,7 @@
                   <a href="https://portal.rcgc.edu" id="p-link" class="button" tabindex="0">Portal Login
                   </a>
                   <a href="#" class="button" id="d-link" style="display: none;">
-                      Direct Links
+                       Quick Links 
                       
                       <span id="dl-end" style="display:none;">
                       </span>
@@ -94,6 +116,14 @@
                           <!--PS: Start of READ-ONLY PREVIEW (do not modify)--><div id="ctl00_g_1b889a18_7b62_41dd_9d92_4216a29f2d77" WebPart="true" __WebPartId="{1b889a18-7b62-41dd-9d92-4216a29f2d77}" __MarkupType="vsattributemarkup"></div><!--PE: End of READ-ONLY PREVIEW-->
                       <!--ME:</a57d54e1c:GCCNewsArticleRollupWP>-->
                       <!--CE: End Gig Werks - News Article Rollup WebPart Snippet-->
+                      <ul id="dir-active">
+                        <li><a href="#" target="_top"><i class="fa fa-cog" aria-hidden="true"></i>
+                     WebAdvisor</a> </li>
+                      <li><a href="#" target="_top"><i class="fa fa-desktop" aria-hidden="true"></i>
+                     Self-Service </a></li>
+                      <li><a href="#" target="_top"><i class="fa fa-book" aria-hidden="true"></i>
+                     MyCCC </a></li>
+                    </ul>
                   </a>
                   <a href="https://www.rcgc.edu/Apply" class="button" tabindex="0">Apply Now</a>
                   <div class="search__box col-12 col-md-4 no-padding order-first order-sm-first order-md-2 order-lg-2">
@@ -369,10 +399,10 @@
                 </li>
 
                 <li class="has-children top-nav-item">
-                  <a href="/WPDI">Community Services</a>
+                  <a href="/WPDI">Workforce Development</a>
                   <ul class="cd-secondary-nav is-hidden sub-nav">
                     <li class="go-back"><a href="#">Menu</a></li>
-                    <li class="see-all"><a href="/WPDI">Community Services</a></li>
+                    <li class="see-all"><a href="/WPDI">Workforce Development</a></li>
                     <li class="sub-nav-group">
                       <a class="featured" href="#" style="padding-right: 0;">
                         <img src="https://via.placeholder.com/325x160" alt="" style="padding-bottom: 0.5rem;">
@@ -424,86 +454,15 @@
   </header>
   <main class="cd-main-content">
     <img src="slider.jpg" alt="Slider">
-    <!-- <div class="yellow">
-      <div class="container no-padding">
-        <nav class="subsite text-align-center">
-          <h1 id="site-name" class="d-md-none"></h1>
-          <ul id="subsite-navigation" class="pd-md textBlack">
-            <li><a href="#" class="textBlack" target="_blank">Example Home</a> </li>
-            <li><a href="#" class="textBlack" target="_blank">Menu Direct</a></li>
-            <li class="subsite-navigation__top">
-                <a class="textBlack" href="#">Menu Dropdown #1</a>
-                <ul class="subsite-navigation__drop d-none">
-                  <li><a class="textBlack" href="#">Lorem</a></li>
-                  <li><a class="textBlack" href="#">Ipsum</a></li>
-                  <li><a class="textBlack" href="#">Dolor</a></li>
-                </ul>
-            </li>
-            <li class="subsite-navigation__top">
-                <a class="textBlack" href="#">Menu Dropdown #2</a>
-                <ul class="subsite-navigation__drop d-none">
-                  <li><a class="textBlack" href="#">Consectetur</a></li>
-                  <li><a class="textBlack" href="#">Adipisicing</a></li>
-                  <li><a class="textBlack" href="#">Molestias</a></li>
-                </ul>
-            </li>
-            <li><a href="#" target="_blank" class="textBlack subsite-navigation__direct">Menu Direct Link</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div> -->
-    <div class="yellow">
-      <div class="yellow subsite-navigation">
-        <nav class="subsite text-align-center container">
-          <span id="end-subnav"></span>
-                  <div id="currentSiteNav" class="ms-dialogHidden ms-forceWrap ms-noList"><div id="SubsiteNavigation" class="navigation">
-              <div><designertempnode name="PlaceHolderLeftNavBarTop"><designertempnode name="PlaceHolderQuickLaunchTop"><designertempnode name="PlaceHolderLeftNavBarDataSource"><designertempnode name="PlaceHolderCalendarNavigator"><designertempnode name="PlaceHolderLeftActions"><div id="ctl00_PlaceHolderMain_QuickLaunchNavigationManager">
-              <div id="zz10_V4QuickLaunchMenu" class=" noindex ms-core-listMenu-verticalBox">
-                <ul id="zz11_RootAspMenu" class="root ms-core-listMenu-root static">
-                  <li class="static">
-                    <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="/police-academy/home" accesskey="q"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Home</span></span></a></li>
-                  <li class="static">
-                    <span class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode">
-                      <span class="additional-background ms-navedit-flyoutArrow">
-                        <span class="menu-item-text">Getting Started</span>
-                      </span>
-                    </span>
-                    <ul class="static">
-                      <li class="static">
-                        <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="/police-academy/becoming-a-police-officer"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Becoming a Police Officer</span></span></a></li><li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="http://rowansj.edu/apply"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Applying to Rowan College</span></span></a></li><li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="http://rowansj.edu/future"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Request More Information</span></span></a></li>
-                    </ul>
-                  </li>
-                  <li class="static">
-                    <span class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode">
-                      <span class="additional-background ms-navedit-flyoutArrow">
-                        <span class="menu-item-text">Law &amp; Justice Programs</span>
-                      </span>
-                    </span>
-                    <ul class="static">
-                      <li class="static">
-                        <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="http://test.net"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">AA in Pre-Law</span></span></a></li><li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="http://crouton.net"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">AS in Criminal Justice</span></span></a></li><li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="http://crouton.net"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">AAS in Law Enforcement</span></span></a></li><li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="http://google.com"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">AAS in Paralegal</span></span></a></li>
-                    </ul>
-                  </li>
-                  <li class="static">
-                    <span class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode">
-                      <span class="additional-background ms-navedit-flyoutArrow">
-                        <span class="menu-item-text">In-Service Training</span>
-                      </span>
-                    </span>
-                    <ul class="static">
-                      <li class="static">
-                        <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="/police-academy/upcoming-courses"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Upcoming Courses</span></span></a></li><li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="http://google.com"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">In-Service Courses</span></span></a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div><designertempnode name="PlaceHolderQuickLaunchBottom"></designertempnode></designertempnode></designertempnode></designertempnode></designertempnode></designertempnode></div>
-          </div></div>
-        </nav>
-      </div>
-    </div>
     <section class="content-page white">
             <section class="page_area">
+              <div class="container">
+                <div class="row justify-content-center">
+                    <section class="title_ribbon">
+                        <h1>E-Learning</h1>
+                    </section>
+                </div>
+            </div>
                 <!-- <div class="container">
                     <div class="row justify-content-center">
                         <section class="title_ribbon">
@@ -512,25 +471,86 @@
                     </div>
                 </div> -->
               <div class="page container">
-                <div class="content row">
-                  <div class="col-sm-6 offset-sm-3 article">
+                <div class="content row article">
+                  <div class="col-md-3">
+                    <div class="subsite-navigation grey left">
+                      <nav class="subsite text-align-center">
+                        <span id="end-subnav"></span>
+                                <div id="currentSiteNav" class="ms-dialogHidden ms-forceWrap ms-noList"><div id="SubsiteNavigation" class="navigation">
+                            <div><designertempnode name="PlaceHolderLeftNavBarTop"><designertempnode name="PlaceHolderQuickLaunchTop"><designertempnode name="PlaceHolderLeftNavBarDataSource"><designertempnode name="PlaceHolderCalendarNavigator"><designertempnode name="PlaceHolderLeftActions"><div id="ctl00_PlaceHolderMain_QuickLaunchNavigationManager">
+                            <div id="zz10_V4QuickLaunchMenu" class=" noindex ms-core-listMenu-verticalBox">
+                              <ul id="zz11_RootAspMenu" class="root ms-core-listMenu-root static" style="">
+                                <!-- <li id="site-name"></li> -->
+                                <li class="static">
+                                  <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="/police-academy/home" accesskey="q"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Home</span></span></a></li>
+                                <li class="static">
+                                  <span class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode">
+                                    <span class="additional-background ms-navedit-flyoutArrow">
+                                      <span class="menu-item-text">Getting Started</span>
+                                    </span>
+                                  </span>
+                                  <ul class="static">
+                                    <li class="static">
+                                      <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="/police-academy/becoming-a-police-officer"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Becoming a Police Officer</span></span></a></li><li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="http://rowansj.edu/apply"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Applying to Rowan College</span></span></a></li><li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="http://rowansj.edu/future"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Request More Information</span></span></a></li>
+                                  </ul>
+                                </li>
+                                <li class="static">
+                                  <span class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode">
+                                    <span class="additional-background ms-navedit-flyoutArrow">
+                                      <span class="menu-item-text">Law &amp; Justice Programs</span>
+                                    </span>
+                                  </span>
+                                  <ul class="static">
+                                    <li class="static">
+                                      <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="http://test.net"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">AA in Pre-Law</span></span></a></li><li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="http://crouton.net"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">AS in Criminal Justice</span></span></a></li><li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="http://crouton.net"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">AAS in Law Enforcement</span></span></a></li><li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="http://google.com"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">AAS in Paralegal</span></span></a></li>
+                                  </ul>
+                                </li>
+                                <li class="static">
+                                  <span class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode">
+                                    <span class="additional-background ms-navedit-flyoutArrow">
+                                      <span class="menu-item-text">In-Service Training</span>
+                                    </span>
+                                  </span>
+                                  <ul class="static">
+                                    <li class="static">
+                                      <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="/police-academy/upcoming-courses"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Upcoming Courses</span></span></a></li><li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="http://google.com"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">In-Service Courses</span></span></a></li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div>
+                          </div><designertempnode name="PlaceHolderQuickLaunchBottom"></designertempnode></designertempnode></designertempnode></designertempnode></designertempnode></designertempnode></div>
+                        </div></div>
+                      </nav>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
                     <h1>
                         <span data-name="Page Field: Title"> 
                             
                                 
-                                Gloucester Pretzel Sales
+                                Page Title
                             
                         </span>
                     </h1>
-                        <div data-name="Page Field: Page Content"><div id="ctl00_PlaceHolderMain_ctl03_label" style="display:none">Page Content</div><div id="ctl00_PlaceHolderMain_ctl03__ControlWrapper_RichHtmlField" class="ms-rtestate-field" style="display:inline" aria-labelledby="ctl00_PlaceHolderMain_ctl03_label"><p style="text-align:center;">​​​<br></p></div>
+                        <div data-name="Page Field: Page Content"><div id="ctl00_PlaceHolderMain_ctl03_label" style="display:none">Page Content</div><div id="ctl00_PlaceHolderMain_ctl03__ControlWrapper_RichHtmlField" class="ms-rtestate-field" style="display:inline" aria-labelledby="ctl00_PlaceHolderMain_ctl03_label">
+                          <p><span class="ms-rteThemeForeColor-2-0">Are you taking an online course at Rowan College? This website will provide you with information related to online learning, as well as support resources if you are experiencing issues with your online course(s). <br></span></p><p><br><span class="ms-rteThemeForeColor-2-0"></span></p><p><span class="ms-rteThemeForeColor-2-0">Rowan College offers three types of eLearning courses: </span></p><ol><li><strong>Online:</strong> All content, meetings through the LMS (BlackBoard).</li><li><strong>Hybrid:</strong> Some meetings in-person, the remainder of quizzes, assignments, etc through BlackBoard.</li><li><strong>Web-enhanced:</strong> Most or all meetings in-person, quizzes, assignments, etc maybe administered through either in-person meetings or via Blackboard.</li></ol><div><br></div><p><span class="ms-rteThemeForeColor-2-0">Students may find that online courses require more self-motivation and better time management skills than traditional face-to-face courses. </span><a href="/elearning-site/Pages/Unified-Is%20eLearning%20Right.docx"><span class="ms-rteThemeForeColor-2-0">Take this quick quiz to help you determine whether online courses are right for you.</span></a></p><p><ul><li>Test 1</li>
+                          <li>Test 2</li>
+                          <li>Test 3</li></ul></p><p><br class="ms-rteThemeForeColor-2-0"></p><table class="ms-rteTable-0" width="100%" cellspacing="0"><tbody><tr class="ms-rteTableEvenRow-0"><td class="ms-rteTableEvenCol-0" style="width:50%;"><h2><span class="ms-rteThemeForeColor-2-0">Student Quick Links</span></h2><p><strong class="ms-rteThemeForeColor-2-0">Student Help Center</strong></p><p><strong class="ms-rteThemeForeColor-2-0">Is eLearning Right for You? Quiz</strong></p><p><strong class="ms-rteThemeForeColor-2-0">Technical Requirements</strong></p><p><strong class="ms-rteThemeForeColor-2-0">Maintenance Schedules</strong></p><p><strong class="ms-rteThemeForeColor-2-0">&nbsp;</strong></p></td><td class="ms-rteTableOddCol-0" style="width:50%;"><h2><span class="ms-rteThemeForeColor-2-0">Faculty Quick Links</span></h2><p><strong class="ms-rteThemeForeColor-2-0">Faculty Help Center</strong></p><p><strong class="ms-rteThemeForeColor-2-0">Center for Teaching &amp; Learning</strong></p><p><strong class="ms-rteThemeForeColor-2-0">Technical Requirements</strong></p><p><strong class="ms-rteThemeForeColor-2-0">Maintenance Schedules</strong></p><p><strong class="ms-rteThemeForeColor-2-0">&nbsp;</strong></p></td></tr></tbody></table>
+                        </div>
 
                     </div>
-                    <div>
+                    <div id="appliesTo">
                         
                         
-                        Gloucester
+                        ;
                         
                     </div>
+                  </div>
+                  <div class="col-md-3">
+                    <section id="navigationExplorer">
+                      <a href="https://www.rcgc.edu" id="gloucesterNavigatorAction" class="button">Gloucester Campus »</a>
+                      <a href="http://www.cccnj.edu" id="cumberlandNavigatorAction" class="button">Cumberland Campus »</a>
+                    </section>
                   </div>
                 </div>
               </div>
@@ -601,8 +621,10 @@
 <script src="packages/mega-site-navigation/js/jquery-2.1.1.js"></script>
 <script src="packages/mega-site-navigation/js/jquery.mobile.custom.min.js"></script>
 <script src="packages/mega-site-navigation/js/main.js"></script>
+<script type="text/javascript" src="js/direct-links.js" defer="defer"></script>
 <script src="packages/mega-site-navigation/js/sharepoint-navigation-converter.js"></script>
-<script src="js/sub-nav.js"></script>
+<script src="js/sub-nav.js" defer="defer"></script>
+<script src="js/preferred.js" defer="defer"></script>
  <!-- Resource jQuery -->
 <span style="display: none;" class="nav-start"></span>
 </body>

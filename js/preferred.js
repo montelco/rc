@@ -1,11 +1,9 @@
 const campusSelector = document.querySelector("#appliesTo");
 let campuses = campusSelector.innerHTML;
-
-
 const navigatorExplorer = document.querySelector("#navigationExplorer");
-
 let multiCampus = null;
 let threshold = 7;
+const expireInDays = 730;
 
 document.addEventListener("DOMContentLoaded", function() {
   readPreferred(sanitize(campuses));
@@ -81,20 +79,28 @@ function checkThreshold (campus) {
 
 function readPreferred(campus) {
   let preferred = document.cookie.indexOf('preferred');
-  if (preferred != -1) {
-    if(getCookieValue("preferred") === "none") {
-      return;
+  let editor = window.location.href.indexOf('//manage.');
+  if (editor == -1) {
+    if (preferred != -1) {
+      if(getCookieValue("preferred") === "none") {
+        return;
+      } else {
+        highlightPreferred();
+        doesNavigatorActionExist(getCookieValue("preferred"));
+      }
     } else {
-      doesNavigatorActionExist(getCookieValue("preferred"));
+      return checkThreshold(campus);
     }
-  } else {
-    return checkThreshold(campus);
   }
 }
 
 function createPreferred(campus) {
-  let cookieValue = "preferred=" + campus;
-  return document.cookie = cookieValue;
+  let date = new Date();
+  date.setTime(date.getTime()+(expireInDays*24*60*60*1000));
+  expires = "; expires="+date.toGMTString();
+  let cookieValue = "preferred=" + campus + expires + ";path=/";
+  document.cookie = cookieValue;
+  return highlightPreferred();
 }
 
 function doesNavigatorActionExist(preferred) {
@@ -106,4 +112,27 @@ function doesNavigatorActionExist(preferred) {
       window.location.replace(URL);
     }
   }
+}
+
+function highlightPreferred() {
+  let cuPicker = document.getElementById("CumberlandCampusSelector");
+  let cuQuickLinks = document.getElementsByClassName('qlCumberlandCampus');
+  let glPicker = document.getElementById("GloucesterCampusSelector");
+  console.log(cuQuickLinks);
+  if (getCookieValue("preferred") === 'cumberland') {
+    cuPicker.classList.add("yellow");
+    cuPicker.classList.add("textBlack");
+    cuPicker.classList.add("last");
+    cuPicker.classList.add("pd-sm");
+    cuQuickLinks.setAttribute('id', 'dir-active');
+    cuQuickLinks.classList.remove('d-none');
+    return;
+  } else if (getCookieValue("preferred") === 'gloucester') {
+    glPicker.classList.add("yellow");
+    glPicker.classList.add("textBlack");
+    glPicker.classList.add("last");
+    glPicker.classList.add("pd-sm");
+    return;
+  }
+  
 }
