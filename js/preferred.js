@@ -86,6 +86,7 @@ function readPreferred(campus) {
         return;
       } else {
         highlightPreferred();
+        swapLogo();
         doesNavigatorActionExist(getCookieValue("preferred"));
       }
     } else {
@@ -134,5 +135,15 @@ function highlightPreferred() {
     glPicker.classList.add("pd-sm");
     return;
   }
-  
+}
+
+function swapLogo() {
+  let logo = document.getElementById("rowanSJLogo");
+  if (getCookieValue("preferred") === 'cumberland') {
+    logo.src = '/Style%20Library/logo-wbg-cu.png';
+  } else if (getCookieValue("preferred") === 'gloucester') {
+    logo.src = '/Style%20Library/logo-wbg-gl.png';
+  } else {
+    logo.src = '/Style%20Library/logo-wbg.png';
+  }
 }

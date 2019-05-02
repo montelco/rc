@@ -169,3 +169,25 @@ header + main {
     border-radius: 4px;
   }
 }
+
+section.home {
+  min-height: 72vh;
+}
+
+video#bgvid {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  // width: auto;
+  // height: auto;
+  z-index: -100;
+  // -ms-transform: translateX(-50%) translateY(-50%);
+  // -moz-transform: translateX(-50%) translateY(-50%);
+  // -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateY(50%);
+  background-color: #666;
+  background-size: cover;
+  overflow: hidden;
+}
