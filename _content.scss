@@ -158,7 +158,7 @@ header + main {
 }
 
 #navigationExplorer {
-  .button {
+  a {
     background: $qnBlue;
     display: block;
     color: $ltBlue;
@@ -167,6 +167,27 @@ header + main {
     padding: 0.5rem;
     margin-bottom: 1rem;
     border-radius: 4px;
+    -webkit-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+
+    &:after {
+      content: ' »';
+      display: inline;
+    }
+    &:hover {
+      background: darken($qnBlue, 5%);
+      -webkit-transition: 0.25s ease-in-out;
+      -o-transition: 0.25s ease-in-out;
+      transition: 0.25s ease-in-out;
+
+    }
+    &:focus {
+      background: darken($qnBlue, 10%);
+      -webkit-transition: 0.25s ease-in-out;
+      -o-transition: 0.25s ease-in-out;
+      transition: 0.25s ease-in-out;
+    }
   }
 }
 

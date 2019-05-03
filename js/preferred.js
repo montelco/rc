@@ -4,6 +4,7 @@ const navigatorExplorer = document.querySelector("#navigationExplorer");
 let multiCampus = null;
 let threshold = 7;
 const expireInDays = 730;
+let maintenance = document.querySelector('#dir-active');
 
 document.addEventListener("DOMContentLoaded", function() {
   readPreferred(sanitize(campuses));
@@ -87,6 +88,7 @@ function readPreferred(campus) {
       } else {
         highlightPreferred();
         swapLogo();
+        changeLink();
         doesNavigatorActionExist(getCookieValue("preferred"));
       }
     } else {
@@ -121,20 +123,20 @@ function highlightPreferred() {
   let glPicker = document.getElementById("GloucesterCampusSelector");
   console.log(cuQuickLinks);
   if (getCookieValue("preferred") === 'cumberland') {
-    cuPicker.classList.add("yellow");
-    cuPicker.classList.add("textBlack");
-    cuPicker.classList.add("last");
-    cuPicker.classList.add("pd-sm");
+    cuPicker.classList.add("yellow", "textBlack", "last", "pd-sm");
+    glPicker.classList = '';
     cuQuickLinks.setAttribute('id', 'dir-active');
     cuQuickLinks.classList.remove('d-none');
     return;
   } else if (getCookieValue("preferred") === 'gloucester') {
-    glPicker.classList.add("yellow");
-    glPicker.classList.add("textBlack");
-    glPicker.classList.add("last");
-    glPicker.classList.add("pd-sm");
+    glPicker.classList.add("yellow", "textBlack", "last", "pd-sm");
+    cuPicker.classList = '';
     return;
   }
+}
+
+function changeLinks() {
+
 }
 
 function swapLogo() {

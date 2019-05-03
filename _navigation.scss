@@ -91,9 +91,8 @@ li.subnav__topLevel-listItems a, a.subsite-navigation__top-link .menu-item-text 
 
   @include media(mm) {
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
     margin-right: auto;
+    margin-bottom: 1.5rem;
     margin-left: auto;
     border-radius: 4px;
   }
