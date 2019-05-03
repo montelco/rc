@@ -178,8 +178,56 @@ $link-hover-color:          darken($link-color, 15%) !default;
 $link-hover-decoration:     underline !default;
 
 // Table
+$border-width:                1px !default;
+$border-color:                $gray-300 !default;
+$border-radius:               4px !default;
+
 $table-cell-padding:          .75rem !default;
+$table-cell-padding-sm:       .3rem !default;
+
+$table-color:                 $body-color !default;
+$table-bg:                    null !default;
+$table-accent-bg:             rgba($black, .05) !default;
+$table-hover-color:           $table-color !default;
+$table-hover-bg:              rgba($black, .075) !default;
+$table-active-bg:             $table-hover-bg !default;
+
+$table-border-width:          $border-width !default;
+$table-border-color:          $border-color !default;
+
+$table-head-bg:               $gray-200 !default;
+$table-head-color:            $gray-700 !default;
+
+$table-dark-color:            $white !default;
+$table-dark-bg:               $gray-800 !default;
+$table-dark-accent-bg:        rgba($white, .05) !default;
+$table-dark-hover-color:      $table-dark-color !default;
+$table-dark-hover-bg:         rgba($white, .075) !default;
+$table-dark-border-color:     lighten($table-dark-bg, 7.5%) !default;
+
+$table-striped-order:         odd !default;
+
 $table-caption-color:         $text-muted !default;
+
+$table-bg-level:              -9 !default;
+$table-border-level: -6 !default;
+
+// Toasts
+
+$toast-max-width:                   350px !default;
+$toast-padding-x:                   .75rem !default;
+$toast-padding-y:                   .25rem !default;
+$toast-font-size:                   .875rem !default;
+$toast-color:                       null !default;
+$toast-background-color:            rgba($white, .85) !default;
+$toast-border-width:                1px !default;
+$toast-border-color:                rgba(0, 0, 0, .1) !default;
+$toast-border-radius:               $border-radius !default;
+$toast-box-shadow:                  0 .25rem .75rem rgba($black, .1) !default;
+
+$toast-header-color:                $gray-600 !default;
+$toast-header-background-color:     rgba($white, .85) !default;
+$toast-header-border-color: rgba(0, 0, 0, .05) !default;
 
 // Label
 $label-margin-bottom:                   .5rem !default;
