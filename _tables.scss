@@ -1,4 +1,7 @@
-.table {
+@import 'mixins/table-row';
+
+.table,
+.page .article table {
   width: 100%;
   margin-bottom: $spacer;
   color: $table-color;

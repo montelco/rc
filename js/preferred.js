@@ -67,15 +67,20 @@ function getCookieValue(cname) {
 
 function checkThreshold (campus) {
   if (getCookieValue(campus) >= threshold) {
-    let isPreferred = confirm("You've gone to several " + campus.charAt(0).toUpperCase() + campus.slice(1) + " pages. Would you like to set it as your preferred campus? (You can always change this later.)");
-    if (isPreferred) {
-      return createPreferred(campus);
-    } else {
-      return document.cookie = "preferred=none";
-    }
+    let toast = toastPopped(campus.charAt(0).toUpperCase() + campus.slice(1));
+
+    // if (isPreferred) {
+    //   return createPreferred(campus);
+    // } else {
+    //   return document.cookie = "preferred=none";
+    // }
   } else {
     checkIfExists(sanitize(campuses), multipleCampusesChecker(sanitize(campuses)));
   }
+}
+
+function toastPopped(campus) {
+  toastr['info']('<p>You\'ve gone to several ' + campus + ' pages. Would you like to set it as your preferred campus. (You can change this at any time.)</p><div><button type="button" id="setPreferred" class="btn btn-primary">Set Preferred</button><button type="button" id="noPreferred" class="btn" style="margin: 0 8px 0 8px">No Thanks</button></div>');
 }
 
 function readPreferred(campus) {
