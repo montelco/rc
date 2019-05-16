@@ -155,6 +155,24 @@ header + main {
 
   }
 
+  // Is a link within a content zone
+  div[data-name^="Page Field: Page Content"] a {
+    a {
+      color: $pc-link-color;
+      text-decoration: $pc-link-decoration;
+      background-color: transparent;
+      -webkit-text-decoration-skip: objects;
+      @include hover {
+        color: $pc-link-hover-color;
+        text-decoration: $pc-link-hover-decoration;
+      }
+      &:visited {
+        color: $pc-link-visited-color;
+        text-decoration: $pc-link-visited-decoration;
+      }
+    }
+  }
+
 }
 
 #navigationExplorer {
