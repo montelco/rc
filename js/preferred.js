@@ -140,7 +140,7 @@ function highlightPreferred() {
   }
 }
 
-function changeLinks() {
+function changeCampusLogins() {
 
 }
 

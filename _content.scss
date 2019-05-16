@@ -253,6 +253,7 @@ video#bgvid {
   transform: translate(-50%, -50%);
   background-color: #666;
   background-size: cover;
+  z-index: -100;
 
   @include media(mo) {
     display: none !important;
