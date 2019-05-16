@@ -123,6 +123,13 @@ a[id*="ExplicitLogin"][href*="www"]{
   width: 100% !important;
 }
 
+li > a.ms-core-listMenu-item.ms-core-listMenu-selected:hover,
+li > a.ms-core-listMenu-item:hover,
+li > a.ms-core-listMenu-item:active {
+  background: none;
+  text-decoration: underline;
+}
+
 // @import 'corev15';
 
 footer {

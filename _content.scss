@@ -156,7 +156,7 @@ header + main {
   }
 
   // Is a link within a content zone
-  div[data-name^="Page Field: Page Content"] a {
+  div[data-name*="Page Field: Page Content"] {
     a {
       color: $pc-link-color;
       text-decoration: $pc-link-decoration;
