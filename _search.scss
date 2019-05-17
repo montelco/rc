@@ -168,7 +168,8 @@ ul#dir-active {
   overflow: hidden !important;
 }
 
-.ms-srch-sb > .ms-srch-sb-searchLink {
+.ms-srch-sb > .ms-srch-sb-searchLink,
+.ms-srch-sb > .ms-srch-sb-navLink {
   margin-left: -1px !important;
   height: 20px !important;
   width: 20px !important;

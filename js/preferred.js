@@ -4,7 +4,6 @@ const navigatorExplorer = document.querySelector("#navigationExplorer");
 let multiCampus = null;
 let threshold = 7;
 const expireInDays = 730;
-let maintenance = document.querySelector('#dir-active');
 
 document.addEventListener("DOMContentLoaded", function() {
   readPreferred(sanitize(campuses));
@@ -67,20 +66,15 @@ function getCookieValue(cname) {
 
 function checkThreshold (campus) {
   if (getCookieValue(campus) >= threshold) {
-    let toast = toastPopped(campus.charAt(0).toUpperCase() + campus.slice(1));
-
-    // if (isPreferred) {
-    //   return createPreferred(campus);
-    // } else {
-    //   return document.cookie = "preferred=none";
-    // }
+    let isPreferred = confirm("You've gone to several " + campus.charAt(0).toUpperCase() + campus.slice(1) + " pages. Would you like to set it as your preferred campus? (You can always change this later.)");
+    if (isPreferred) {
+      return createPreferred(campus);
+    } else {
+      return document.cookie = "preferred=none";
+    }
   } else {
     checkIfExists(sanitize(campuses), multipleCampusesChecker(sanitize(campuses)));
   }
-}
-
-function toastPopped(campus) {
-  toastr['info']('<p>You\'ve gone to several ' + campus + ' pages. Would you like to set it as your preferred campus. (You can change this at any time.)</p><div><button type="button" id="setPreferred" class="btn btn-primary">Set Preferred</button><button type="button" id="noPreferred" class="btn" style="margin: 0 8px 0 8px">No Thanks</button></div>');
 }
 
 function readPreferred(campus) {
@@ -92,8 +86,6 @@ function readPreferred(campus) {
         return;
       } else {
         highlightPreferred();
-        swapLogo();
-        changeLink();
         doesNavigatorActionExist(getCookieValue("preferred"));
       }
     } else {
@@ -127,21 +119,22 @@ function highlightPreferred() {
   let cuQuickLinks = document.getElementsByClassName('qlCumberlandCampus');
   let glPicker = document.getElementById("GloucesterCampusSelector");
   console.log(cuQuickLinks);
+  swapLogo();
   if (getCookieValue("preferred") === 'cumberland') {
-    cuPicker.classList.add("yellow", "textBlack", "last", "pd-sm");
-    glPicker.classList = '';
+    cuPicker.classList.add("yellow");
+    cuPicker.classList.add("textBlack");
+    cuPicker.classList.add("last");
+    cuPicker.classList.add("pd-sm");
     cuQuickLinks.setAttribute('id', 'dir-active');
     cuQuickLinks.classList.remove('d-none');
     return;
   } else if (getCookieValue("preferred") === 'gloucester') {
-    glPicker.classList.add("yellow", "textBlack", "last", "pd-sm");
-    cuPicker.classList = '';
+    glPicker.classList.add("yellow");
+    glPicker.classList.add("textBlack");
+    glPicker.classList.add("last");
+    glPicker.classList.add("pd-sm");
     return;
   }
-}
-
-function changeCampusLogins() {
-
 }
 
 function swapLogo() {
@@ -153,4 +146,8 @@ function swapLogo() {
   } else {
     logo.src = '/Style%20Library/logo-wbg.png';
   }
+}
+
+function toastPopped(campus) {
+  toastr['info']('<p>You\'ve gone to several ' + campus + ' pages. Would you like to set it as your preferred campus. (You can change this at any time.)</p><div><button type="button" id="setPreferred" onclick="setPreferred()" class="btn btn-primary">Set Preferred</button><button type="button" id="noPreferred" class="btn" style="margin: 0 8px 0 8px">No Thanks</button></div>');
 }
