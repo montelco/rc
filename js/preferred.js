@@ -66,12 +66,8 @@ function getCookieValue(cname) {
 
 function checkThreshold (campus) {
   if (getCookieValue(campus) >= threshold) {
-    let isPreferred = confirm("You've gone to several " + campus.charAt(0).toUpperCase() + campus.slice(1) + " pages. Would you like to set it as your preferred campus? (You can always change this later.)");
-    if (isPreferred) {
-      return createPreferred(campus);
-    } else {
-      return document.cookie = "preferred=none";
-    }
+    let toast = toastPopped(campus.charAt(0).toUpperCase() + campus.slice(1));
+    return;
   } else {
     checkIfExists(sanitize(campuses), multipleCampusesChecker(sanitize(campuses)));
   }
@@ -91,6 +87,16 @@ function readPreferred(campus) {
     } else {
       return checkThreshold(campus);
     }
+  }
+}
+
+function preference(preferred, campus) {
+  if(preferred){
+    createPreferred(campus);
+    return;
+  } else {
+    createPreferred("none");
+    return;
   }
 }
 
@@ -118,7 +124,7 @@ function highlightPreferred() {
   let cuPicker = document.getElementById("CumberlandCampusSelector");
   let cuQuickLinks = document.getElementsByClassName('qlCumberlandCampus');
   let glPicker = document.getElementById("GloucesterCampusSelector");
-  console.log(cuQuickLinks);
+  // console.log(cuQuickLinks);
   swapLogo();
   if (getCookieValue("preferred") === 'cumberland') {
     cuPicker.classList.add("yellow");
@@ -138,16 +144,16 @@ function highlightPreferred() {
 }
 
 function swapLogo() {
-  let logo = document.getElementById("rowanSJLogo");
-  if (getCookieValue("preferred") === 'cumberland') {
-    logo.src = '/Style%20Library/logo-wbg-cu.png';
-  } else if (getCookieValue("preferred") === 'gloucester') {
-    logo.src = '/Style%20Library/logo-wbg-gl.png';
-  } else {
-    logo.src = '/Style%20Library/logo-wbg.png';
-  }
+  // let logo = document.getElementById("rowanSJLogo");
+  // if (getCookieValue("preferred") === 'cumberland') {
+  //   logo.src = '/Style%20Library/logo-wbg-cu.png';
+  // } else if (getCookieValue("preferred") === 'gloucester') {
+  //   logo.src = '/Style%20Library/logo-wbg-gl.png';
+  // } else {
+  //   logo.src = '/Style%20Library/logo-wbg.png';
+  // }
 }
 
 function toastPopped(campus) {
-  toastr['info']('<p>You\'ve gone to several ' + campus + ' pages. Would you like to set it as your preferred campus. (You can change this at any time.)</p><div><button type="button" id="setPreferred" onclick="setPreferred()" class="btn btn-primary">Set Preferred</button><button type="button" id="noPreferred" class="btn" style="margin: 0 8px 0 8px">No Thanks</button></div>');
+  toastr['info']('<p>You\'ve gone to several ' + campus + ' pages. Would you like to set it as your preferred campus. (You can change this at any time.)</p><div><button type="button" id="setPreferred" onclick="preference(true)" class="btn btn-primary">Set Preferred</button><button type="button" id="noPreferred" class="btn" onclick="preference(false)" style="margin: 0 8px 0 8px">No Thanks</button></div>');
 }
