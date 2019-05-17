@@ -180,9 +180,9 @@ $link-hover-decoration:     underline !default;
 // Page Content (PC) Area Variables
 $pc-link-color:                theme-color("primary") !default;
 $pc-link-decoration:           underline !default;
-$pc-link-hover-color:          darken($pc-link-color, 10%) !default;
+$pc-link-hover-color:          lighten($pc-link-color, 5%) !default;
 $pc-link-hover-decoration:     underline !default;
-$pc-link-visited-color:        darken($pc-link-color, 20%) !default;
+$pc-link-visited-color:        $purple !default;
 $pc-link-visited-decoration:   underline !default;
 
 // Table
