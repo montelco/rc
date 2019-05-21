@@ -73,7 +73,8 @@
   font-weight: 600 !important;
 }
 
-#d-link {
+#d-link,
+.login-action {
   .brt-none {
     border-top-right-radius: 0 !important;
     border-top-left-radius: 0 !important;
@@ -84,7 +85,8 @@
   }
 }
 
-ul#dir-active {
+ul#dir-active,
+ul.dropdown-menu {
   display: none;
   width: 100%!important;
   margin: 0!important;
@@ -93,7 +95,8 @@ ul#dir-active {
   right: 0!important;
 }
 
-#dir-active {
+#dir-active,
+.dropdown-menu {
   background-color: #dab62a !important;
   position: absolute;
   min-height: 50px;

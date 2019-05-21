@@ -8,17 +8,37 @@ jQuery(document).ready(function() {
     var contents = $("#dir-active");
     contents.detach();
     contents.insertAfter('#dl-end');
-
-    var myTimeout;
-    $("#d-link").on('click', function(){
-      $("#dir-active").toggle(10);
-      $("#d-link").toggleClass('brb-none');
-      $("#dir-active").toggleClass('brt-none');
-    });
   }
+
   if (!$("#dir-active").length > 0) {
     $('#frame-links').hide();
     var button = $("#p-link");
     button.show();
   }
+
+  var contents = $("#qlCampusPicker");
+  contents.detach();
+  contents.insertAfter('#cl-end');
+
+  var contents = $("#qlCumberlandCampus");
+  contents.detach();
+  contents.insertAfter('#cuql-end');
+
+  var myTimeout;
+  $(".login-action").on('click', function(e){
+    if ($(this).hasClass('no-menu')) {
+      return;
+    } else {
+      e.preventDefault();
+      $(this).children(".dropdown-menu").toggle(1);
+      $(this).toggleClass('brb-none');
+      $(this).children(".dropdown-menu").toggleClass('brt-none');
+    }
+  });
+
+  $(".login-intent").on('click', function(e){
+    e.preventDefault();
+    createPreferred($(this).data('campus'))
+    return window.location.href = $(this).attr('href');
+  });
 });

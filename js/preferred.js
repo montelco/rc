@@ -79,12 +79,15 @@ function readPreferred(campus) {
   if (editor == -1) {
     if (preferred != -1) {
       if(getCookieValue("preferred") === "none") {
+        changeLinks("default");
         return;
       } else {
         highlightPreferred();
+        changeLinks(getCookieValue("preferred"));
         doesNavigatorActionExist(getCookieValue("preferred"));
       }
     } else {
+      changeLinks("default");
       return checkThreshold(campus);
     }
   }
@@ -106,14 +109,16 @@ function createPreferred(campus) {
   expires = "; expires="+date.toGMTString();
   let cookieValue = "preferred=" + campus + expires + ";path=/";
   document.cookie = cookieValue;
-  return highlightPreferred();
+  highlightPreferred();
+  return true;
 }
 
 function doesNavigatorActionExist(preferred) {
   if (navigatorExplorer != null) {
     let navigationAction = "#" + preferred + "NavigatorAction";
+    let intent = navigationAction.dataset.intent;
     let navigationActionButton = document.querySelector(navigationAction);
-    if (navigationActionButton != null) {
+    if (navigationActionButton != null && intent == '1') {
       let URL = navigationActionButton.href;
       window.location.replace(URL);
     }
@@ -122,24 +127,55 @@ function doesNavigatorActionExist(preferred) {
 
 function highlightPreferred() {
   let cuPicker = document.getElementById("CumberlandCampusSelector");
-  let cuQuickLinks = document.getElementsByClassName('qlCumberlandCampus');
   let glPicker = document.getElementById("GloucesterCampusSelector");
   // console.log(cuQuickLinks);
   swapLogo();
   if (getCookieValue("preferred") === 'cumberland') {
-    cuPicker.classList.add("yellow");
-    cuPicker.classList.add("textBlack");
-    cuPicker.classList.add("last");
-    cuPicker.classList.add("pd-sm");
-    cuQuickLinks.setAttribute('id', 'dir-active');
-    cuQuickLinks.classList.remove('d-none');
-    return;
+    cuPicker.classList.add("yellow", "textBlack", "last", "pd-sm");
+    glPicker.classList.remove("yellow", "textBlack", "last", "pd-sm");
+    return true;
   } else if (getCookieValue("preferred") === 'gloucester') {
-    glPicker.classList.add("yellow");
-    glPicker.classList.add("textBlack");
-    glPicker.classList.add("last");
-    glPicker.classList.add("pd-sm");
-    return;
+    glPicker.classList.add("yellow", "textBlack", "last", "pd-sm");
+    cuPicker.classList.remove("yellow", "textBlack", "last", "pd-sm");
+    return true;
+  }
+}
+
+function detectMaintenance(webpart) {
+  if (document.getElementById('maintenanceMenu').length > 0) {
+
+  }
+}
+
+function loginClick(campus) {
+  return console.log($(this));
+  // createPreferred(campus);
+  // window.location.replace(action);
+}
+
+function changeLinks(campus) {
+  let portal = document.querySelector('#p-link');
+  let quicklinks = document.querySelector('#cu-link');
+  let campuspicker = document.querySelector('#campusLogin-link');
+
+  if (campus == "cumberland") {
+    // let cuQuickLinks = document.getElementsByClassName('qlCumberlandCampus');
+    // let cuButton = document.getElementById('cu-link');
+    // cuQuickLinks.setAttribute('id', 'dropdown-active');
+    // cuQuickLinks.classList.remove('d-none');
+    portal.parentNode.removeChild(portal);
+    campuspicker.parentNode.removeChild(campuspicker);
+  } else if(campus == "gloucester") {
+    campuspicker.parentNode.removeChild(campuspicker);
+    quicklinks.parentNode.removeChild(quicklinks);
+  } else if(campus == "default"){
+    let campusLogins = document.getElementById('qlCampusPicker');
+    let campusButton = document.getElementById('campusLogin-link');
+    campusLogins.setAttribute('id', 'dropdown-active');
+    campusLogins.classList.remove('d-none');
+    campusButton.classList.remove('d-none');
+    portal.parentNode.removeChild(portal);
+    quicklinks.parentNode.removeChild(quicklinks);
   }
 }
 
@@ -157,3 +193,4 @@ function swapLogo() {
 function toastPopped(campus) {
   toastr['info']('<p>You\'ve gone to several ' + campus + ' pages. Would you like to set it as your preferred campus. (You can change this at any time.)</p><div><button type="button" id="setPreferred" onclick="preference(true)" class="btn btn-primary">Set Preferred</button><button type="button" id="noPreferred" class="btn" onclick="preference(false)" style="margin: 0 8px 0 8px">No Thanks</button></div>');
 }
+

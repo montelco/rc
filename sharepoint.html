@@ -102,29 +102,28 @@
               </ul>
               <!-- cd-header-buttons -->
               <div class="search col-12 offset-md-1 col-md-8 d-flex justify-content-between justify-content-md-end align-items-center no-padding flex-wrap can-hide">
-                  <a href="https://portal.rcgc.edu" id="p-link" class="button" tabindex="0">Portal Login
+                  <!-- Default Login -->
+                  <a href="#" id="campusLogin-link" class="login-action button" tabindex="0">Campus Login<span id="cl-end" style="display:none;"></span></a>
+                  <ul id="qlCampusPicker" class="dropdown-menu">
+                    <li><a href="https://portal.rcgc.edu" class="login-intent" data-campus="gloucester" target="_top"><i class="fa fa-desktop" aria-hidden="true"></i>Gloucester </a></li>
+                    <li><a href="http://www.cccnj.edu/current-students" class="login-intent" data-campus="cumberland" target="_top"><i class="fa fa-link" aria-hidden="true"></i>Cumberland </a></li>
+                  </ul>
+
+                  <!-- Gloucester Campus Login -->
+                  <a href="https://portal.rcgc.edu" id="p-link" class="login-action no-menu button" tabindex="0">Portal Login</a>
+
+                  <!-- Cumberland Campus Login -->
+                  <a href="#" class="login-action button" id="cu-link">Quick Links <span id="cuql-end" style="display:none;"></span>
                   </a>
-                  <a href="#" class="button" id="d-link" style="display: none;">
-                       Quick Links 
-                      
-                      <span id="dl-end" style="display:none;">
-                      </span>
-                      <!--CS: Start Gig Werks - News Article Rollup WebPart Snippet-->
-                      <!--SPM:<%@Register Tagprefix="spsswc"  Namespace="Microsoft.Office.Server.Search.WebControls" Assembly="Microsoft.Office.Server.Search, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>-->
-                      <!--SPM:<%@Register Tagprefix="a57d54e1c"  Namespace="gigwerks.gcc.webcomponents.WebParts.GCCNewsArticleRollupWP" Assembly="gigwerks.gcc.webcomponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8fd9dce341bf8bd9" %>-->
-                      <!--MS:<a57d54e1c:GCCNewsArticleRollupWP runat="server" ListName="Portal Login Switch" Category="Home Page" ItemLimit="1" ItemTemplate="{{%-Body-%}}" Description="Displays News Article Rollup based on configuration specified in WebPart settings." ImportErrorMessage="&#60;%$Resources:core,ImportErrorMessage;%&#62;" Title="Portal Login Switch" ID="g_1b889a18_7b62_41dd_9d92_4216a29f2d77" WebPart="true" __WebPartId="{1b889a18-7b62-41dd-9d92-4216a29f2d77}" xmlns:__designer="SPD" __MarkupType="vsattributemarkup" IsClosed="false">-->
-                          <!--PS: Start of READ-ONLY PREVIEW (do not modify)--><div id="ctl00_g_1b889a18_7b62_41dd_9d92_4216a29f2d77" WebPart="true" __WebPartId="{1b889a18-7b62-41dd-9d92-4216a29f2d77}" __MarkupType="vsattributemarkup"></div><!--PE: End of READ-ONLY PREVIEW-->
-                      <!--ME:</a57d54e1c:GCCNewsArticleRollupWP>-->
-                      <!--CE: End Gig Werks - News Article Rollup WebPart Snippet-->
-                      <ul id="dir-active">
-                        <li><a href="#" target="_top"><i class="fa fa-cog" aria-hidden="true"></i>
-                     WebAdvisor</a> </li>
-                      <li><a href="#" target="_top"><i class="fa fa-desktop" aria-hidden="true"></i>
-                     Self-Service </a></li>
-                      <li><a href="#" target="_top"><i class="fa fa-book" aria-hidden="true"></i>
-                     MyCCC </a></li>
-                    </ul>
-                  </a>
+                  <ul id="qlCumberlandCampus" class="dropdown-menu">
+                    <li><a href="#" target="_top"><i class="fa fa-cog" aria-hidden="true"></i>WebAdvisor</a> </li>
+                    <li><a href="#" target="_top"><i class="fa fa-desktop" aria-hidden="true"></i>Self-Service </a></li>
+                    <li><a href="#" target="_top"><i class="fa fa-book" aria-hidden="true"></i>MyCCC </a></li>
+                  </ul>
+
+                  <!-- Gloucester Maintenance Links -->
+                  <a href="https://portal.rcgc.edu" id="d-link" class="login-action no-menu button" tabindex="0" style="display: none;">Direct Links<span id="dl-end" style="display:none;"></span></a>
+
                   <a href="https://www.rcgc.edu/Apply" class="button" tabindex="0">Apply Now</a>
                   <div class="search__box col-12 col-md-4 no-padding order-first order-sm-first order-md-2 order-lg-2">
                       <div data-name="SearchBox">
