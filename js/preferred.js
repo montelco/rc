@@ -90,11 +90,14 @@ function readPreferred(campus) {
       changeLinks("default");
       return checkThreshold(campus);
     }
+  } else {
+    changeLinks("default");
   }
 }
 
 function preference(preferred, campus) {
   if(preferred){
+    console.log('making preferred for' + campus);
     createPreferred(campus);
     return;
   } else {
@@ -199,6 +202,6 @@ function swapLogo() {
 }
 
 function toastPopped(campus) {
-  toastr['info']('<p>You\'ve gone to several ' + campus + ' pages. Would you like to set it as your preferred campus. (You can change this at any time.)</p><div><button type="button" id="setPreferred" onclick="preference(true)" class="btn btn-primary">Set Preferred</button><button type="button" id="noPreferred" class="btn" onclick="preference(false)" style="margin: 0 8px 0 8px">No Thanks</button></div>');
+  toastr['info']('<p>You\'ve gone to several ' + campus + ' pages. Would you like to set it as your preferred campus.<br/> (You can change this at any time.)</p><div class="button-container"><button type="button" id="setPreferred" onclick="preference(true, \'' + sanitize(campus) + '\')" class="btn btn-primary">Set Preferred</button><button type="button" id="noPreferred" class="btn" onclick="preference(false)" style="margin: 0 8px 0 8px">No Thanks</button></div>');
 }
 

@@ -35,7 +35,9 @@ jQuery(document).ready(function() {
 
   function label() {
     var site = $("section.title_ribbon h1").text();
-    $("#site-name").addClass('yellow').append("<a class='textBlack' href='#'><h1 class='pd-md'>" + site + " <span class='d-md-none'>Links »</span></h1></a>");
+    var url = window.location.pathname;
+    var home = url.substring(0, url.lastIndexOf("/") + 1);
+    $("#site-name").addClass('yellow').append("<a class='textBlack' href='"+home+"'><h1 class='pd-md'>" + site + " <span class='d-md-none'>Links »</span></h1></a>");
   }
 
   if (!checkWidth() && !hasCollapsed) {
