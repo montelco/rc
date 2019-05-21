@@ -16,13 +16,13 @@ jQuery(document).ready(function() {
     button.show();
   }
 
-  var contents = $("#qlCampusPicker");
-  contents.detach();
-  contents.insertAfter('#cl-end');
+  var picker = $("#qlCampusPicker");
+  picker.detach();
+  picker.insertBefore('#cl-end');
 
-  var contents = $("#qlCumberlandCampus");
-  contents.detach();
-  contents.insertAfter('#cuql-end');
+  var cumberland = $("#qlCumberlandCampus");
+  cumberland.detach();
+  cumberland.insertAfter('#cuql-end');
 
   var myTimeout;
   $(".login-action").on('click', function(e){

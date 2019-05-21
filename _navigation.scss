@@ -7,6 +7,30 @@ h6 {
   margin: 0 0 5px;
 }
 
+.campus-switcher {
+  padding: 0.25em;
+  &.active{
+    position: relative;
+    background: $yellow;
+    color: $coal;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    &:hover{
+      color: $coal;
+      background: #dab62a !important;
+      -webkit-transition: 0.25s ease-in-out !important;
+      -o-transition: 0.25s ease-in-out !important;
+      transition: 0.25s ease-in-out !important;
+      &:after{
+        content: '×';
+        position: absolute;
+        left: 0;
+        padding-left: 0.125rem;
+      }
+    }
+  }
+}
+
 header.cd-main-content{
   z-index: 4;
 }

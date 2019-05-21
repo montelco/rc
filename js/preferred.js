@@ -128,16 +128,25 @@ function doesNavigatorActionExist(preferred) {
 function highlightPreferred() {
   let cuPicker = document.getElementById("CumberlandCampusSelector");
   let glPicker = document.getElementById("GloucesterCampusSelector");
+  let message = "Remove your preferred campus";
+  let remover = 'createPreferred("none")';
   // console.log(cuQuickLinks);
   swapLogo();
   if (getCookieValue("preferred") === 'cumberland') {
-    cuPicker.classList.add("yellow", "textBlack", "last", "pd-sm");
-    glPicker.classList.remove("yellow", "textBlack", "last", "pd-sm");
+    cuPicker.classList.add("active");
+    cuPicker.setAttribute('title', message);
+    cuPicker.setAttribute('onclick', remover);
+    glPicker.classList.remove("active");
     return true;
   } else if (getCookieValue("preferred") === 'gloucester') {
-    glPicker.classList.add("yellow", "textBlack", "last", "pd-sm");
-    cuPicker.classList.remove("yellow", "textBlack", "last", "pd-sm");
+    glPicker.classList.add("active");
+    glPicker.setAttribute('title', message);
+    glPicker.setAttribute('onclick', remover);
+    cuPicker.classList.remove("active");
     return true;
+  } else {
+    cuPicker.classList.remove("active");
+    glPicker.classList.remove("active");
   }
 }
 
@@ -171,7 +180,6 @@ function changeLinks(campus) {
   } else if(campus == "default"){
     let campusLogins = document.getElementById('qlCampusPicker');
     let campusButton = document.getElementById('campusLogin-link');
-    campusLogins.setAttribute('id', 'dropdown-active');
     campusLogins.classList.remove('d-none');
     campusButton.classList.remove('d-none');
     portal.parentNode.removeChild(portal);
