@@ -155,6 +155,86 @@ header + main {
 
   }
 
+  .marketing-feature {
+    margin-bottom: 1em;
+    &__img {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+    &__body {
+      padding-left: 1rem !important;
+      flex: 0 0 75%;
+      max-width: 75%;
+      .marker {
+        height: 8px;
+        width: 64px;
+        &:nth-of-type(1) {background: $blue;}
+        &:nth-of-type(2) {background: lighten( $blue, 3%);}
+        &:nth-of-type(3) {background: lighten( $blue, 6%);}
+        &:nth-of-type(4) {background: lighten( $blue, 9%);}
+        &:nth-of-type(5) {background: lighten( $blue, 12%);}
+        &:nth-of-type(6) {background: lighten( $blue, 15%);}
+        &:nth-of-type(7) {background: lighten( $blue, 18%);}
+        &:nth-of-type(8) {background: lighten( $blue, 21%);}
+        &:nth-of-type(9) {background: lighten( $blue, 24%);}
+        &:nth-of-type(10) {background: lighten( $blue, 27%);}
+      }
+      h2 {
+        color: $body-color;
+        font: {
+          weight: 700;
+          size: 18pt;
+        }
+        margin-bottom: 0.25em;
+      }
+      p {
+        color: $body-color;
+        font: {
+          weight: 700;
+          size: 18pt;
+        }
+        margin-bottom: 0.25em;
+      }
+      a {
+        text-align: right;
+        display: block;
+        font: {
+          weight: 700;
+          style: italic;
+        }
+      }
+    }
+
+    h3 {
+      color: black;
+      font: {
+        size: 24px;
+        weight: 600;
+      }
+    }
+
+    h4 {
+      color: black;
+      font: {
+        size: 15px;
+        weight: 400;
+      }
+      margin-top: 8px;
+      margin-bottom: 24px;
+    }
+
+    img {width: 100%;}
+
+    a {
+      color: black;
+      font: {
+        size: 16px;
+        weight: 600;
+      }
+      &:after {content: "»"}
+    }
+  }
+
   // Is a link within a content zone
   div[data-name*="Page Field: Page Content"] {
     a {
