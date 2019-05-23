@@ -104,6 +104,7 @@ function preference(preferred, campus) {
     createPreferred("none");
     return;
   }
+  // Should pop an informational toast that it can be changed. This would remove the dual returns in the conditional loop.
 }
 
 function createPreferred(campus) {
@@ -113,6 +114,8 @@ function createPreferred(campus) {
   let cookieValue = "preferred=" + campus + expires + ";path=/";
   document.cookie = cookieValue;
   highlightPreferred();
+  // Change buttons (call out to the jQuery function)
+  // Swap the logos
   return true;
 }
 
