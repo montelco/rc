@@ -165,21 +165,24 @@ header + main {
       padding-left: 1rem !important;
       flex: 0 0 75%;
       max-width: 75%;
+
       .marker {
         display: block;
         height: 8px;
         width: 64px;
-        &:nth-of-type(1) {background: $blue;}
-        &:nth-of-type(2) {background: lighten( $blue, 3%);}
-        &:nth-of-type(3) {background: lighten( $blue, 6%);}
-        &:nth-of-type(4) {background: lighten( $blue, 9%);}
-        &:nth-of-type(5) {background: lighten( $blue, 12%);}
-        &:nth-of-type(6) {background: lighten( $blue, 15%);}
-        &:nth-of-type(7) {background: lighten( $blue, 18%);}
-        &:nth-of-type(8) {background: lighten( $blue, 21%);}
-        &:nth-of-type(9) {background: lighten( $blue, 24%);}
-        &:nth-of-type(10) {background: lighten( $blue, 27%);}
+        margin-bottom: 0.25rem;
+        &:nth-child(1) {background: $blue;}
+        &:nth-child(2) {background: lighten( $blue, 3%);}
+        &:nth-child(3) {background: lighten( $blue, 6%);}
+        &:nth-child(4) {background: lighten( $blue, 9%);}
+        &:nth-child(5) {background: lighten( $blue, 12%);}
+        &:nth-child(6) {background: lighten( $blue, 15%);}
+        &:nth-child(7) {background: lighten( $blue, 18%);}
+        &:nth-child(8) {background: lighten( $blue, 21%);}
+        &:nth-child(9) {background: lighten( $blue, 24%);}
+        &:nth-child(10) {background: lighten( $blue, 27%);}
       }
+
       h2 {
         color: $body-color;
         font: {
@@ -188,7 +191,23 @@ header + main {
         }
         margin-bottom: 0.25em;
       }
-      
+
+      h2 + a {
+        font: {
+          weight: 400;
+          style: italic;
+        }
+        
+        &:after:not(:last-of-type) {
+          content: " | ";
+          font: {
+            weight: 400;
+            style: initial;
+          }
+          color: $body-color;
+        }
+      }
+
       p {
         color: $body-color;
         font: {
@@ -197,13 +216,14 @@ header + main {
         margin-bottom: 0.25em;
       }
 
-      a {
+      p + a {
         text-align: right;
         display: block;
         font: {
           weight: 700;
           style: italic;
         }
+        &:after {content: "»"}
       }
     }
 
@@ -233,7 +253,6 @@ header + main {
         size: 16px;
         weight: 600;
       }
-      &:after {content: "»"}
     }
   }
 
