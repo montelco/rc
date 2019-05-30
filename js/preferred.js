@@ -114,8 +114,7 @@ function createPreferred(campus) {
   let cookieValue = "preferred=" + campus + expires + ";path=/";
   document.cookie = cookieValue;
   highlightPreferred();
-  // Change buttons (call out to the jQuery function)
-  // Swap the logos
+  changeLinks(getCookieValue("preferred"));
   return true;
 }
 

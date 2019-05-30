@@ -1,5 +1,6 @@
 jQuery(document).ready(function() {
   var mobileSize = 576;
+  var hasRun = false;
   checkWidth();
   label();
 
@@ -29,15 +30,21 @@ jQuery(document).ready(function() {
     if (e[a + 'Width'] >= mobileSize) {
         return true;
     } else {
+        // label();
         return false;
     }
   }
 
   function label() {
+    if (hasRun) {
+      return;
+    } else {
+      var hasRun = true;
+    }
     var site = $("section.title_ribbon h1").text();
     var url = window.location.pathname;
     var home = url.substring(0, url.lastIndexOf("/") + 1);
-    $("#site-name").addClass('yellow').append("<a class='textBlack' href='"+home+"'><h1 class='pd-md'>" + site + " <span class='d-md-none'>Links »</span></h1></a>");
+    $("#site-name").addClass('yellow').append("<a class='textBlack' href='"+home+"'><h1 class='pd-md'>" + site + " <span class='d-md-none'>Links</span></h1></a>");
   }
 
   if (!checkWidth() && !hasCollapsed) {
