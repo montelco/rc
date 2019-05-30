@@ -80,3 +80,10 @@ fullScreenOffsetContainer: ""
 
 
 }); //ready 
+
+var styles = ["one", "two", "three","four", "five", "six","seven", "eight", "nine","ten"];
+var index = 0;
+$(".article").find(".marker").each(function() {
+    $(this).addClass(styles[index++]);
+    if (index >= styles.length) index = 0;
+});
