@@ -1,6 +1,7 @@
 // First, the reset ia loaded to account for browser styling differences.
 @import 'mixins/hover';
 @import 'mixins/media';
+@import 'functions/sp-theme-color';
 @import 'functions/functions-color';
 @import 'variables';
 @import 'reset';

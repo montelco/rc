@@ -301,6 +301,7 @@ header + main {
       }
     }
   }
+  @include sp-theme-color($rc-themes, 5);
 
 }
 

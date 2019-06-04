@@ -114,7 +114,7 @@ function createPreferred(campus) {
   let cookieValue = "preferred=" + campus + expires + ";path=/";
   document.cookie = cookieValue;
   highlightPreferred();
-  changeLinks(getCookieValue("preferred"));
+  // changeLinks(getCookieValue("preferred"));
   return true;
 }
 

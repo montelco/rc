@@ -428,7 +428,7 @@ img{
       position: initial;
       float: none;
       margin-left: 0;
-      &:nth-of-type(3n) {
+      &:nth-of-type(4n) {
         @include media(mo) {
           a {
             text-align: right;
@@ -436,7 +436,7 @@ img{
           }
         }
       }
-      &:nth-of-type(6n) {
+      &:nth-of-type(7n) {
         @include media(lg) {
           > a {
             text-align: right;

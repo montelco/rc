@@ -124,6 +124,22 @@ $luminance: map-merge(
   $luminance
 );
 
+// Lighten/Darken Percentages for the new Colors function
+$rc-themes: () !default;
+$rc-themes: map-merge(
+  (
+    "black":          $coal,
+    "white":          $ltBlue,
+    "accent-white":   $gray-200,
+    "grey":           $gray-500,
+    "blue":           $blue,
+    "accent-blue":    $qnBlue,
+    "dark-blue":      $dkBlue,
+    "yellow":         $yellow
+  ),
+  $rc-themes
+);
+
 // Global Theme
 $body-color:                $gray-900 !default;
 $body-bg:                   $white !default;
