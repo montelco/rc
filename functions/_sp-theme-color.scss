@@ -1,0 +1,17 @@
+@function sp-theme-color($themes, $n-tints) {
+  @each $theme, $value in $themes {
+    $i: index($themes, $theme);
+    .ms-rteThemeForeColor-{$i} {
+      color: $value;
+      @for $n-tint from 0 through $n-tints {
+        &-{$n-tint} {
+          if $n-tint <= 2 {
+            color: scale-color($value, $lightness: 50% - percentage($n-tint*10));
+          } else {
+            color: scale-color($value, $lightness: -1 * percentage($n-tint*10));
+          }
+        }
+      }
+    }
+  }
+}
