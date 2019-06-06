@@ -2,7 +2,7 @@ const campusSelector = document.querySelector("#appliesTo");
 let campuses = campusSelector.innerHTML;
 const navigatorExplorer = document.querySelector("#navigationExplorer");
 let multiCampus = null;
-let threshold = 7;
+let threshold = 3;
 const expireInDays = 730;
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -43,10 +43,13 @@ function createCampusCookie(campus) {
 function addToCampusCount (campus) {
   let cookie = parseInt(getCookieValue(campus));
   cookie++;
+  let date = new Date();
+  console.log('new value will be ' + cookie + ' for ' + campus);
   date.setTime(date.getTime()+(expireInDays*24*60*60*1000));
   expires = "; expires="+date.toGMTString();
   let cookieValue = campus + "=" + cookie + expires + ";path=/";
-  return document.cookie = newCookieValue;
+  console.log(cookieValue);
+  return document.cookie = cookieValue;
 }
 
 function getCookieValue(cname) {
