@@ -43,8 +43,9 @@ function createCampusCookie(campus) {
 function addToCampusCount (campus) {
   let cookie = parseInt(getCookieValue(campus));
   cookie++;
-  let newCookieValue = campus + "=" + cookie;
-
+  date.setTime(date.getTime()+(expireInDays*24*60*60*1000));
+  expires = "; expires="+date.toGMTString();
+  let cookieValue = campus + "=" + cookie + expires + ";path=/";
   return document.cookie = newCookieValue;
 }
 
