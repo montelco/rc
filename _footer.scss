@@ -30,12 +30,9 @@ footer.cd-main-content {
     display: block;
   }
 }
+
 .mb-mm-35 {
   @include media(mm) {
     margin-bottom: 55px;   
   }
-}
-
-.text-align-center {
-  text-align: center;
 }

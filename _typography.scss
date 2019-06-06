@@ -1,5 +1,6 @@
 @import 'links';
 @import 'sizing';
+@import 'functions/spacing';
 
 .md-bold {
   font: {
@@ -45,6 +46,14 @@ main .ms-rtestate-field {
   h4 {
     color: #333;
   }
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-right {
+  text-align: right;
 }
 
 .textBlack {

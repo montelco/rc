@@ -14,5 +14,8 @@
         }
       }
     }
+    .ms-rteForeColor-#{$i} {
+      color: $value !important;
+    }
   }
 }

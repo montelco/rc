@@ -3,10 +3,10 @@ jQuery('.tp-banner').show().revolution(
 {
 dottedOverlay:"none",
 delay:16000,
-startwidth:1200,
+startwidth:1900,
 startheight:650,
-hideThumbs:200,
-lazyLoad:"on",
+hideThumbs:50,
+lazyLoad:"off",
 
 thumbWidth:100,
 thumbHeight:50,

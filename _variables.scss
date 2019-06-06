@@ -46,6 +46,7 @@ $grays: map-merge(
 $break-vals: xs sm md lg xl wl;
 
 $blue:    #29568f !default;
+$branding:#005494 !default;
 $ltBlue:  #e0e5eb !default;
 $dkBlue:  #1e3f69 !default;
 $qnBlue:  #3c6599 !default;
@@ -132,8 +133,10 @@ $rc-themes: map-merge(
     "white":          $ltBlue,
     "accent-white":   $gray-200,
     "grey":           $gray-500,
-    "blue":           $blue,
     "accent-blue":    $qnBlue,
+    "lite-blue":      $pcBlue,
+    "branding-blue":  $branding,
+    "web-blue":       $blue,
     "dark-blue":      $dkBlue,
     "yellow":         $yellow
   ),
@@ -160,32 +163,29 @@ $spacers: map-merge(
 
 
 // Types of font, line-height, and color for body text, headings, and more.
-$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-sans-serif:      "Segoe UI",-apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
-
 $font-size-base:              1rem !default;
-
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
 $font-weight-litebold:        600 !default;
 $font-weight-bold:            700 !default;
-
 $weights: (
   lt: $font-weight-light,
   nm: $font-weight-normal,
   md: $font-weight-litebold,
   hv: $font-weight-bold
 );
-
 $font-weight-base:            $font-weight-normal !default;
 $line-height-base:            1.5 !default;
-
 $text-muted:                  $gray-600 !default;
-
 $headings-margin-bottom:      ($spacer / 2) !default;
 $paragraph-margin-bottom:   1rem !default;
 $dt-font-weight:              $font-weight-bold !default;
+// Content Zones on the page abide by the following ratios
+$ms-font-size-base:      1.125em;
+$ms-ratio:               1.5;
 
 // Links, the lifeblood of the Web
 $link-color:                theme-color("primary") !default;
