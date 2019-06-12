@@ -1,0 +1,145 @@
+/* Acordion CSS Starts here */
+#arcordion-house {
+  min-width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  background: #eee;
+}
+
+.arcordion {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    background: #fff;
+}
+
+.acordion-content > strong:first-of-type {
+    margin-bottom: 10px;
+    width: 100%;
+    display: block!important;
+}
+
+.acordion-content i {
+display: block; 
+}
+
+.acordion-content ul {
+margin: 10px 0 10px 35px;
+}
+
+.arcordion li {
+margin-bottom: 5px; 
+}
+
+
+#arcordion-house .acordion-content {
+border-top: 1px solid #ddd;
+height: 0;
+overflow: hidden;
+background: #fff;
+width: calc(100% - 50px);
+
+}
+
+.dormatAcordion {
+transition: all .65s;
+min-height: 1px !important;
+overflow: hidden;
+max-height: 1px !important;
+padding: 0 !important;
+width: 100% !important;
+
+}
+
+.acordion-content strong {
+    width: 100%;
+    display: block; 
+    font-size: 22px;
+    font-family: "myriad-pro-condensed","Arial Narrow", "Helvetica Neue", Helvetica, "Arial", "sans-serif";
+    color: #333;
+    font-weight: lighter;
+}
+
+
+#arcordion-house input {
+  display: none;
+}
+
+.arcordion label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding-left: 25px;
+  height: 45px;
+  line-height: 45px;
+  font-weight: 600;
+  text-align: left;
+  color: #555;
+  border-bottom: 1px solid #4987c3;
+  width: 100%;
+  background: #fff;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.arcordion label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+.arcordion:first-of-type label {
+border-top: 1px solid #4987c3;
+}
+
+
+.arcordion label[for*='1']:before { content: '\f055'; }
+.arcordion label[for*='2']:before { content: '\f055'; }
+.arcordion label[for*='3']:before { content: '\f055'; }
+.arcordion label[for*='4']:before { content: '\f055'; }
+.arcordion label[for*='5']:before { content: '\f055'; }
+.arcordion label[for*='6']:before { content: '\f055'; }
+.arcordion label:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+.arcordion input:checked + label {
+color: #eee;
+background: #4987c3;
+   
+}
+
+
+.arcordion #tab1:checked ~  .acordion-content,
+.arcordion #tab2:checked ~ .acordion-content,
+.arcordion #tab3:checked ~ .acordion-content,
+.arcordion #tab4:checked ~ .acordion-content,
+.arcordion #tab5:checked ~ .acordion-content,
+.arcordion #tab6:checked ~ .acordion-content {
+    transition: all 1s;
+    display: block;
+    min-height: 150px;
+    height: auto;
+    padding: 25px;
+    max-width: 100%;
+    border-bottom: 1px solid #4987c3;
+}
+
+
+.activeAcordion {   
+    transition: all 1s;
+    display: block;
+    min-height: 150px;
+    height: auto!important;
+    padding: 25px 25px 25px 25px!important;
+    max-width: 100%;
+    border-bottom: 1px solid #4987c3;
+
+}
+
+
+
+.acordion-content strong:nth-child(n+1) {
+display: inline-block;  
+width: auto;
+}

@@ -6,8 +6,10 @@ let threshold = 3;
 const expireInDays = 730;
 
 document.addEventListener("DOMContentLoaded", function() {
-  readPreferred(sanitize(campuses));
+  // readPreferred(sanitize(campuses));
 });
+
+readPreferred(sanitize(campuses));
 
 function sanitize(values) {
   let cleaned = values.replace(/(\r\n|\n|\r)/gm,"").split(' ').join('').toLowerCase();
@@ -125,11 +127,14 @@ function createPreferred(campus) {
 function doesNavigatorActionExist(preferred) {
   if (navigatorExplorer != null) {
     let navigationAction = "#" + preferred + "NavigatorAction";
-    let intent = navigationAction.dataset.intent;
-    let navigationActionButton = document.querySelector(navigationAction);
-    if (navigationActionButton != null && intent == '1') {
-      let URL = navigationActionButton.href;
+    let navigationActionButton = "#" + preferred + "URL";
+    let intent = "#" + preferred + "RedirectIntent";
+    intent = document.querySelector(intent).innerHTML;
+    navigationActionButton = document.querySelector(navigationAction + " " + navigationActionButton + " a");
+    let URL = navigationActionButton.href;
+    if (URL != null && intent.includes('1')) {
       window.location.replace(URL);
+      // return console.log(URL);
     }
   }
 }
@@ -208,6 +213,6 @@ function swapLogo() {
 }
 
 function toastPopped(campus) {
-  toastr['info']('<p>You\'ve gone to several ' + campus + ' pages. Would you like to set it as your preferred campus.<br/> (You can change this at any time.)</p><div class="button-container"><button type="button" id="setPreferred" onclick="preference(true, \'' + sanitize(campus) + '\')" class="btn btn-primary">Set Preferred</button><button type="button" id="noPreferred" class="btn" onclick="preference(false)" style="margin: 0 8px 0 8px">No Thanks</button></div>');
+  toastr['info']('<p>Would you like to set ' + campus + ' as your preferred campus?<br/><b>(You can change this at any time.)</b></p><div class="button-container"><button type="button" id="setPreferred" onclick="preference(true, \'' + sanitize(campus) + '\')" class="btn btn-primary">Set Preferred</button><button type="button" id="noPreferred" class="btn" onclick="preference(false)" style="margin: 0 8px 0 8px">No Thanks</button></div>');
 }
 

@@ -89,6 +89,11 @@
 
     &.np{padding:0;}
 
+    &.twitter-container {
+      position: relative;
+      overflow-y: scroll;
+    }
+
     &.lp{
       padding: 0 8px;
       border-top-left-radius: 0px;

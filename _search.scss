@@ -2,6 +2,14 @@
   color: #ebeff4 !important;
 }
 
+.ms-srch-hover-outerContainer,
+.ms-srch-result #Paging li,
+.ms-srch-sbLarge-navImg {
+    display:none !important;
+    opacity: 0;
+    visibility: hidden;
+}
+
 .ms-srch-sb>input {
   display: block !important;
   border-style: none !important;
