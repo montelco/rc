@@ -4,10 +4,16 @@
 
 .ms-srch-hover-outerContainer,
 .ms-srch-result #Paging li,
-.ms-srch-sbLarge-navImg {
+.ms-srch-sbLarge-navImg,
+.ms-srch-item-previewContainer {
     display:none !important;
     opacity: 0;
     visibility: hidden;
+}
+
+.ms-srch-item,
+.ms-srch-item-summaryPreview {
+  width: 100%;
 }
 
 .ms-srch-sb>input {

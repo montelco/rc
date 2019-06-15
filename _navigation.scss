@@ -437,7 +437,7 @@ img{
         }
       }
       &:nth-of-type(7n) {
-        @include media(lg) {
+        @include media(mo) {
           > a {
             text-align: right;
             width: 100%;

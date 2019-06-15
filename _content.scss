@@ -364,14 +364,14 @@ section.home {
   overflow: hidden;
 
   @include media(mo) {
-    background-image: url(../video-replacement-bg.jpg);
+    background-image: url(/PublishingImages/HomePage-Video/video-replacement-bg.jpg);
     background-repeat: no-repeat;
     background-position: top center !important;
     height: 72vh;
   }
 
   @include media(mm) {
-    background-image: url(../video-replacement-bg.jpg);
+    background-image: url(/PublishingImages/HomePage-Video/video-replacement-bg.jpg);
     background-repeat: no-repeat;
     background-position: top center !important;
     height: 72vh;

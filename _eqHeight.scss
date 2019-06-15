@@ -231,3 +231,15 @@
     }
   }
 }
+
+@include media(mm) {
+  #whatsNew div.d-flex {
+    & > div {
+      .card {
+        &__body.twitter-container {
+          height: 400px;
+        }
+      }
+    }
+  }
+}
