@@ -128,6 +128,12 @@
   }
 }
 
+.student-spotlight {
+  @include media (mm) {
+    display: none;
+  }
+}
+
 .student-spotlight .flyout {
   height: 100%;
   position: absolute;

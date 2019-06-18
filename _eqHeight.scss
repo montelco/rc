@@ -232,11 +232,14 @@
   }
 }
 
-@include media(mm) {
-  #whatsNew div.d-flex {
-    & > div {
-      .card {
-        &__body.twitter-container {
+#whatsNew div.d-flex {
+  & > div {
+    .card {
+      &__body.twitter-container {
+        @include media(mm) {
+          height: 400px;
+        }
+        @include media(mo) {
           height: 400px;
         }
       }

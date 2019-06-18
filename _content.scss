@@ -10,6 +10,29 @@ header + main {
   }
   line-height: $line-height-base;
 
+  .no_overlay_hero {
+    height: 18vh;
+
+    &> div {
+      @include media(mm) {
+        height: 18vh;
+      }
+      
+      .ms-siteicon-a {
+        @include media(mm) {
+          display: flex;
+          height: 100%;
+        }
+
+        img.ms-siteicon-img {
+          @include media(mm) {
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+
   .hero {
     overflow: hidden;
     z-index: 2;

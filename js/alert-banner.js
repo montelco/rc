@@ -10,6 +10,12 @@ $(document).ready(function () {
   $('.alert-box').attr('id', function(i) {
      return 'alert'+(i+1);
   });
+  var n = $(".alert-box").length;
+  console.log(n + " Alerts");
+  $(".alert-count").text("" + n + " Alerts");
+  $('.alert-box').length === 1 && $('.alert-navigator').css({
+      display: 'none'
+  });
   function closeBox(){  
     var closeBox = $('#alert1').remove();
     $.cookie('closeBox', "true", {
@@ -52,28 +58,24 @@ $(document).ready(function () {
     console.log('Closed the alert box manually');
     closeBox3();
   });
-  $(function () {
-      var timer = function () {
-          if ($(".alert-box:visible").next().length !== 0) $(".alert-box:visible").next().show().prev().hide();
-          else {
-            $(".alert-box:visible").hide();
-            $(".alert-box:first").show();
-          }
-      };
-      var timerID = null;
-      if ($('.alert-box').length > 1) {
-        timerID = setInterval(timer, 10000);
-      }
-      $('.alert-box').hover(function (ev) {
-          clearInterval(timerID);
-      }, function (ev) {
-          timerID = setInterval(timer, 10000);
-      });
-  });
-  var n = $(".alert-box").length;
-  $(".alert-count").text("" + n + " Alerts");
-  $('.alert-box').length < 2 && $('.alert-right-arrow .fa, .alert-left-arrow .fa, .alert-count').css({
-      display: 'none'
+});
+
+$(function () {
+  var timer = function () {
+    if ($(".alert-box:visible").next().length !== 0) $(".alert-box:visible").next().show().prev().hide();
+    else {
+      $(".alert-box:visible").hide();
+      $(".alert-box:first").show();
+    }
+  };
+  var timerID = null;
+  if (!$('.alert-box').length === 1) {
+    timerID = setInterval(timer, 10000);
+  }
+  $('.alert-box').hover(function (ev) {
+    clearInterval(timerID);
+  }, function (ev) {
+    timerID = setInterval(timer, 10000);
   });
 });
 
