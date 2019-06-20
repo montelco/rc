@@ -42,9 +42,12 @@ jQuery(document).ready(function() {
       var hasRun = true;
     }
     var site = $("section.title_ribbon h1").text();
-    var url = window.location.pathname;
-    var home = url.substring(0, url.lastIndexOf("/") + 1);
+    var header = $("a.ms-siteicon-a");
+    var url = header.attr('href');
+    var home = url.replace(/-site/g, '');
+    // header.attr('id', 'topSiteLink');
     $("#site-name").addClass('yellow').append("<a class='textBlack' href='"+home+"'><h1 class='pd-md'>" + site + " <span class='d-md-none'>Links</span></h1></a>");
+    // $("a.ms-siteicon-a").addClass('controlHomeLink').attr('href', home);
   }
 
   if (!checkWidth() && !hasCollapsed) {

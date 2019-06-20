@@ -92,12 +92,7 @@ border-top: 1px solid #4987c3;
 }
 
 
-.arcordion label[for*='1']:before { content: '\f055'; }
-.arcordion label[for*='2']:before { content: '\f055'; }
-.arcordion label[for*='3']:before { content: '\f055'; }
-.arcordion label[for*='4']:before { content: '\f055'; }
-.arcordion label[for*='5']:before { content: '\f055'; }
-.arcordion label[for*='6']:before { content: '\f055'; }
+.arcordion label:before { content: '\f055'; }
 .arcordion label:hover {
   color: #888;
   cursor: pointer;
@@ -115,7 +110,41 @@ background: #4987c3;
 .arcordion #tab3:checked ~ .acordion-content,
 .arcordion #tab4:checked ~ .acordion-content,
 .arcordion #tab5:checked ~ .acordion-content,
-.arcordion #tab6:checked ~ .acordion-content {
+.arcordion #tab6:checked ~ .acordion-content,
+.arcordion #tab7:checked ~ .acordion-content,
+.arcordion #tab8:checked ~ .acordion-content,
+.arcordion #tab9:checked ~ .acordion-content,
+.arcordion #tab10:checked ~ .acordion-content,
+.arcordion #tab11:checked ~ .acordion-content,
+.arcordion #tab12:checked ~ .acordion-content,
+.arcordion #tab13:checked ~ .acordion-content,
+.arcordion #tab14:checked ~ .acordion-content,
+.arcordion #tab15:checked ~ .acordion-content,
+.arcordion #tab16:checked ~ .acordion-content,
+.arcordion #tab17:checked ~ .acordion-content,
+.arcordion #tab18:checked ~ .acordion-content,
+.arcordion #tab19:checked ~ .acordion-content,
+.arcordion #tab20:checked ~ .acordion-content,
+.arcordion #tab21:checked ~ .acordion-content,
+.arcordion #tab22:checked ~ .acordion-content,
+.arcordion #tab23:checked ~ .acordion-content,
+.arcordion #tab24:checked ~ .acordion-content,
+.arcordion #tab25:checked ~ .acordion-content,
+.arcordion #tab26:checked ~ .acordion-content,
+.arcordion #tab27:checked ~ .acordion-content,
+.arcordion #tab28:checked ~ .acordion-content,
+.arcordion #tab29:checked ~ .acordion-content,
+.arcordion #tab30:checked ~ .acordion-content,
+.arcordion #tab31:checked ~ .acordion-content,
+.arcordion #tab32:checked ~ .acordion-content,
+.arcordion #tab33:checked ~ .acordion-content,
+.arcordion #tab34:checked ~ .acordion-content,
+.arcordion #tab35:checked ~ .acordion-content,
+.arcordion #tab36:checked ~ .acordion-content,
+.arcordion #tab37:checked ~ .acordion-content,
+.arcordion #tab38:checked ~ .acordion-content,
+.arcordion #tab39:checked ~ .acordion-content,
+.arcordion #tab40:checked ~ .acordion-content, {
     transition: all 1s;
     display: block;
     min-height: 150px;
