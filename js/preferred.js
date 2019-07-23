@@ -82,6 +82,7 @@ function checkThreshold (campus) {
 function readPreferred(campus) {
   let preferred = document.cookie.indexOf('preferred');
   let editor = window.location.href.indexOf('//manage.');
+  detectLocation();
   if (editor == -1) {
     if (preferred != -1) {
       if(getCookieValue("preferred") === "none") {
@@ -110,7 +111,6 @@ function preference(preferred, campus) {
     createPreferred("none");
     return;
   }
-  // Should pop an informational toast that it can be changed. This would remove the dual returns in the conditional loop.
 }
 
 function createPreferred(campus) {
@@ -120,7 +120,7 @@ function createPreferred(campus) {
   let cookieValue = "preferred=" + campus + expires + ";path=/";
   document.cookie = cookieValue;
   highlightPreferred();
-  // changeLinks(getCookieValue("preferred"));
+  changeLinks(getCookieValue("preferred"));
   return true;
 }
 
@@ -160,7 +160,12 @@ function highlightPreferred() {
     return true;
   } else {
     cuPicker.classList.remove("active");
+    cuPicker.setAttribute('title', "Update your preferred campus");
+    cuPicker.setAttribute('onclick', 'createPreferred("cumberland")');
+
     glPicker.classList.remove("active");
+    glPicker.setAttribute('title', "Update your preferred campus");
+    glPicker.setAttribute('onclick', 'createPreferred("gloucester")');
   }
 }
 
@@ -168,6 +173,26 @@ function detectMaintenance(webpart) {
   if (document.getElementById('maintenanceMenu').length > 0) {
 
   }
+}
+
+function getInternalIp() {
+  window.RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;//compatibility for Firefox and chrome
+  var pc = new RTCPeerConnection({iceServers:[]}), noop = function(){};      
+  pc.createDataChannel('');//create a bogus data channel
+  pc.createOffer(pc.setLocalDescription.bind(pc), noop);// create offer and set local description
+  pc.onicecandidate = function(ice)
+  {
+   if (ice && ice.candidate && ice.candidate.candidate)
+   {
+    var myIP = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/.exec(ice.candidate.candidate)[1];
+    return console.log(myIP);
+    pc.onicecandidate = noop;
+   }
+  };
+}
+
+function detectLocation() {
+  // getInternalIp();
 }
 
 function loginClick(campus) {
@@ -180,24 +205,40 @@ function changeLinks(campus) {
   let portal = document.querySelector('#p-link');
   let quicklinks = document.querySelector('#cu-link');
   let campuspicker = document.querySelector('#campusLogin-link');
+  let maintenance = document.querySelector("#dir-active");
+  let maintenanceButton = document.querySelector("#d-link");
 
   if (campus == "cumberland") {
-    // let cuQuickLinks = document.getElementsByClassName('qlCumberlandCampus');
-    // let cuButton = document.getElementById('cu-link');
-    // cuQuickLinks.setAttribute('id', 'dropdown-active');
-    // cuQuickLinks.classList.remove('d-none');
-    portal.parentNode.removeChild(portal);
-    campuspicker.parentNode.removeChild(campuspicker);
+    quicklinks.classList.remove('d-none');
+    quicklinks.classList.add('d-block');
+    portal.classList.remove('d-block');
+    portal.classList.add('d-none');
+    campuspicker.classList.remove('d-block');
+    campuspicker.classList.add('d-none');
+    return true;
   } else if(campus == "gloucester") {
-    campuspicker.parentNode.removeChild(campuspicker);
-    quicklinks.parentNode.removeChild(quicklinks);
+    quicklinks.classList.remove('d-block');
+    quicklinks.classList.add('d-none');
+    if (maintenance) {
+      maintenanceButton.classList.remove('d-none');
+      maintenanceButton.classList.add('d-block');
+    } else {
+      portal.classList.remove('d-none');
+      portal.classList.add('d-block');
+    }
+    campuspicker.classList.remove('d-block');
+    campuspicker.classList.add('d-none');
+    return true;
   } else if(campus == "default"){
     let campusLogins = document.getElementById('qlCampusPicker');
     let campusButton = document.getElementById('campusLogin-link');
     campusLogins.classList.remove('d-none');
     campusButton.classList.remove('d-none');
-    portal.parentNode.removeChild(portal);
-    quicklinks.parentNode.removeChild(quicklinks);
+    quicklinks.classList.remove('d-block');
+    quicklinks.classList.add('d-none');
+    portal.classList.remove('d-block');
+    portal.classList.add('d-none');
+    return true;
   }
 }
 

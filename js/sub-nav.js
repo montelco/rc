@@ -4,6 +4,11 @@ jQuery(document).ready(function() {
   checkWidth();
   label();
 
+  var header = $("a.ms-siteicon-a");
+  var url = header.attr('href');
+  var home = url.replace(/-site/g, '');
+  $("a.ms-siteicon-a").addClass('controlHomeLink').attr('href', home);
+
   $(window).on('resize', function() {
     checkWidth();
   });
@@ -41,13 +46,21 @@ jQuery(document).ready(function() {
     } else {
       var hasRun = true;
     }
+    
     var site = $("section.title_ribbon h1").text();
     var header = $("a.ms-siteicon-a");
     var url = header.attr('href');
     var home = url.replace(/-site/g, '');
-    // header.attr('id', 'topSiteLink');
-    $("#site-name").addClass('yellow').append("<a class='textBlack' href='"+home+"'><h1 class='pd-md'>" + site + " <span class='d-md-none'>Links</span></h1></a>");
-    // $("a.ms-siteicon-a").addClass('controlHomeLink').attr('href', home);
+    $("#site-name").addClass('yellow').append("<a class='textBlack' href='"+home+"'><h1 class='pd-md'>" + site + ' <span class="d-md-none"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/></svg></span></h1></a>');
+
+    var editor = window.location.href.indexOf('//manage.');
+    if (editor == -1) {
+      header.attr('id', 'lazy-home-link');
+      $("a.ms-siteicon-a").addClass('HomeLink').attr('href', home);
+      return;
+    } else {
+      return;
+    }
   }
 
   if (!checkWidth() && !hasCollapsed) {

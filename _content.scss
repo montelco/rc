@@ -20,13 +20,16 @@ header + main {
       
       .ms-siteicon-a {
         @include media(mm) {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
           height: 100%;
         }
 
         img.ms-siteicon-img {
           @include media(mm) {
-            object-fit: cover;
+            -o-object-fit: cover;
+               object-fit: cover;
           }
         }
       }
@@ -56,16 +59,21 @@ header + main {
       width: 100%;
       top: -10px;
       height: auto;
-      object-fit: cover;
-      filter: grayscale(100%) blur(5px);
+      -o-object-fit: cover;
+         object-fit: cover;
+      -webkit-filter: grayscale(100%) blur(5px);
+              filter: grayscale(100%) blur(5px);
       z-index: 0;
     }
 
     &__title {
       z-index: 10;
+      position: -webkit-sticky;
       position: sticky;
       top: 50%;
-      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
     }
   }
 
@@ -147,28 +155,37 @@ header + main {
 .article {
   padding: 1rem 0;
 
+  font: {
+    family: $font-family-sans-serif;
+  }
+
   h1 {
     font: {
       weight: 600;
       size: 20pt;
+      family: $font-family-sans-serif;
     }
+    color: inherit;
   }
   
   p {
     @include media(md) {
       font: {
         size: 14pt;
+        family: $font-family-sans-serif;
       }
     }
 
     @include media(mm) {
       font: {
         size: 16pt;
+        family: $font-family-sans-serif;
       }
     }
 
     font: {
       size: 12pt;
+      family: $font-family-sans-serif;
     }
     line-height: 1.65;
   }
@@ -179,6 +196,7 @@ header + main {
   }
 
   li {
+    family: $font-family-sans-serif;
     color: inherit;
     list-style-type: inherit;
 
@@ -187,14 +205,19 @@ header + main {
     }
 
   }
+  
+  ul.list-unstyled{list-style-type: none;}
 
   @import 'tabbed'; 
   @import 'legacy/accordion';
+  @import 'legacy/directory';
 
   .marketing-feature {
     margin-bottom: 3em;
     &__img {
-      flex: 0 0 25%;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 25%;
+              flex: 0 0 25%;
       max-width: 25%;
       @include media(mm) {
         display: none;
@@ -202,10 +225,14 @@ header + main {
     }
     &__body {
       padding-left: 1rem !important;
-      flex: 0 0 75%;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 75%;
+              flex: 0 0 75%;
       max-width: 75%;
       @include media(mm) {
-        flex: 0 0 100%;
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
         max-width: 100%;
       }
 
@@ -231,6 +258,7 @@ header + main {
         font: {
           weight: 700;
           size: 18pt;
+          family: $font-family-sans-serif;
         }
         margin-bottom: 0.25em;
       }
@@ -302,20 +330,23 @@ header + main {
     }
   }
 
-  // Is a link within a content zone
+  /* Is a link within a content zone*/
   div[data-name*="Page Field: Page Content"] {
     a {
       color: $pc-link-color;
-      text-decoration: $pc-link-decoration;
+      -webkit-text-decoration: $pc-link-decoration;
+              text-decoration: $pc-link-decoration;
       background-color: transparent;
       -webkit-text-decoration-skip: objects;
       @include hover {
         color: $pc-link-hover-color;
-        text-decoration: $pc-link-hover-decoration;
+        -webkit-text-decoration: $pc-link-hover-decoration;
+                text-decoration: $pc-link-hover-decoration;
       }
       &:visited {
         color: $pc-link-visited-color;
-        text-decoration: $pc-link-visited-decoration;
+        -webkit-text-decoration: $pc-link-visited-decoration;
+                text-decoration: $pc-link-visited-decoration;
       }
       &.external::after {
         content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath class='heroicon-ui' d='M19 6.41L8.7 16.71a1 1 0 1 1-1.4-1.42L17.58 5H14a1 1 0 0 1 0-2h6a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0V6.41zM17 14a1 1 0 0 1 2 0v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7c0-1.1.9-2 2-2h5a1 1 0 0 1 0 2H5v12h12v-5z'/%3E%3C/svg%3E");
@@ -328,7 +359,7 @@ header + main {
     }
   }
   @include sp-theme-color($rc-themes, 5);
-
+  
 }
 
 #navigationExplorer,
@@ -438,7 +469,6 @@ video#bgvid {
   min-width: 100%;
   min-height: 100%;
   -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   background-color: #666;
@@ -464,4 +494,7 @@ video#bgvid {
   position: absolute !important;
   top: 0;
   left: 0;
+  @supports (-ms-high-contrast: none) {
+    backgroun: $white;
+  }
 }

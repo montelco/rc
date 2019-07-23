@@ -1,6 +1,6 @@
 .flex{
-  &-xs{@media (max-width: $sm){flex: 1;}}
-  &-sm{@media (max-width: $mm){flex: 1;}}
-  &-md{@media (min-width: $md){flex: 1;}}
-  &-lg{@media (min-width: $lg){flex: 1;}}
+  &-xs{@media (max-width: $sm){-webkit-box-flex: 1;-ms-flex: 1;flex: 1;}}
+  &-sm{@media (max-width: $mm){-webkit-box-flex: 1;-ms-flex: 1;flex: 1;}}
+  &-md{@media (min-width: $md){-webkit-box-flex: 1;-ms-flex: 1;flex: 1;}}
+  &-lg{@media (min-width: $lg){-webkit-box-flex: 1;-ms-flex: 1;flex: 1;}}
 }

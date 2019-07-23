@@ -7,7 +7,7 @@
 @import 'reset';
 
 // In this block, the Bootstrap 4 Grid is imported. It is done directly in our code so it can be swapped out should the case arise.
-// This also allows for the  framework to have variables changed and the files minified.
+// This also allows for the framework to have variables changed and the files minified.
 
 @import 'packages/bootstrap-4-grid/scss/grid';
 @import 'functions/flex';

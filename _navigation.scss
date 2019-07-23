@@ -37,6 +37,7 @@ header.cd-main-content{
 nav.subsite {
   .textBlack li{
     color: $coal;
+    width: 100%;
   }
   li {
     font: {
@@ -379,7 +380,7 @@ img{
 .quicklinks a, .quicklinks a:hover, .quicklinks a:visited, .quicklinks a:active{
   @include media(xs) {
     font: {
-      size: 75%;
+      size: 90%;
     }
   }
   color: white;

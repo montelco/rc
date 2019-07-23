@@ -1,10 +1,21 @@
 jQuery(document).ready(function() {
-
-  if($("#dir-active").length > 0 ) {
+  if($("#dir-active").length > 0 && $('#p-link').length > 0 && $.cookie('preferred') === "gloucester") {
     var button = $("#d-link");
     button.show();
     $('#p-link').remove();
-
+    console.log('in maintenance mode');
+    var contents = $("#dir-active");
+    contents.detach();
+    contents.insertAfter('#dl-end');
+  } else if ($("#dir-active").length > 0 && $('#p-link').length > 0 && $.cookie('preferred') === "none"){
+    $('#p-link').remove();
+    console.log('in maintenance mode and no preference');
+    var contents = $("#dir-active");
+    contents.detach();
+    contents.insertAfter('#dl-end');
+  } else if ($("#dir-active").length > 0 && $('#p-link').length > 0) {
+    $('#p-link').remove();
+    console.log('in maintenance mode and not set');
     var contents = $("#dir-active");
     contents.detach();
     contents.insertAfter('#dl-end');
@@ -14,6 +25,7 @@ jQuery(document).ready(function() {
     $('#frame-links').hide();
     var button = $("#p-link");
     button.show();
+    console.log('not in maintenance mode');
   }
 
   var picker = $("#qlCampusPicker");
@@ -39,6 +51,14 @@ jQuery(document).ready(function() {
   $(".login-intent").on('click', function(e){
     e.preventDefault();
     createPreferred($(this).data('campus'))
+    return window.location.href = $(this).attr('href');
+  });
+  $("#qlCumberlandCampus li a").on('click', function(e){
+    e.preventDefault();
+    return window.location.href = $(this).attr('href');
+  });
+  $("#d-link li a").on('click', function(e){
+    e.preventDefault();
     return window.location.href = $(this).attr('href');
   });
 });
