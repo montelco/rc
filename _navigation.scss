@@ -56,7 +56,9 @@ nav.subsite {
   }
 }
 
-li.subnav__topLevel-listItems a, a.subsite-navigation__top-link .menu-item-text {
+li.subnav__topLevel-listItems a,
+a.subsite-navigation__top-link .menu-item-text,
+.ms-core-listMenu-item:link {
   color: #373d3f;
 }
 

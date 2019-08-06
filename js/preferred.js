@@ -113,9 +113,9 @@ function preference(preferred, campus) {
   }
 }
 
-function createPreferred(campus) {
+function createPreferred(campus, expiry=expireInDays) {
   let date = new Date();
-  date.setTime(date.getTime()+(expireInDays*24*60*60*1000));
+  date.setTime(date.getTime()+(expiry*24*60*60*1000));
   expires = "; expires="+date.toGMTString();
   let cookieValue = "preferred=" + campus + expires + ";path=/";
   document.cookie = cookieValue;
@@ -144,19 +144,24 @@ function highlightPreferred() {
   let glPicker = document.getElementById("GloucesterCampusSelector");
   let message = "Remove your preferred campus";
   let remover = 'createPreferred("none")';
-  // console.log(cuQuickLinks);
-  swapLogo();
+
   if (getCookieValue("preferred") === 'cumberland') {
     cuPicker.classList.add("active");
     cuPicker.setAttribute('title', message);
     cuPicker.setAttribute('onclick', remover);
+
     glPicker.classList.remove("active");
+    glPicker.setAttribute('title', "Update your preferred campus");
+    glPicker.setAttribute('onclick', 'createPreferred("gloucester")');
     return true;
   } else if (getCookieValue("preferred") === 'gloucester') {
     glPicker.classList.add("active");
     glPicker.setAttribute('title', message);
     glPicker.setAttribute('onclick', remover);
+
     cuPicker.classList.remove("active");
+    cuPicker.setAttribute('title', "Update your preferred campus");
+    cuPicker.setAttribute('onclick', 'createPreferred("cumberland")');
     return true;
   } else {
     cuPicker.classList.remove("active");
@@ -176,10 +181,10 @@ function detectMaintenance(webpart) {
 }
 
 function getInternalIp() {
-  window.RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;//compatibility for Firefox and chrome
+  window.RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
   var pc = new RTCPeerConnection({iceServers:[]}), noop = function(){};      
-  pc.createDataChannel('');//create a bogus data channel
-  pc.createOffer(pc.setLocalDescription.bind(pc), noop);// create offer and set local description
+  pc.createDataChannel('');
+  pc.createOffer(pc.setLocalDescription.bind(pc), noop);
   pc.onicecandidate = function(ice)
   {
    if (ice && ice.candidate && ice.candidate.candidate)
@@ -211,10 +216,15 @@ function changeLinks(campus) {
   if (campus == "cumberland") {
     quicklinks.classList.remove('d-none');
     quicklinks.classList.add('d-block');
-    portal.classList.remove('d-block');
-    portal.classList.add('d-none');
     campuspicker.classList.remove('d-block');
     campuspicker.classList.add('d-none');
+    if (maintenance) {
+      maintenanceButton.classList.remove('d-block');
+      maintenanceButton.classList.add('d-none');
+    } else {
+      portal.classList.remove('d-block');
+      portal.classList.add('d-none');
+    }
     return true;
   } else if(campus == "gloucester") {
     quicklinks.classList.remove('d-block');
@@ -238,22 +248,15 @@ function changeLinks(campus) {
     quicklinks.classList.add('d-none');
     portal.classList.remove('d-block');
     portal.classList.add('d-none');
+    if (maintenance) {maintenanceButton.classList.add('d-none');}
     return true;
   }
 }
 
 function swapLogo() {
-  // let logo = document.getElementById("rowanSJLogo");
-  // if (getCookieValue("preferred") === 'cumberland') {
-  //   logo.src = '/Style%20Library/logo-wbg-cu.png';
-  // } else if (getCookieValue("preferred") === 'gloucester') {
-  //   logo.src = '/Style%20Library/logo-wbg-gl.png';
-  // } else {
-  //   logo.src = '/Style%20Library/logo-wbg.png';
-  // }
 }
 
 function toastPopped(campus) {
-  toastr['info']('<p>Would you like to set ' + campus + ' as your preferred campus?<br/><b>(You can change this at any time.)</b></p><div class="button-container"><button type="button" id="setPreferred" onclick="preference(true, \'' + sanitize(campus) + '\')" class="btn btn-primary">Set Preferred</button><button type="button" id="noPreferred" class="btn" onclick="preference(false)" style="margin: 0 8px 0 8px">No Thanks</button></div>');
+  toastr['info']('<p>Would you like to set ' + campus + ' as your preferred campus?<br/><b><a href="/CampusDefault" target="_blank">(You can change this at any time.)</a></b></p><div class="button-container"><button type="button" id="setPreferred" onclick="preference(true, \'' + sanitize(campus) + '\')" class="btn btn-primary">Set Preferred</button><button type="button" id="noPreferred" class="btn" onclick="preference(false)" style="margin: 0 8px 0 8px">No Thanks</button></div>');
 }
 

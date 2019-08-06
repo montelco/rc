@@ -96,7 +96,7 @@ $(".alert-left-arrow").on('click', function () {
   function closeBox2(){     
     var closeBox2 = $('#alert2').remove();
     $.cookie('Box2-closed', "true", {
-      expires: 7,
+      expires: 1,
       path: '/'});
     $.cookie('Box2-closed');
     countAlerts();
@@ -114,7 +114,7 @@ $(".alert-left-arrow").on('click', function () {
   function closeBox3(){     
     var closeBox3 = $('#alert3').remove();
     $.cookie('Box3-closed', "true", {
-      expires: 7,
+      expires: 1,
       path: '/'});
     $.cookie('Box3-closed');
     countAlerts();
