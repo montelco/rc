@@ -2,7 +2,22 @@
   color: #ebeff4 !important;
 }
 
-.ms-srch-sb>input {
+.ms-srch-hover-outerContainer,
+.ms-srch-result #Paging .ms-srch-pagingNext,
+.ms-srch-sbLarge-navImg,
+.ms-srch-item-previewContainer {
+    display:none !important;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.ms-srch-item,
+.ms-srch-item-summaryPreview {
+  width: 100%;
+}
+
+.ms-srch-sb>input,
+.ms-srch-sbLarge>input {
   display: block !important;
   border-style: none !important;
   outline-style: none !important;
@@ -18,10 +33,12 @@
   height: 100% !important;
   width: 100% !important;
 }
-.ms-srch-sb>input:hover{
+.ms-srch-sb>input:hover,
+.ms-srch-sbLarge>input:hover{
   background-color: #6683a9 !important;
 }
-.ms-srch-sb>input:focus {
+.ms-srch-sb>input:focus,
+.ms-srch-sbLarge>input:focus {
   color: black !important;
   background-color: white !important;
   -webkit-transition: 0.25s ease-in-out !important;
@@ -49,12 +66,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 2px 2px 2px rgba(25,25,25,0.08);
     margin: 15px 0px !important;
     -webkit-box-flex: 1 !important;
     -webkit-flex: 1 !important;
         -ms-flex: 1 !important;
             flex: 1 !important;
-    &:nth-of-type(1) {
+    &:not(:last-of-type) {
       margin-right: 30px !important;
     }
   }
@@ -73,7 +91,8 @@
   font-weight: 600 !important;
 }
 
-#d-link {
+#d-link,
+.login-action {
   .brt-none {
     border-top-right-radius: 0 !important;
     border-top-left-radius: 0 !important;
@@ -84,7 +103,8 @@
   }
 }
 
-ul#dir-active {
+ul#dir-active,
+ul.dropdown-menu {
   display: none;
   width: 100%!important;
   margin: 0!important;
@@ -93,7 +113,8 @@ ul#dir-active {
   right: 0!important;
 }
 
-#dir-active {
+#dir-active,
+.dropdown-menu {
   background-color: #dab62a !important;
   position: absolute;
   min-height: 50px;
@@ -168,7 +189,8 @@ ul#dir-active {
   overflow: hidden !important;
 }
 
-.ms-srch-sb > .ms-srch-sb-searchLink {
+.ms-srch-sb > .ms-srch-sb-searchLink,
+.ms-srch-sb > .ms-srch-sb-navLink {
   margin-left: -1px !important;
   height: 20px !important;
   width: 20px !important;

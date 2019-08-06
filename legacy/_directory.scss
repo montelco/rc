@@ -1,0 +1,276 @@
+.administrator {
+  width: 580px;
+  margin: 0 0 20px 0;
+  background-color: #F1F4F9;
+  display: inline-block;
+  padding: 20px;
+  position: relative;
+  border: solid 1px #ddd;
+  border-radius: 5px;
+}
+
+
+.administratorSmall {
+  width: 370px;
+  display: inline-block;
+  float: left;
+  padding-bottom: 12.5px;
+  margin-bottom: 12.5px;
+  border-bottom: solid 1px #ddd;
+}
+
+.bioSpacer {
+  width: 100%;
+  display: block;
+  margin-bottom: 15px!important;
+}
+
+
+.adImager {
+  width: 100px;
+  height: 150px;
+  float: left;
+  margin: 0 25px 0 0;
+  overflow: hidden;
+  border-radius: 5px;
+  border: solid 1px #ddd;
+  padding: 7px!important;
+  box-shadow: 1px 1px 5px 1px #ddd;
+}
+
+.administratorSmall .adImager {
+  padding: 0!important;
+}
+
+
+.adImager img {
+  width: 100%!important;
+  height: auto;
+  border-radius: 5px;
+  border: solid 1px #ddd;
+  opacity: .93;
+}
+
+.adInfo,
+.adName,
+.adNumer {
+  width: 410px;
+  display: inline-block;  
+  margin-bottom: 0px;
+}
+
+.administratorSmall .adInfo{  
+  width: 220px;
+}
+
+.administratorSmall  .note {  
+  width: auto;
+  display: inline-block;
+  margin: 15px 0 15px 0;
+  font-style: italic;
+}
+
+.adName {
+  font-size: 24px!important;  
+  font-weight: bold!important;
+  margin-top: -5px;
+  width: auto;
+}
+
+.adNumer {
+  font-size: 18px;
+  font-weight: lighter;
+  margin-bottom: 5px; 
+}
+
+.adEmail {
+  color: blue;  
+}
+
+.addFullInfo {
+  font-weight: lighter; 
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+.presidesc {
+  width: auto;
+  display: inline-block;  
+  margin-top: 10px;
+  height: auto;
+}
+
+.administrator,
+.administrator *:not(.bioIntro) {
+  transition: all .3s;  
+}
+
+.bioIntro {
+  display: inline-block;
+  overflow: hidden;
+  float: left;
+}
+
+.bioIntro:before {
+  content: '...';
+  position: absolute;
+  width: 100%;
+  display: block;
+  bottom: 30px;
+  pointer-events: none;
+}
+
+.bioToggle {
+  width: 100%;
+  color: #000;
+  text-align: center; 
+  min-height: 35px;
+  line-height: 35px;
+  margin-top: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.dotters {
+  position: relative!important;
+  bottom: 21px!important;
+  color: red!important;
+  font-size: 24px!important;
+  z-index: 999999999999999999999999999!important;
+  display: inline-block;
+  float: left!important;
+  display: none!important;
+}
+
+.staffEdu,
+.epStatus  {
+  margin-bottom: 5px; 
+}
+
+@media screen and (min-width: 767px) {
+  .cat-news:nth-of-type(even) {
+    margin-left: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cat-news:nth-of-type(even) {margin-left: 20px!important;}
+
+  .cat-news {
+    margin-bottom: 20px!important;
+    vertical-align: top;
+    max-width: 220px;
+  }
+
+  .administrator,
+  .administrator *:not(.bioIntro) {transition: all .3s;}
+
+  .adImager,
+  .addFullInfo,
+  .presidesc,
+  .adInfo,
+  .administratorSmall {
+    width: 100%!important;
+    display: inline-block;  
+    padding: 0;
+  }
+
+  .adImager   {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 120px!important;
+    height: 120px!important;
+    margin: 0 auto!important;
+    overflow: hidden;
+    float: none!important;
+    display: block;
+    margin-bottom: 15px!important;
+    padding: 0!important;
+  }
+
+  .administrator {
+    width: 90%!important;
+    padding: 5%!important;
+  }
+}
+
+/* Staff Directory CSS starts here */
+
+#act-direcory {
+  width: 100%;
+  overflow: hidden!important;
+}
+
+#act-direcory > .title {
+  width: 100%;
+  height: 35px!important;
+  line-height: 35px!important;
+  background-color: #C8D3E0;
+  color: #254150!important;
+  font-weight: bold;
+  font-size: 18px!important;
+  float: left;
+  padding: 5px 15px 15px 15px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  float: left;
+  position: relative;
+  
+  
+}
+
+
+#act-direcory .title > div {
+text-align: center; 
+}
+
+
+.act-employee-directory {
+width: 100%;
+background-color: #ddd; 
+float: left;
+padding: 10px;
+margin-bottom: 5px;
+border-bottom: solid 1px #ccc;
+border-top: solid 1px #ccc;
+  
+}
+
+.act-employee-directory strong {
+width: 100%;
+display: none;
+
+}
+
+
+
+
+.act-employee-directory:nth-of-type(2n) {
+  background-color: #eee;
+  
+}
+
+.act-employee-directory > div, .title > div {
+  float: left;
+  font-size: 16px;
+  height: auto;
+  color: black;
+}
+
+
+.act-employee-directory .name, .title .tname  {
+  width: 30%;
+}
+
+.act-employee-directory .center, .title .department {
+  width: 50%;
+  
+}
+.act-employee-directory .phone, .title .ext {
+  // width: 100px;
+  text-align: center;
+  
+}

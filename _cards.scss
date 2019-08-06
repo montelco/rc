@@ -13,7 +13,7 @@
   &__header {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    // TO-DO: Rewrite to a function;
+    /* TO-DO: Rewrite to a function;*/
     font-size: 22px;
     padding: 5px 12px;
     h3 {
@@ -36,26 +36,22 @@
   }
 
   &__thumbnail {
-    // TO-DO: Flex mixin and portable extension?;
-    -webkit-flex-basis: calc(150px);
-        -ms-flex-preferred-size: calc(150px);
-            flex-basis: calc(150px);
+    /* TO-DO: Flex mixin and portable extension?;*/
+    -ms-flex-preferred-size: calc(150px);
+        flex-basis: calc(150px);
     height: 150px;
     padding: 0;
     margin: 0;
     -webkit-box-flex: 0;
-    -webkit-flex-grow: 0;
         -ms-flex-positive: 0;
             flex-grow: 0;
-    -webkit-flex-shrink: 0;
-        -ms-flex-negative: 0;
-            flex-shrink: 0;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
     width: 150px;
 
     @include media(mm) {
-      -webkit-flex-basis: 120px;
-          -ms-flex-preferred-size: 120px;
-              flex-basis: 120px;
+      -ms-flex-preferred-size: 120px;
+          flex-basis: 120px;
       height: 120px;
     }
     @include media(nml) {
@@ -89,6 +85,13 @@
 
     &.np{padding:0;}
 
+    &.twitter-container {
+      position: relative;
+      @supports not (-ms-high-contrast: none) {
+        overflow-y: scroll;
+      }
+    }
+
     &.lp{
       padding: 0 8px;
       border-top-left-radius: 0px;
@@ -98,7 +101,6 @@
 
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
       -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
               flex: 1 1 auto;
     }
@@ -109,7 +111,7 @@
       border-bottom-left-radius: 4px;
       border-bottom-right-radius: 4px;
     }
-    // TO-DO: Refactor as an extension which can inherit. Refactor will include a rewrite to font scaling;
+    /* TO-DO: Refactor as an extension which can inherit. Refactor will include a rewrite to font scaling;*/
     h3 {
       @include media(mm) {
         font: {
@@ -146,7 +148,7 @@
     }
 
   }
-    // TO-DO: Reconsider the scope and applicability of this. Tied to the presentation of the Newsfeed but might be worth rewriting;
+    /* TO-DO: Reconsider the scope and applicability of this. Tied to the presentation of the Newsfeed but might be worth rewriting;*/
     ul{
       padding-left: 0;
       &>li{
@@ -178,7 +180,7 @@
       text-align: center;
       text-transform: uppercase; 
     }
-    // TO-DO: Rewrite into a mixin for typography;
+    /* TO-DO: Rewrite into a mixin for typography;*/
     h1 {
       font: {
         size: 32px;
@@ -193,7 +195,7 @@
       }
     }
   }
-  // TO-DO: Rewrite into a mixin for typography;
+  /* TO-DO: Rewrite into a mixin for typography;*/
   &__details {
     h2 {
       font: {
@@ -239,8 +241,8 @@
       font-size: 26px;
       @media screen and (max-width: $wl - 1) {font-size: 24px;}
       @media screen and (max-width: $lg - 1) {font-size: 22px;}
-      // TO-DO: Flex mixins and portable extensions?;
-      @include media(lg) {-webkit-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;}
+      /* TO-DO: Flex mixins and portable extensions?;*/
+      @include media(lg) {-webkit-box-flex: 1;-ms-flex: 1;flex: 1;}
       @include media(mm) {
         font-size: .75em;
         padding-bottom: 1em;

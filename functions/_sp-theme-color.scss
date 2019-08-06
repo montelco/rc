@@ -1,0 +1,37 @@
+@mixin sp-theme-color($themes, $n-tints: 5) {
+  @each $theme, $value in $themes {
+    $i: index(($themes), ($theme $value));
+    .ms-rteThemeForeColor-#{$i} {
+
+      color: $value;
+      @for $n-tint from 0 through $n-tints {
+        &-#{$n-tint} {
+          @if $n-tint <= 2 {
+            color: scale-color($value, $lightness: 50% - percentage(($n-tint * 10)/100));
+          } @else if $n-tint >= 3{
+            color: scale-color($value, $lightness: -1 * percentage(($n-tint * 10)/100));
+          }
+        }
+      }
+    }
+    .ms-rteForeColor-#{$i} {
+      color: $value;
+    }
+    .ms-rteThemeBackColor-#{$i} {
+
+      background-color: $value;
+      @for $n-tint from 0 through $n-tints {
+        &-#{$n-tint} {
+          @if $n-tint <= 2 {
+            background-color: scale-color($value, $lightness: 50% - percentage(($n-tint * 10)/100));
+          } @else if $n-tint >= 3{
+            background-color: scale-color($value, $lightness: -1 * percentage(($n-tint * 10)/100));
+          }
+        }
+      }
+    }
+    .ms-rteBackColor-#{$i} {
+      background-color: $value;
+    }
+  }
+}

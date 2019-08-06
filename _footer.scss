@@ -1,3 +1,7 @@
+footer.cd-main-content {
+  z-index: 0;
+}
+
 .social{
   display: -webkit-box;
   display: -webkit-flex;
@@ -26,12 +30,9 @@
     display: block;
   }
 }
+
 .mb-mm-35 {
   @include media(mm) {
     margin-bottom: 55px;   
   }
-}
-
-.text-align-center {
-  text-align: center;
 }

@@ -1,118 +1,101 @@
 @include media(lg) {
-  #whatsNew div.d-flex {
+  @supports not (-ms-high-contrast: none){
+    #whatsNew div.d-flex {
 
-    div[id^='ct100_PlaceHolderMain'],
-    div[webpart] {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 1 1 auto;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto;
-    }
-
-    & > div {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 1 1 auto;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      /* div[id^='ct100_PlaceHolderMain'] {*/
-      /*   display: flex;*/
-      /*   flex: 1 1 auto;*/
-      /* }*/
-      .card {
+      div[id^='ct100_PlaceHolderMain'],
+      div[id^='ctl00_PlaceHolderMain'],
+      div[webpart] {
         display: -webkit-box;
-        display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-flex: 1 1 auto;
-        -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+      }
+
+      & > div {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1 1 auto;
             -ms-flex: 1 1 auto;
                 flex: 1 1 auto;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
             -ms-flex-direction: column;
                 flex-direction: column;
-        width: 100%;
-        &__body {
+        /* div[id^='ct100_PlaceHolderMain'] {*/
+        /*   display: flex;*/
+        /*   flex: 1 1 auto;*/
+        /* }*/
+        .card {
           display: -webkit-box;
-          display: -webkit-flex;
           display: -ms-flexbox;
           display: flex;
           -webkit-box-flex: 1 1 auto;
-          -webkit-flex: 1 1 auto;
               -ms-flex: 1 1 auto;
                   flex: 1 1 auto;
           -webkit-box-orient: vertical;
           -webkit-box-direction: normal;
-          -webkit-flex-direction: column;
               -ms-flex-direction: column;
                   flex-direction: column;
-          &.np a {
+          width: 100%;
+          &__body {
             display: -webkit-box;
-            display: -webkit-flex;
             display: -ms-flexbox;
             display: flex;
             -webkit-box-flex: 1 1 auto;
-            -webkit-flex: 1 1 auto;
                 -ms-flex: 1 1 auto;
                     flex: 1 1 auto;
             -webkit-box-orient: vertical;
             -webkit-box-direction: normal;
-            -webkit-flex-direction: column;
                 -ms-flex-direction: column;
                     flex-direction: column;
+            &.np a {
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-flex: 1 1 auto;
+                  -ms-flex: 1 1 auto;
+                      flex: 1 1 auto;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+                  -ms-flex-direction: column;
+                      flex-direction: column;
+            }
           }
+          &__event {-webkit-box-flex: 1 1 auto;-ms-flex: 1 1 auto;flex: 1 1 auto;}
         }
-        &__event {-webkit-box-flex: 1 1 auto;-webkit-flex: 1 1 auto;-ms-flex: 1 1 auto;flex: 1 1 auto;}
       }
     }
   }
 }
 
 @include media(md) {
-  // IE gets punished for existing. We're okay with giving a slightly worse experience since it's not a major piece.
-  // Everyone else gets nicely sized cards.
+  /* IE gets punished for existing. We're okay with giving a slightly worse experience since it's not a major piece.*/
+  /* Everyone else gets nicely sized cards.*/
   @supports not (-ms-high-contrast: none){
     #Highlights {
       .card__body.lp {
         display: -webkit-box;
-        display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-flex: 1;
-        -webkit-flex: 1 1 auto;
             -ms-flex: 1 1 auto;
                 flex: 1 1 auto;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
             -ms-flex-direction: column;
                 flex-direction: column;
         &>a:nth-of-type(1){
           display: -webkit-box;
-          display: -webkit-flex;
           display: -ms-flexbox;
           display: flex;
           -webkit-box-flex: 1;
-          -webkit-flex: 1 1 auto;
               -ms-flex: 1 1 auto;
                   flex: 1 1 auto;
           -webkit-box-orient: vertical;
           -webkit-box-direction: normal;
-          -webkit-flex-direction: column;
               -ms-flex-direction: column;
                   flex-direction: column;
         }
@@ -134,12 +117,10 @@
       }
       .row .col-md-4 {
         display: -webkit-box;
-        display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         .card {
           -webkit-box-flex: 1;
-          -webkit-flex: 1 1 auto;
               -ms-flex: 1 1 auto;
                   flex: 1 1 auto;
         }
@@ -154,27 +135,22 @@
     div[id^='ct100_PlaceHolderMain'],
     div[webpart] {
       display: -webkit-box;
-      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       -webkit-box-flex: 1 1 auto;
-      -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
               flex: 1 1 auto;
     }
 
     & > div {
       display: -webkit-box;
-      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       -webkit-box-flex: 1 1 auto;
-      -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
               flex: 1 1 auto;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
           -ms-flex-direction: column;
               flex-direction: column;
       /* div[id^='ct100_PlaceHolderMain'] {*/
@@ -183,50 +159,56 @@
       /* }*/
       &.card {
         display: -webkit-box;
-        display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-flex: 1 1 auto;
-        -webkit-flex: 1 1 auto;
             -ms-flex: 1 1 auto;
                 flex: 1 1 auto;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
             -ms-flex-direction: column;
                 flex-direction: column;
         width: 100%;
         &__body {
           display: -webkit-box;
-          display: -webkit-flex;
           display: -ms-flexbox;
           display: flex;
           -webkit-box-flex: 1 1 auto;
-          -webkit-flex: 1 1 auto;
               -ms-flex: 1 1 auto;
                   flex: 1 1 auto;
           -webkit-box-orient: vertical;
           -webkit-box-direction: normal;
-          -webkit-flex-direction: column;
               -ms-flex-direction: column;
                   flex-direction: column;
           &.np a {
             display: -webkit-box;
-            display: -webkit-flex;
             display: -ms-flexbox;
             display: flex;
             -webkit-box-flex: 1 1 auto;
-            -webkit-flex: 1 1 auto;
                 -ms-flex: 1 1 auto;
                     flex: 1 1 auto;
             -webkit-box-orient: vertical;
             -webkit-box-direction: normal;
-            -webkit-flex-direction: column;
                 -ms-flex-direction: column;
                     flex-direction: column;
           }
         }
-        &__event {-webkit-box-flex: 1 1 auto;-webkit-flex: 1 1 auto;-ms-flex: 1 1 auto;flex: 1 1 auto;}
+        &__event {-webkit-box-flex: 1 1 auto;-ms-flex: 1 1 auto;flex: 1 1 auto;}
+      }
+    }
+  }
+}
+
+#whatsNew div.d-flex {
+  & > div {
+    .card {
+      &__body.twitter-container {
+        @include media(mm) {
+          height: 400px;
+        }
+        @include media(mo) {
+          height: 400px;
+        }
       }
     }
   }

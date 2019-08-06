@@ -1,0 +1,5 @@
+@function ms($exponent, $number: $ms-ratio, $ms-base: $ms-font-size-base){
+  $size: pow($number, $exponent);
+  $size: $size*$ms-base;
+  @return $size;
+}
