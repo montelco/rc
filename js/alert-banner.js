@@ -10,7 +10,6 @@ $(document).ready(function () {
   });
 
   $('.alert-switch').on('click', function (event) {
-  console.log('showing next');
       event.preventDefault();
       var currAlert = $('.alert-box:visible');
       var nextAlert = currAlert.next();
@@ -22,7 +21,6 @@ $(document).ready(function () {
   });
 
 $(".alert-right-arrow, .alert-count").on('click', function () {
-  console.log('showing next');
   if ($(".alert-box:visible").next().length !== 0){
     $(".alert-box:visible").next().show().prev().hide();
   } else {
@@ -33,7 +31,6 @@ $(".alert-right-arrow, .alert-count").on('click', function () {
 });
 
 $(".alert-left-arrow").on('click', function () {
-  console.log('showing prev');
   if ($(".alert-box:visible").prev().length != 0) {
     if ($(".alert-box:first").is(":visible")) {
       $(".alert-box:last").show();
@@ -66,7 +63,6 @@ $(".alert-left-arrow").on('click', function () {
 
   function countAlerts(){
     var n = $(".alert-box").length;
-    console.log(n + " Alerts");
     $(".alert-count").text("" + n + " Alerts");
   }
   countAlerts();
@@ -85,12 +81,10 @@ $(".alert-left-arrow").on('click', function () {
     }
   }
   if($.cookie('closeBox') === "true"){
-    console.log('Closed the alert box automatically...');
     hideAllButFirst();
     closeBox();
   }
   $('#alert1 .alert-switch').one('click', function () {
-    console.log('Closed the alert box manually');
     closeBox();
   });    
   function closeBox2(){     
@@ -103,12 +97,10 @@ $(".alert-left-arrow").on('click', function () {
     hideNavIfOne();
   }
   if($.cookie('Box2-closed') === "true") {
-    console.log('Closed the alert box automatically...');
     hideAllButFirst();
     closeBox2();
   }
   $('#alert2 .alert-switch').one('click', function () {
-    console.log('Closed the alert box manually');
     closeBox2();
   });
   function closeBox3(){     
@@ -121,12 +113,10 @@ $(".alert-left-arrow").on('click', function () {
     hideNavIfOne();    
   }
   if($.cookie('Box3-closed') === "true") {
-    console.log('Closed the alert box automatically...');
     hideAllButFirst();
     closeBox3();
   }
   $('#alert3 .alert-switch').one('click', function () {
-    console.log('Closed the alert box manually');
     closeBox3();
   });
 });

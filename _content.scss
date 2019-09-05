@@ -135,6 +135,10 @@ header + main {
         box-shadow: none;
       }
 
+      @include media(xs) {
+        display: none;
+      }
+
       h1 {
         color: $white;
         font: {
@@ -171,16 +175,17 @@ header + main {
   p {
     @include media(md) {
       font: {
-        size: 14pt;
+        size: 12pt;
         family: $font-family-sans-serif;
       }
     }
 
     @include media(mm) {
       font: {
-        size: 16pt;
+        size: 14pt;
         family: $font-family-sans-serif;
       }
+      line-height: 1.45;
     }
 
     font: {
@@ -203,7 +208,22 @@ header + main {
     &.lst-none{
       list-style-type: none;
     }
+  }
 
+  div[id^="WebPartctl00"] table {
+    table-layout: auto !important;
+    tbody {
+      tr {
+        td {
+          width: auto !important;
+          height: auto !important;
+          div[id^="MSOPictureLibrarySlideshowWebPart"] {
+            width: auto !important;
+            height: auto !important;
+          }
+        }
+      }
+    }
   }
   
   ul.list-unstyled{list-style-type: none;}
