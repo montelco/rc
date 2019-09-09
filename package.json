@@ -1,0 +1,30 @@
+{
+  "name": "grid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/montelco/rc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/montelco/rc/issues"
+  },
+  "homepage": "https://github.com/montelco/rc#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/register": "^7.6.0",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.39.3"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.6.0"
+  }
+}
