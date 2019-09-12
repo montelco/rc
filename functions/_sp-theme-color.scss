@@ -4,7 +4,7 @@
     .ms-rteThemeForeColor-#{$i} {
 
       color: $value;
-      @for $n-tint from 0 through $n-tints {
+      @for $n-tint from 1 through $n-tints {
         &-#{$n-tint} {
           @if $n-tint <= 2 {
             color: scale-color($value, $lightness: 50% - percentage(($n-tint * 10)/100));
@@ -14,13 +14,14 @@
         }
       }
     }
-    .ms-rteForeColor-#{$i} {
+    .ms-rteForeColor-#{$i},
+    .ms-rteForeColor-#{$i}\-0 {
       color: $value;
     }
     .ms-rteThemeBackColor-#{$i} {
 
       background-color: $value;
-      @for $n-tint from 0 through $n-tints {
+      @for $n-tint from 1 through $n-tints {
         &-#{$n-tint} {
           @if $n-tint <= 2 {
             background-color: scale-color($value, $lightness: 50% - percentage(($n-tint * 10)/100));
@@ -30,7 +31,8 @@
         }
       }
     }
-    .ms-rteBackColor-#{$i} {
+    .ms-rteBackColor-#{$i},
+    .ms-rteBackColor-#{$i}\-0 {
       background-color: $value;
     }
   }

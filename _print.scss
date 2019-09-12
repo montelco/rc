@@ -1,0 +1,109 @@
+@media print {
+  body,
+  .light,
+  .content {
+    background: $white;
+    color: $black !important;
+    font-family: $font-family-sans-serif;
+    font-size: 14pt !important;
+  }
+
+  h1 {
+    font-size: 1.75em;
+  }
+
+  h2 {
+    font-size: 1.65em;
+  }
+
+  h3 {
+    font-size: 1.55em;
+  }
+
+  h4 {
+    font-size: 1.45em;
+  }
+
+  h5 {
+    font-size: 1.35em;
+  }
+
+  h5 {
+    font-size: 1.25em;
+  }
+
+  p{
+    font-size: 1em;
+  }
+
+  body{
+    &:before{
+      content: url(https://www.rcsj.edu/PublishingImages/logos/RCSJ%20logo_black-STACKED_print.png);
+      width: 25vw;
+      height: auto;
+    }
+  }
+
+  .content-page {
+    width: 100%;
+    margin: 0; padding: 0;
+    background: none;
+    section.page_area{
+      background: $white;
+      .container {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .title_ribbon{
+        margin: none;
+        background: none;
+        box-shadow: none;
+        h1 {
+          color: $black;
+        }
+      }
+
+      .subsite-navigation.grey {
+        display: none;
+      }
+      .page {
+        .article {
+          a {
+            color: $pc-link-color;
+            -webkit-text-decoration: $pc-link-decoration;
+                    text-decoration: $pc-link-decoration;
+            background-color: transparent;
+            -webkit-text-decoration-skip: objects;
+            @include hover {
+              color: $pc-link-hover-color;
+              -webkit-text-decoration: $pc-link-hover-decoration;
+                      text-decoration: $pc-link-hover-decoration;
+            }
+            &:visited {
+              color: $pc-link-visited-color;
+              -webkit-text-decoration: $pc-link-visited-decoration;
+                      text-decoration: $pc-link-visited-decoration;
+            }
+          }
+          a:after {
+            content: " [" attr(href) "] ";
+          }
+          iframe {
+            display: none;
+          }
+
+          img {
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
+          }
+        }
+      }
+    }
+  }
+
+  #alerts, header, footer, .content-page .no_overlay_hero, fab {
+    display: none;
+  }
+}
+
