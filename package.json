@@ -1,17 +1,19 @@
 {
-  "name": "grid",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "Rowan College",
+  "version": "2.0",
+  "description": "The codebase for the Rowan College of South Jersey web application suite.",
+  "private": true,
+  "main": "bundle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --config webpack.dev.js --open",
+    "prod": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/montelco/rc.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Rowan College of South Jersey",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/montelco/rc/issues"
@@ -22,7 +24,10 @@
     "@babel/preset-env": "^7.6.0",
     "@babel/register": "^7.6.0",
     "babel-loader": "^8.0.6",
-    "webpack": "^4.39.3"
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0",
+    "webpack": "^4.39.3",
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {
     "@babel/polyfill": "^7.6.0"
