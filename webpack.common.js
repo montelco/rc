@@ -1,5 +1,18 @@
 const path = require("path");
-module.exports {
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+
+module.exports = {
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          keep_fnames: true,
+        },
+      }),
+    ],
+  },
   module: {
     rules: [
       {
@@ -13,12 +26,35 @@ module.exports {
           'sass-loader',
         ],
       },
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      },
+      {
+        test: /.js/,
+        use: [
+          {
+            loader: `expose-loader`,
+          }
+        ]
+      }
     ],
   },
-  mode: "production",
-  entry: "./src/main.js",
+  entry: ["@babel/polyfill", "./src/preferred.js"],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Production',
+   }),
+  ],
   output: {
-    filename: "bundled.js",
+    filename: "preferred.js",
     path: path.resolve(__dirname, "dist")
   }
 };

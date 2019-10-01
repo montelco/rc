@@ -1,3 +1,4 @@
+require("@babel/polyfill");
 // Variable Declarations
 // Look for checkbox area for campuses
 const campusSelector = document.querySelector("#appliesTo");
@@ -229,13 +230,22 @@ function checkForLocationMatch(ip, validRanges=externalRanges) {
 }
 
 function createLocationTemp(campus, expiry=expireInDays) {
-  if (campus !== null ) {
-    let date = new Date();
-    date.setTime(date.getTime()+(expiry*24*60*60*1000));
-    expires = "; expires="+date.toGMTString();
-    let cookieValue = "userTempLocation=" + campus + expires + ";path=/";
-    document.cookie = cookieValue;
-    return createTempPreference("userTempLocation");
+  if (campus !== null) {
+    if (campus !== undefined) {
+      let date = new Date();
+      date.setTime(date.getTime()+(expiry*24*60*60*1000));
+      expires = "; expires="+date.toGMTString();
+      let cookieValue = "userTempLocation=" + campus + expires + ";path=/";
+      document.cookie = cookieValue;
+      return createTempPreference("userTempLocation");
+    } else {
+      let date = new Date();
+      date.setTime(date.getTime()+(expiry*24*60*60*1000));
+      expires = "; expires="+date.toGMTString();
+      let cookieValue = "userTempLocation=none" + expires + ";path=/";
+      document.cookie = cookieValue;
+      return createTempPreference("userTempLocation");
+    }
   } else {
     return false;
   }
