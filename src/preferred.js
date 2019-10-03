@@ -24,13 +24,13 @@ let ip_value;
 readPreferred(sanitize(campuses));
 
 // Remove all extraneous characters from campus input
-function sanitize(values) {
+export function sanitize(values) {
   let cleaned = values.replace(/(\r\n|\n|\r)/gm,"").split(' ').join('').toLowerCase();
   return cleaned;
 }
 
 // Does the page apply to multiple campuses
-function multipleCampusesChecker(values) {
+export function multipleCampusesChecker(values) {
   if (values.includes(';')) {
     return multiCampus = 1;
   } else {
@@ -39,7 +39,7 @@ function multipleCampusesChecker(values) {
 }
 
 // If a page is campus-specific, check if incrementing cookie exists
-function checkIfExists (campus, isMulti){
+export function checkIfExists (campus, isMulti){
   if (!isMulti) {
     let check = document.cookie.indexOf(campus);
     if (check != -1) {
@@ -53,26 +53,26 @@ function checkIfExists (campus, isMulti){
 }
 
 // Create a new counter for the given campus
-function createCampusCookie(campus) {
+export function createCampusCookie(campus) {
   let cookieValue = campus + "=1";
   return document.cookie = cookieValue;
 }
 
 // Add to the counter for a user's preference
-function addToCampusCount (campus) {
+export function addToCampusCount (campus) {
   let cookie = parseInt(getCookieValue(campus));
   cookie++;
   let date = new Date();
   console.log('new value will be ' + cookie + ' for ' + campus);
   date.setTime(date.getTime()+(expireInDays*24*60*60*1000));
-  expires = "; expires="+date.toGMTString();
+  let expires = "; expires="+date.toGMTString();
   let cookieValue = campus + "=" + cookie + expires + ";path=/";
   console.log(cookieValue);
   return document.cookie = cookieValue;
 }
 
-// Select a cookie and return its value to a function
-function getCookieValue(cname) {
+// Select a cookie and return its value to a export function
+export function getCookieValue(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
@@ -89,7 +89,7 @@ function getCookieValue(cname) {
 }
 
 // If the campus count is equal to or greater than the threshold, prompt a user to select, otherwise check the existince and/or increment the count
-function checkThreshold (campus) {
+export function checkThreshold (campus) {
   if (getCookieValue(campus) >= threshold) {
     let toast = toastPopped(campus.charAt(0).toUpperCase() + campus.slice(1));
     return;
@@ -99,7 +99,7 @@ function checkThreshold (campus) {
 }
 
 // Check if in editor mode, if so, do nothing; if a preference is set, if so, highlight the preference and redirect if possible; and if a user is on a campus, temporarily set their preference.
-function readPreferred(campus) {
+export function readPreferred(campus) {
   let preferred = document.cookie.indexOf('preferred');
   let location = document.cookie.indexOf('userTempLocation');
   let editor = window.location.href.indexOf('//manage.');
@@ -121,7 +121,7 @@ function readPreferred(campus) {
   }
 }
 
-function preference(preferred, campus) {
+export function preference(preferred, campus) {
   if(preferred){
     createPreferred(campus);
     return;
@@ -131,11 +131,11 @@ function preference(preferred, campus) {
   }
 }
 
-function createPreferred(campus, expiry) {
+export function createPreferred(campus, expiry) {
   expiry = expiry || expireInDays;
   let date = new Date();
   date.setTime(date.getTime()+(expiry*24*60*60*1000));
-  expires = "; expires="+date.toGMTString();
+  let expires = "; expires="+date.toGMTString();
   let cookieValue = "preferred=" + campus + expires + ";path=/";
   document.cookie = cookieValue;
   highlightPreferred();
@@ -143,7 +143,7 @@ function createPreferred(campus, expiry) {
   return true;
 }
 
-function doesNavigatorActionExist(preferred) {
+export function doesNavigatorActionExist(preferred) {
   if (navigatorExplorer != null) {
     let navigationAction = "#" + preferred + "NavigatorAction";
     let navigationActionButton = "#" + preferred + "URL";
@@ -158,11 +158,11 @@ function doesNavigatorActionExist(preferred) {
   }
 }
 
-function highlightPreferred() {
+export function highlightPreferred() {
   let cuPicker = document.getElementById("CumberlandCampusSelector");
   let glPicker = document.getElementById("GloucesterCampusSelector");
   let message = "Remove your preferred campus";
-  let remover = 'createPreferred("none")';
+  let remover = 'preferred.createPreferred("none")';
 
   if (getCookieValue("preferred") === 'cumberland') {
     cuPicker.classList.add("active");
@@ -171,7 +171,7 @@ function highlightPreferred() {
 
     glPicker.classList.remove("active");
     glPicker.setAttribute('title', "Update your preferred campus");
-    glPicker.setAttribute('onclick', 'createPreferred("gloucester")');
+    glPicker.setAttribute('onclick', 'preferred.createPreferred("gloucester")');
     return true;
   } else if (getCookieValue("preferred") === 'gloucester') {
     glPicker.classList.add("active");
@@ -180,30 +180,30 @@ function highlightPreferred() {
 
     cuPicker.classList.remove("active");
     cuPicker.setAttribute('title', "Update your preferred campus");
-    cuPicker.setAttribute('onclick', 'createPreferred("cumberland")');
+    cuPicker.setAttribute('onclick', 'preferred.createPreferred("cumberland")');
     return true;
   } else {
     cuPicker.classList.remove("active");
     cuPicker.setAttribute('title', "Update your preferred campus");
-    cuPicker.setAttribute('onclick', 'createPreferred("cumberland")');
+    cuPicker.setAttribute('onclick', 'preferred.createPreferred("cumberland")');
 
     glPicker.classList.remove("active");
     glPicker.setAttribute('title', "Update your preferred campus");
-    glPicker.setAttribute('onclick', 'createPreferred("gloucester")');
+    glPicker.setAttribute('onclick', 'preferred.createPreferred("gloucester")');
   }
 }
 
-function detectMaintenance(webpart) {
+export function detectMaintenance(webpart) {
   if (document.getElementById('maintenanceMenu').length > 0) {
 
   }
 }
 
-async function getIP() {
+export async function getIP() {
   try {
     return await fetch('https://api.ipify.org/?format=json').then(response => response.json()).then(data => ip_value = data.ip);
   } catch (e) {
-    ip_value = null;
+    let ip_value = null;
     throw e;
   } finally {
     let location = checkForLocationMatch(ip_value, externalRanges);
@@ -216,7 +216,7 @@ async function getIP() {
   }
 }
 
-function checkForLocationMatch(ip, validRanges=externalRanges) {
+export function checkForLocationMatch(ip, validRanges=externalRanges) {
   try {
     for (const [key, value] of Object.entries(validRanges)) {
       if (value.test(ip)) {
@@ -229,19 +229,19 @@ function checkForLocationMatch(ip, validRanges=externalRanges) {
   }
 }
 
-function createLocationTemp(campus, expiry=expireInDays) {
+export function createLocationTemp(campus, expiry=expireInDays) {
   if (campus !== null) {
     if (campus !== undefined) {
       let date = new Date();
       date.setTime(date.getTime()+(expiry*24*60*60*1000));
-      expires = "; expires="+date.toGMTString();
+      let expires = "; expires="+date.toGMTString();
       let cookieValue = "userTempLocation=" + campus + expires + ";path=/";
       document.cookie = cookieValue;
       return createTempPreference("userTempLocation");
     } else {
       let date = new Date();
       date.setTime(date.getTime()+(expiry*24*60*60*1000));
-      expires = "; expires="+date.toGMTString();
+      let expires = "; expires="+date.toGMTString();
       let cookieValue = "userTempLocation=none" + expires + ";path=/";
       document.cookie = cookieValue;
       return createTempPreference("userTempLocation");
@@ -251,7 +251,7 @@ function createLocationTemp(campus, expiry=expireInDays) {
   }
 }
 
-function checkForValidLocation(campus, location, locationCookieName) {
+export function checkForValidLocation(campus, location, locationCookieName) {
   console.log('Checking location...');
   if (location != -1 && getCookieValue(locationCookieName) !== "null" && typeof getCookieValue(locationCookieName) !== "undefined") {
     console.log('Creating the cookie...');
@@ -263,18 +263,18 @@ function checkForValidLocation(campus, location, locationCookieName) {
   return checkThreshold(campus);
 }
 
-function createTempPreference(locationCookieName) {
+export function createTempPreference(locationCookieName) {
   createPreferred(getCookieValue(locationCookieName), expireByIP);
   highlightPreferred();
   changeLinks(getCookieValue("preferred"));
   return true;
 }
 
-function loginClick(campus) {
+export function loginClick(campus) {
   return console.log($(this));
 }
 
-function changeLinks(campus) {
+export function changeLinks(campus) {
   let portal = document.querySelector('#p-link');
   let quicklinks = document.querySelector('#cu-link');
   let campuspicker = document.querySelector('#campusLogin-link');
@@ -321,10 +321,10 @@ function changeLinks(campus) {
   }
 }
 
-function swapLogo() {
+export function swapLogo() {
 }
 
-function toastPopped(campus) {
+export function toastPopped(campus) {
   toastr['info']('<p>Would you like to set ' + campus + ' as your preferred campus?<br/><b><a href="/CampusDefault" target="_blank">(You can change this at any time.)</a></b></p><div class="button-container"><button type="button" id="setPreferred" onclick="preference(true, \'' + sanitize(campus) + '\')" class="btn btn-primary">Set Preferred</button><button type="button" id="noPreferred" class="btn" onclick="preference(false)" style="margin: 0 8px 0 8px">No Thanks</button></div>');
 }
 

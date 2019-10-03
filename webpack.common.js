@@ -35,25 +35,15 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
-      },
-      {
-        test: /.js/,
-        use: [
-          {
-            loader: `expose-loader`,
-          }
-        ]
       }
     ],
   },
   entry: ["@babel/polyfill", "./src/preferred.js"],
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: 'Production',
-   }),
   ],
   output: {
+    library: "preferred",
     filename: "preferred.js",
     path: path.resolve(__dirname, "dist")
   }
