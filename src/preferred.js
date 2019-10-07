@@ -252,9 +252,7 @@ export function createLocationTemp(campus, expiry=expireInDays) {
 }
 
 export function checkForValidLocation(campus, location, locationCookieName) {
-  console.log('Checking location...');
   if (location != -1 && getCookieValue(locationCookieName) !== "null" && typeof getCookieValue(locationCookieName) !== "undefined") {
-    console.log('Creating the cookie...');
     return createTempPreference(locationCookieName);
   } else {
     return getIP();
