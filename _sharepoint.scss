@@ -131,6 +131,14 @@ a[id*="ExplicitLogin"][href*="www"]{
   font-size: 10pt;
 }
 
+.ms-cui-gallerybutton-a {
+  padding: 0;
+  div > .ms-cui-ctl-mediumlabel {
+    font-size: 8pt;
+    display: inline-block;
+  }
+}
+
 .ms-cui-groupTitle {
   font-size: 10px;
 }
