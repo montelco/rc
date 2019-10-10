@@ -71,23 +71,6 @@ export function addToCampusCount (campus) {
   return document.cookie = cookieValue;
 }
 
-// Select a cookie and return its value to a export function
-export function getCookieValue(cname) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
-  for(let i = 0; i <ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
 // If the campus count is equal to or greater than the threshold, prompt a user to select, otherwise check the existince and/or increment the count
 export function checkThreshold (campus) {
   if (getCookieValue(campus) >= threshold) {
