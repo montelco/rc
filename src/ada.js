@@ -1,8 +1,4 @@
-window.onload = function() {
-  fixMainTabsAndId();
-  fixSharePointSearchBox();
-  fixMegaMenu();
-}
+window.onload = () => {fixMainTabsAndId();fixSharePointSearchBox();fixMegaMenu();};
 
 export function fixMainTabsAndId() {
   let main = document.querySelector("main");
