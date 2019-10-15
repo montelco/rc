@@ -2,7 +2,6 @@ import {getCookieValue} from './getCookieValue.js';
 
 const video = document.getElementById('bgvid');
 const vTrimControl = document.getElementById('vTrimControl');
-const pausedPreference = new getCookieValue();
 
 window.onload = () => {
   let present = isVideoThere(video);
@@ -29,5 +28,6 @@ export function isVideoThere(video) {
 }
 
 export function rememberPreference() {
-  
+  let pausedPreference = getCookieValue('video-state');
+  return console.log(pausedPreference);
 }

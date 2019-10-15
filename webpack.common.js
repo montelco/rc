@@ -2,13 +2,14 @@ const path = require("path");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   optimization: {
     minimizer: [
       new TerserPlugin({
         terserOptions: {
-          keep_fnames: true,
+          keep_fnames: false,
         },
       }),
     ],
@@ -38,13 +39,17 @@ module.exports = {
       }
     ],
   },
-  entry: ["@babel/polyfill", "./src/preferred.js"],
+  entry: ["@babel/polyfill", "./src/main.js"],
   plugins: [
     new CleanWebpackPlugin(),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    }),
   ],
   output: {
-    library: "preferred",
-    filename: "preferred.js",
+    library: "rcsj",
+    filename: "main-rcsj.js",
     path: path.resolve(__dirname, "dist")
   }
 };

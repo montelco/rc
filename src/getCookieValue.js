@@ -1,5 +1,5 @@
-export function getCookieValue(name) {
-  let name = name + "=";
+export function getCookieValue(cookiename) {
+  let cname = cookiename + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
   for(let i = 0; i <ca.length; i++) {
@@ -7,8 +7,8 @@ export function getCookieValue(name) {
     while (c.charAt(0) == ' ') {
       c = c.substring(1);
     }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
+    if (c.indexOf(cname) == 0) {
+      return c.substring(cname.length, c.length);
     }
   }
   return "";

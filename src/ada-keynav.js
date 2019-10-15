@@ -1,88 +1,87 @@
-(($, window, {activeElement}) => {
-    const pluginName = "accessibleMegaMenu";
-
-    const defaults = {
-        uuidPrefix: "accessible-megamenu", // unique ID's are required to indicate aria-owns, aria-controls and aria-labelledby
-        menuClass: "accessible-megamenu", // default css class used to define the megamenu styling
-        topNavItemClass: "accessible-megamenu-top-nav-item", // default css class for a top-level navigation item in the megamenu
-        panelClass: "accessible-megamenu-panel", // default css class for a megamenu panel
-        panelGroupClass: "accessible-megamenu-panel-group", // default css class for a group of items within a megamenu panel
-        hoverClass: "hover", // default css class for the hover state
-        focusClass: "focus", // default css class for the focus state
-        openClass: "open", // default css class for the open state
-        openDelay: 0, // default open delay when opening menu via mouseover,
-        debug: true
-    };
-
-    const Keyboard = {
-        BACKSPACE: 8,
-        COMMA: 188,
-        DELETE: 46,
-        DOWN: 40,
-        END: 35,
-        ENTER: 13,
-        ESCAPE: 27,
-        HOME: 36,
-        LEFT: 37,
-        PAGE_DOWN: 34,
-        PAGE_UP: 33,
-        PERIOD: 190,
-        RIGHT: 39,
-        SPACE: 32,
-        TAB: 9,
-        UP: 38,
-        keyMap: {
-            48: "0",
-            49: "1",
-            50: "2",
-            51: "3",
-            52: "4",
-            53: "5",
-            54: "6",
-            55: "7",
-            56: "8",
-            57: "9",
-            59: ";",
-            65: "a",
-            66: "b",
-            67: "c",
-            68: "d",
-            69: "e",
-            70: "f",
-            71: "g",
-            72: "h",
-            73: "i",
-            74: "j",
-            75: "k",
-            76: "l",
-            77: "m",
-            78: "n",
-            79: "o",
-            80: "p",
-            81: "q",
-            82: "r",
-            83: "s",
-            84: "t",
-            85: "u",
-            86: "v",
-            87: "w",
-            88: "x",
-            89: "y",
-            90: "z",
-            96: "0",
-            97: "1",
-            98: "2",
-            99: "3",
-            100: "4",
-            101: "5",
-            102: "6",
-            103: "7",
-            104: "8",
-            105: "9",
-            190: "."
-        }
-    };
-
+(function ($, window, document) {
+    "use strict";
+    var pluginName = "accessibleMegaMenu",
+        defaults = {
+            uuidPrefix: "accessible-megamenu", // unique ID's are required to indicate aria-owns, aria-controls and aria-labelledby
+            menuClass: "accessible-megamenu", // default css class used to define the megamenu styling
+            topNavItemClass: "accessible-megamenu-top-nav-item", // default css class for a top-level navigation item in the megamenu
+            panelClass: "accessible-megamenu-panel", // default css class for a megamenu panel
+            panelGroupClass: "accessible-megamenu-panel-group", // default css class for a group of items within a megamenu panel
+            hoverClass: "hover", // default css class for the hover state
+            focusClass: "focus", // default css class for the focus state
+            openClass: "open", // default css class for the open state
+            openDelay: 0, // default open delay when opening menu via mouseover,
+            debug: true
+        },
+        Keyboard = {
+            BACKSPACE: 8,
+            COMMA: 188,
+            DELETE: 46,
+            DOWN: 40,
+            END: 35,
+            ENTER: 13,
+            ESCAPE: 27,
+            HOME: 36,
+            LEFT: 37,
+            PAGE_DOWN: 34,
+            PAGE_UP: 33,
+            PERIOD: 190,
+            RIGHT: 39,
+            SPACE: 32,
+            TAB: 9,
+            UP: 38,
+            keyMap: {
+                48: "0",
+                49: "1",
+                50: "2",
+                51: "3",
+                52: "4",
+                53: "5",
+                54: "6",
+                55: "7",
+                56: "8",
+                57: "9",
+                59: ";",
+                65: "a",
+                66: "b",
+                67: "c",
+                68: "d",
+                69: "e",
+                70: "f",
+                71: "g",
+                72: "h",
+                73: "i",
+                74: "j",
+                75: "k",
+                76: "l",
+                77: "m",
+                78: "n",
+                79: "o",
+                80: "p",
+                81: "q",
+                82: "r",
+                83: "s",
+                84: "t",
+                85: "u",
+                86: "v",
+                87: "w",
+                88: "x",
+                89: "y",
+                90: "z",
+                96: "0",
+                97: "1",
+                98: "2",
+                99: "3",
+                100: "4",
+                101: "5",
+                102: "6",
+                103: "7",
+                104: "8",
+                105: "9",
+                190: "."
+            }
+        };
+    
     function AccessibleMegaMenu(element, options) {
         this.element = element;
 
@@ -100,27 +99,27 @@
         this.init();
     }
 
-    AccessibleMegaMenu.prototype = (() => {
-        /* private attributes and methods ------------------------ */
-        let uuid = 0;
+    AccessibleMegaMenu.prototype = (function () {
 
-        const keydownTimeoutDuration = 1000;
-        let keydownSearchString = "";
-        const isTouch = typeof window.hasOwnProperty === "function" && !!window.hasOwnProperty("ontouchstart");
-        let _getPlugin;
-        let _addUniqueId;
-        let _togglePanel;
-        let _clickHandler;
-        let _clickOutsideHandler;
-        let _DOMAttrModifiedHandler;
-        let _focusInHandler;
-        let _focusOutHandler;
-        let _keyDownHandler;
-        let _mouseDownHandler;
-        let _mouseOverHandler;
-        let _mouseOutHandler;
-        let _toggleExpandedEventHandlers;
-        let _log;
+        /* private attributes and methods ------------------------ */
+        var uuid = 0,
+            keydownTimeoutDuration = 1000,
+            keydownSearchString = "",
+            isTouch = typeof window.hasOwnProperty === "function" && !!window.hasOwnProperty("ontouchstart"),
+            _getPlugin,
+            _addUniqueId,
+            _togglePanel,
+            _clickHandler,
+            _clickOutsideHandler,
+            _DOMAttrModifiedHandler,
+            _focusInHandler,
+            _focusOutHandler,
+            _keyDownHandler,
+            _mouseDownHandler,
+            _mouseOverHandler,
+            _mouseOutHandler,
+            _toggleExpandedEventHandlers,
+            _log;
 
         /**
          * @name jQuery.fn.accessibleMegaMenu~_getPlugin
@@ -130,7 +129,9 @@
          * @inner
          * @private
          */
-        _getPlugin = element => $(element).closest(`:data(plugin_${pluginName})`).data(`plugin_${pluginName}`);
+        _getPlugin = function (element) {
+            return $(element).closest(':data(plugin_' + pluginName + ')').data("plugin_" + pluginName);
+        };
 
         /**
          * @name jQuery.fn.accessibleMegaMenu~_addUniqueId
@@ -144,9 +145,9 @@
          */
         _addUniqueId = function (element) {
             element = $(element);
-            const settings = this.settings;
+            var settings = this.settings;
             if (!element.attr("id")) {
-                element.attr("id", `${settings.uuidPrefix}-${new Date().getTime()}-${++uuid}`);
+                element.attr("id", settings.uuidPrefix + "-" + new Date().getTime() + "-" + (++uuid));
             }
         };
 
@@ -162,29 +163,29 @@
          */
         _togglePanel = function (event, hide) {
             _log("Toggling Panel")
-            const target = $(event.target);
-            const that = this;
-            const settings = this.settings;
-            const menu = this.menu;
-            let topli;
+            var target = $(event.target),
+                that = this,
+                settings = this.settings,
+                menu = this.menu,
+                topli;
 
-            if (target.closest(`.${settings.panelClass}`).length === 1) {
-                topli = $(`.${settings.topNavItemClass}`).eq($(`.${this.settings.panelClass}`).index(target.closest(`.${settings.panelClass}`)));
+            if (target.closest('.' + settings.panelClass).length === 1) {
+                topli = $('.' + settings.topNavItemClass).eq($('.' + this.settings.panelClass).index(target.closest('.' + settings.panelClass)));
             } else {
-                topli = target.closest(`.${settings.topNavItemClass}`);
+                topli = target.closest('.' + settings.topNavItemClass);
             }
 
-            const navbar = topli.parent();
-            const panel = $(`.${this.settings.panelClass}`).eq(navbar.find(`.${this.settings.topNavItemClass}`).index(topli));
+            var navbar = topli.parent();
+            var panel = $('.' + this.settings.panelClass).eq(navbar.find('.' + this.settings.topNavItemClass).index(topli));
 
-            let newfocus;
+            var newfocus;
 
             _toggleExpandedEventHandlers.call(this, true);
             _log("Checking for hide flag");
             if (hide || !$('.has-children').children('ul.cd-secondary-nav').hasClass("is-hidden")) {
 
                 _log("Hide flagged: Hiding all panels");
-                topli = menu.find(`.${settings.topNavItemClass} .${settings.openClass}:first`).closest(`.${settings.topNavItemClass}`);
+                topli = menu.find('.' + settings.topNavItemClass + ' .' + settings.openClass + ':first').closest('.' + settings.topNavItemClass);
 
                 _log("Removing Classes from Navbar Parent");
                 navbar.parent()
@@ -192,7 +193,7 @@
                     .attr('aria-expanded', 'false')
                     .removeClass(settings.openClass)
                     .attr('aria-hidden', 'true');
-                const selected = $('.has-children').children('ul.cd-secondary-nav');
+                var selected = $('.has-children').children('ul.cd-secondary-nav');
                 selected.removeClass('selected').next('ul').addClass('is-hidden').end().parent('.has-children').parent('ul').removeClass('moves-out');
                 $('.cd-overlay').removeClass('is-visible');
 
@@ -200,8 +201,8 @@
 
                 if ((event.type === 'keydown' && event.keyCode === Keyboard.ESCAPE) || event.type === 'DOMAttrModified') {
                     newfocus = topli.find(':tabbable:first');
-                    setTimeout(() => {
-                        menu.find(`[aria-expanded].${that.settings.panelClass}`).off('DOMAttrModified.accessible-megamenu');
+                    setTimeout(function () {
+                        menu.find('[aria-expanded].' + that.settings.panelClass).off('DOMAttrModified.accessible-megamenu');
                         newfocus.focus();
                         that.justFocused = false;
                     }, 99);
@@ -212,7 +213,7 @@
                 navbar.parent.find('[aria-expanded=true]')
                     .attr('aria-expanded', 'false')
                     .removeClass(settings.openClass)
-                    .filter(`.${settings.panelClass}`)
+                    .filter('.' + settings.panelClass)
                     .attr('aria-hidden', 'true');
 
                 // end rcgc
@@ -234,7 +235,7 @@
                     .attr('aria-hidden', 'false');
 
 
-                if (event.type === 'mouseover' && target.is(':tabbable') && topli.length === 1 && panel.length === 0 && menu.has(activeElement).length > 0) {
+                if (event.type === 'mouseover' && target.is(':tabbable') && topli.length === 1 && panel.length === 0 && menu.has(document.activeElement).length > 0) {
                     target.focus();
                     that.justFocused = false;
                 }
@@ -251,7 +252,7 @@
          * @inner
          * @private
          */
-        _clickHandler = event => {
+        _clickHandler = function (event) {
             _log("Click handler called")
 
         };
@@ -264,7 +265,7 @@
          * @inner
          * @private
          */
-        _clickOutsideHandler = event => {
+        _clickOutsideHandler = function (event) {
             _log("Click outside Handler called");
 
         };
@@ -277,7 +278,7 @@
          * @inner
          * @private
          */
-        _DOMAttrModifiedHandler = event => {
+        _DOMAttrModifiedHandler = function (event) {
 
         };
 
@@ -292,20 +293,18 @@
         _focusInHandler = function (event) {
             _log("Focus IN handler called")
             clearTimeout(this.focusTimeoutID);
-            const target = $(event.target);
-
-            const // rcgc
-            // trigger focus on next element, show corresponding panel
-            // panel = target.closest('.' + this.settings.panelClass);
-            panel = $(`.${this.settings.panelClass}`).eq(this.menu.find(`.${this.settings.topNavItemClass}`).index(target.parent()));
-
+            var target = $(event.target),
+                // rcgc
+                // trigger focus on next element, show corresponding panel
+                // panel = target.closest('.' + this.settings.panelClass);
+                panel = $('.' + this.settings.panelClass).eq(this.menu.find('.' + this.settings.topNavItemClass).index(target.parent()));
             // rnd rcgc
             target
                 .addClass(this.settings.focusClass)
                 .on('click.accessible-megamenu', $.proxy(_clickHandler, this));
             this.justFocused = !this.mouseFocused;
             this.mouseFocused = false;
-            if (this.panels.not(panel).filter(`.${this.settings.openClass}`).length) {
+            if (this.panels.not(panel).filter('.' + this.settings.openClass).length) {
                 _togglePanel.call(this, event);
             }
         };
@@ -318,7 +317,7 @@
          * @inner
          * @private
          */
-        _focusOutHandler = event => {
+        _focusOutHandler = function (event) {
             _log("Focus OUT handler called");
 
         };
@@ -333,40 +332,37 @@
          */
         _keyDownHandler = function (event) {
             _log("Keyboard pressed");
+            var that = (this.constructor === AccessibleMegaMenu) ? this : _getPlugin(this), // determine the AccessibleMegaMenu plugin instance
+                settings = that.settings,
+                target = $($(this).is('.' + settings.hoverClass + ':tabbable') ? this : event.target), // if the element is hovered the target is this, otherwise, its the focused element
+                menu = that.menu,
+                topnavitems = that.topnavitems,
+                topli = target.closest('.' + settings.topNavItemClass),
+                tabbables = menu.parent().find(':tabbable'),
 
-            const // determine the AccessibleMegaMenu plugin instance
-            that = (this.constructor === AccessibleMegaMenu) ? this : _getPlugin(this);
+                panel = target.hasClass(settings.panelClass) ? target : target.closest('.' + settings.panelClass),
+                panelGroups = panel.find('.' + settings.panelGroupClass),
+                currentPanelGroup = target.closest('.' + settings.panelGroupClass),
+                currentPanelIndex = $('.' + settings.panelClass).index(panel),
 
-            const settings = that.settings;
 
-            const // if the element is hovered the target is this, otherwise, its the focused element
-            target = $($(this).is(`.${settings.hoverClass}:tabbable`) ? this : event.target);
-
-            const menu = that.menu;
-            const topnavitems = that.topnavitems;
-            const topli = target.closest(`.${settings.topNavItemClass}`);
-            let tabbables = menu.parent().find(':tabbable');
-            const panel = target.hasClass(settings.panelClass) ? target : target.closest(`.${settings.panelClass}`);
-            const panelGroups = panel.find(`.${settings.panelGroupClass}`);
-            const currentPanelGroup = target.closest(`.${settings.panelGroupClass}`);
-            const currentPanelIndex = $(`.${settings.panelClass}`).index(panel);
-            let next;
-            const keycode = event.keyCode || event.which;
-            let start;
-            let i;
-            let o;
-            let label;
-            let found = false;
-            const newString = Keyboard.keyMap[event.keyCode] || '';
-            let regex;
-            const isTopNavItem = (topli.length === 1 && panel.length === 0);
+                next,
+                keycode = event.keyCode || event.which,
+                start,
+                i,
+                o,
+                label,
+                found = false,
+                newString = Keyboard.keyMap[event.keyCode] || '',
+                regex,
+                isTopNavItem = (topli.length === 1 && panel.length === 0);
 
             if (target.is("input:focus, select:focus, textarea:focus, button:focus")) {
                 // if the event target is a form element we should handle keydown normally
                 return;
             }
 
-            if (target.is(`.${settings.hoverClass}:tabbable`)) {
+            if (target.is('.' + settings.hoverClass + ':tabbable')) {
                 $('html').off('keydown.accessible-megamenu');
             }
 
@@ -383,11 +379,11 @@
                         _log("Top Nav Item Link")
                         _togglePanel.call(that, event);
 
-                        found = (this.panels.eq(topli.parent().find(`.${settings.topNavItemClass}`).index(topli)).find(':tabbable:first').focus().length === 1);
+                        found = (this.panels.eq(topli.parent().find('.' + settings.topNavItemClass).index(topli)).find(':tabbable:first').focus().length === 1);
                         // end rcgc
                     } else {
                         _log("Sub Nav Item Link")
-                        found = (tabbables.filter(`:gt(${tabbables.index(target)}):first`).focus().length === 1);
+                        found = (tabbables.filter(':gt(' + tabbables.index(target) + '):first').focus().length === 1);
                     }
                     break;
 
@@ -397,18 +393,18 @@
                     event.preventDefault();
                     if (isTopNavItem && target.hasClass(settings.openClass)) {
                         _togglePanel.call(that, event, true);
-                        next = topnavitems.filter(`:lt(${topnavitems.index(topli)}):last`);
-                        if (next.children(`.${settings.panelClass}`).length) {
+                        next = topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last');
+                        if (next.children('.' + settings.panelClass).length) {
                             found = (next.children()
                                 .attr('aria-expanded', 'true')
                                 .addClass(settings.openClass)
-                                .filter(`.${settings.panelClass}`)
+                                .filter('.' + settings.panelClass)
                                 .attr('aria-hidden', 'false')
                                 .find(':tabbable:last')
                                 .focus() === 1);
                         }
                     } else if (!isTopNavItem) {
-                        let newFocusItem = tabbables.filter(`:lt(${tabbables.index(target)}):last`);
+                        var newFocusItem = tabbables.filter(':lt(' + tabbables.index(target) + '):last');
                         if (newFocusItem.parent().hasClass(settings.topNavItemClass)) {
                             newFocusItem = topnavitems.eq(currentPanelIndex).find('a');
                         }
@@ -418,7 +414,7 @@
                     if (!found && window.opera && opera.toString() === "[object Opera]" && (event.ctrlKey || event.metaKey)) {
                         tabbables = $(':tabbable');
                         i = tabbables.index(target);
-                        found = ($(`:tabbable:lt(${$(':tabbable').index(target)}):first`).focus().length === 1);
+                        found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):first').focus().length === 1);
                     }
                     break;
 
@@ -426,11 +422,11 @@
                 case Keyboard.RIGHT:
                     event.preventDefault();
                     if (isTopNavItem) {
-                        found = (topnavitems.filter(`:gt(${topnavitems.index(topli)}):first`).find(':tabbable:first').focus().length === 1);
+                        found = (topnavitems.filter(':gt(' + topnavitems.index(topli) + '):first').find(':tabbable:first').focus().length === 1);
                     } else {
                         if (panelGroups.length && currentPanelGroup.length) {
                             // if the current panel contains panel groups, and we are able to focus the first tabbable element of the next panel group
-                            found = (panelGroups.filter(`:gt(${panelGroups.index(currentPanelGroup)}):first`).find(':tabbable:first').focus().length === 1);
+                            found = (panelGroups.filter(':gt(' + panelGroups.index(currentPanelGroup) + '):first').find(':tabbable:first').focus().length === 1);
                         }
 
                         if (!found) {
@@ -443,11 +439,11 @@
                 case Keyboard.LEFT:
                     event.preventDefault();
                     if (isTopNavItem) {
-                        found = (topnavitems.filter(`:lt(${topnavitems.index(topli)}):last`).find(':tabbable:first').focus().length === 1);
+                        found = (topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last').find(':tabbable:first').focus().length === 1);
                     } else {
                         if (panelGroups.length && currentPanelGroup.length) {
                             // if the current panel contains panel groups, and we are able to focus the first tabbable element of the previous panel group
-                            found = (panelGroups.filter(`:lt(${panelGroups.index(currentPanelGroup)}):last`).find(':tabbable:first').focus().length === 1);
+                            found = (panelGroups.filter(':lt(' + panelGroups.index(currentPanelGroup) + '):last').find(':tabbable:first').focus().length === 1);
                         }
 
                         if (!found) {
@@ -461,27 +457,27 @@
                     i = tabbables.index(target);
                     if (event.shiftKey && isTopNavItem && target.hasClass(settings.openClass)) {
                         _togglePanel.call(that, event, true);
-                        next = topnavitems.filter(`:lt(${topnavitems.index(topli)}):last`);
-                        if (next.children(`.${settings.panelClass}`).length) {
+                        next = topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last');
+                        if (next.children('.' + settings.panelClass).length) {
                             found = next.children()
                                 .attr('aria-expanded', 'true')
                                 .addClass(settings.openClass)
-                                .filter(`.${settings.panelClass}`)
+                                .filter('.' + settings.panelClass)
                                 .attr('aria-hidden', 'false')
                                 .find(':tabbable:last')
                                 .focus();
                         }
                     } else if (event.shiftKey && i > 0) {
-                        found = (tabbables.filter(`:lt(${i}):last`).focus().length === 1);
+                        found = (tabbables.filter(':lt(' + i + '):last').focus().length === 1);
                     } else if (!event.shiftKey && i < tabbables.length - 1) {
-                        found = (tabbables.filter(`:gt(${i}):first`).focus().length === 1);
+                        found = (tabbables.filter(':gt(' + i + '):first').focus().length === 1);
                     } else if (window.opera && opera.toString() === "[object Opera]") {
                         tabbables = $(':tabbable');
                         i = tabbables.index(target);
                         if (event.shiftKey) {
-                            found = ($(`:tabbable:lt(${$(':tabbable').index(target)}):last`).focus().length === 1);
+                            found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):last').focus().length === 1);
                         } else {
-                            found = ($(`:tabbable:gt(${$(':tabbable').index(target)}):first`).focus().length === 1);
+                            found = ($(':tabbable:gt(' + $(':tabbable').index(target) + '):first').focus().length === 1);
                         }
                     }
 
@@ -513,12 +509,12 @@
                         return;
                     }
 
-                    this.keydownTimeoutID = setTimeout(() => {
+                    this.keydownTimeoutID = setTimeout(function () {
                         keydownSearchString = '';
                     }, keydownTimeoutDuration);
 
                     if (isTopNavItem && !target.hasClass(settings.openClass)) {
-                        tabbables = tabbables.filter(`:not(.${settings.panelClass} :tabbable)`);
+                        tabbables = tabbables.filter(':not(.' + settings.panelClass + ' :tabbable)');
                     } else {
                         tabbables = topli.find(':tabbable');
                     }
@@ -536,7 +532,7 @@
                         }
                     }
 
-                    regex = new RegExp(`^${keydownSearchString.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, '\\$&')}`, 'i');
+                    regex = new RegExp('^' + keydownSearchString.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, '\\$&'), 'i');
 
                     for (i = start; i < tabbables.length; i++) {
                         o = tabbables.eq(i);
@@ -570,7 +566,7 @@
          * @inner
          * @private
          */
-        _mouseDownHandler = event => {
+        _mouseDownHandler = function (event) {
             // rcgc mouseDown handled in main function
             // if ($(event.target).is(this.settings.panelClass) || $(event.target).closest(":focusable").length) {
             //     this.mouseFocused = true;
@@ -589,7 +585,7 @@
          * @inner
          * @private
          */
-        _mouseOverHandler = event => {
+        _mouseOverHandler = function (event) {
             // rcgc mouseOver handled in main function
             // clearTimeout(this.mouseTimeoutID);
             // var that = this;
@@ -610,7 +606,7 @@
          * @inner
          * @private
          */
-        _mouseOutHandler = event => {
+        _mouseOutHandler = function (event) {
             // rcgc mouseOut handled in main function
             // clearTimeout(this.mouseTimeoutID);
             // var that = this;
@@ -627,7 +623,7 @@
 
         _toggleExpandedEventHandlers = function (hide) {
             _log("Expanded Event Handler Called");
-            const menu = this.menu;
+            var menu = this.menu;
             // if (hide) {
             //     $('html').off('mouseup.outside-accessible-megamenu, touchend.outside-accessible-megamenu, mspointerup.outside-accessible-megamenu,  pointerup.outside-accessible-megamenu');
 
@@ -641,7 +637,7 @@
             // }
         };
 
-        _log = msg => {
+        _log = function (msg) {
             if (msg) {
                 //console.log(msg);
             }
@@ -658,22 +654,19 @@
              * @memberof jQuery.fn.accessibleMegaMenu
              * @instance
              */
-            init() {
-                const settings = this.settings;
-                const nav = $(this.element);
-
-                const // rcgc
-                // menu = nav.children().first(),
-                menu = nav.children().first();
-
-                const // end rcgc
-                topnavitems = menu.children();
-
+            init: function () {
+                var settings = this.settings,
+                    nav = $(this.element),
+                    // rcgc
+                    // menu = nav.children().first(),
+                    menu = nav.children().first(),
+                    // end rcgc
+                    topnavitems = menu.children();
                 this.start(settings, nav, menu, topnavitems);
             },
 
-            start(settings, nav, menu, topnavitems) {
-                const that = this;
+            start: function (settings, nav, menu, topnavitems) {
+                var that = this;
                 this.settings = settings;
                 this.menu = menu;
                 this.topnavitems = topnavitems;
@@ -681,9 +674,8 @@
                 nav.attr("role", "navigation");
                 nav.addClass('testing_123');
                 menu.addClass(settings.menuClass);
-                topnavitems.each((i, topnavitem) => {
-                    let topnavitemlink;
-                    let topnavitempanel;
+                topnavitems.each(function (i, topnavitem) {
+                    var topnavitemlink, topnavitempanel;
                     topnavitem = $(topnavitem);
                     topnavitem.addClass(settings.topNavItemClass);
                     topnavitemlink = topnavitem.find(":tabbable:first");
@@ -708,10 +700,10 @@
                     }
                 });
 
-                this.panels = menu.parent().find(`.${settings.panelClass}`);
+                this.panels = menu.parent().find("." + settings.panelClass);
 
-                menu.parent().on("focusin.accessible-megamenu", `:focusable, .${settings.panelClass}`, $.proxy(_focusInHandler, this))
-                    .on("focusout.accessible-megamenu", `:focusable, .${settings.panelClass}`, $.proxy(_focusOutHandler, this))
+                menu.parent().on("focusin.accessible-megamenu", ":focusable, ." + settings.panelClass, $.proxy(_focusInHandler, this))
+                    .on("focusout.accessible-megamenu", ":focusable, ." + settings.panelClass, $.proxy(_focusOutHandler, this))
                     .on("keydown.accessible-megamenu", $.proxy(_keyDownHandler, this))
                     .on("mouseover.accessible-megamenu", $.proxy(_mouseOverHandler, this))
                     .on("mouseout.accessible-megamenu", $.proxy(_mouseOutHandler, this))
@@ -723,8 +715,8 @@
 
                 menu.find("hr").attr("role", "separator");
 
-                if ($(activeElement).closest(menu).length) {
-                    $(activeElement).trigger("focusin.accessible-megamenu");
+                if ($(document.activeElement).closest(menu).length) {
+                    $(document.activeElement).trigger("focusin.accessible-megamenu");
                 }
             },
 
@@ -735,7 +727,7 @@
              * @memberof jQuery.fn.accessibleMegaMenu
              * @instance
              */
-            getDefaults() {
+            getDefaults: function () {
                 return this._defaults;
             },
 
@@ -747,7 +739,7 @@
              * @memberof jQuery.fn.accessibleMegaMenu
              * @instance
              */
-            getOption(opt) {
+            getOption: function (opt) {
                 return this.settings[opt];
             },
 
@@ -758,7 +750,7 @@
              * @memberof jQuery.fn.accessibleMegaMenu
              * @instance
              */
-            getAllOptions() {
+            getAllOptions: function () {
                 return this.settings;
             },
 
@@ -771,19 +763,19 @@
              * @memberof jQuery.fn.accessibleMegaMenu
              * @instance
              */
-            setOption(opt, value, reinitialize) {
+            setOption: function (opt, value, reinitialize) {
                 this.settings[opt] = value;
                 if (reinitialize) {
                     this.init();
                 }
             }
         };
-    })();
+    }());
 
     $.fn[pluginName] = function (options) {
         return this.each(function () {
-            if (!$.data(this, `plugin_${pluginName}`)) {
-                $.data(this, `plugin_${pluginName}`, new $.fn[pluginName].AccessibleMegaMenu(this, options));
+            if (!$.data(this, "plugin_" + pluginName)) {
+                $.data(this, "plugin_" + pluginName, new $.fn[pluginName].AccessibleMegaMenu(this, options));
             }
         });
     };
@@ -806,17 +798,15 @@
      * @private
      */
     function focusable(element, isTabIndexNotNaN) {
-        let map;
-        let mapName;
-        let img;
-        const nodeName = element.nodeName.toLowerCase();
+        var map, mapName, img,
+            nodeName = element.nodeName.toLowerCase();
         if ("area" === nodeName) {
             map = element.parentNode;
             mapName = map.name;
             if (!element.href || !mapName || map.nodeName.toLowerCase() !== "map") {
                 return false;
             }
-            img = $(`img[usemap=#${mapName}]`)[0];
+            img = $("img[usemap=#" + mapName + "]")[0];
             return !!img && visible(img);
         }
         return (/input|select|textarea|button|object/.test(nodeName) ? !element.disabled :
@@ -828,17 +818,23 @@
     }
 
     $.extend($.expr[":"], {
-        data: $.expr.createPseudo ? $.expr.createPseudo(dataName => elem => !!$.data(elem, dataName)) : // support: jQuery <1.8
-                (elem, i, match) => !!$.data(elem, match[3]),
+        data: $.expr.createPseudo ? $.expr.createPseudo(function (dataName) {
+            return function (elem) {
+                return !!$.data(elem, dataName);
+            };
+        }) : // support: jQuery <1.8
+                function (elem, i, match) {
+                    return !!$.data(elem, match[3]);
+                },
 
-        focusable(element) {
+        focusable: function (element) {
             return focusable(element, !isNaN($.attr(element, "tabindex")));
         },
 
-        tabbable(element) {
-            const tabIndex = $.attr(element, "tabindex");
-            const isTabIndexNaN = isNaN(tabIndex);
+        tabbable: function (element) {
+            var tabIndex = $.attr(element, "tabindex"),
+                isTabIndexNaN = isNaN(tabIndex);
             return (isTabIndexNaN || tabIndex >= 0) && focusable(element, !isTabIndexNaN);
         }
     });
-})(jQuery, window, document);
+}(jQuery, window, document));

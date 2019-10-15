@@ -1,27 +1,48 @@
 require("@babel/polyfill");
+import {getCookieValue} from './getCookieValue.js';
+
 // Variable Declarations
-// Look for checkbox area for campuses
 const campusSelector = document.querySelector("#appliesTo");
-// Campus value of current page
 let campuses = campusSelector.innerHTML;
-// Locate element which contains redirect URLs
 const navigatorExplorer = document.querySelector("#navigationExplorer");
-// Does it apply to mulitple campuses
+let cuPicker = document.getElementById("CumberlandCampusSelector");
+let glPicker = document.getElementById("GloucesterCampusSelector");
+let message = "Remove your preferred campus";
+let updater = "Update your preferred campus";
 let multiCampus = null;
-// Threshold before prompt to choose a preference
 let threshold = 3;
-// Preference cookie duration (default: 2 years)
 const expireInDays = 730;
-// How long between location checks for users with no preference
 const expireByIP = 0.010416; 
-// Array containing campus names and IP ranges
 let externalRanges = {'cumberland': /([130]{3}.[156]{3}.[180]{3}.[0-9]{1,3})/g,'gloucester': /([107]{3}.[1]{1,3}.[86]{1,3}.[0-9]{1,3})/g};
-// Setting empty variable to use
 let ip_value;
 
-// Start Program
-// Begin by taking the value, sanitizing, and comparing to campus prefernce values
 readPreferred(sanitize(campuses));
+
+glPicker.addEventListener("click", function() {
+  if (getCookieValue("preferred") === 'cumberland' || getCookieValue("preferred") === 'none'  || getCookieValue("preferred") === 'undefined') {
+    createPreferred("gloucester");
+    return true;
+  } else if (getCookieValue("preferred") === 'gloucester') {
+    createPreferred("none");
+    return true;
+  } else {
+    createPreferred("gloucester");
+    return true;
+  }
+});
+
+cuPicker.addEventListener("click", function() {
+  if (getCookieValue("preferred") === 'gloucester' || getCookieValue("preferred") === 'none'  || getCookieValue("preferred") === 'undefined') {
+    createPreferred("cumberland");
+    return true;
+  } else if (getCookieValue("preferred") === 'cumberland') {
+    createPreferred("none");
+    return true;
+  } else {
+    createPreferred("cumberland");
+    return true;
+  }
+});
 
 // Remove all extraneous characters from campus input
 export function sanitize(values) {
@@ -142,37 +163,24 @@ export function doesNavigatorActionExist(preferred) {
 }
 
 export function highlightPreferred() {
-  let cuPicker = document.getElementById("CumberlandCampusSelector");
-  let glPicker = document.getElementById("GloucesterCampusSelector");
-  let message = "Remove your preferred campus";
-  let remover = 'preferred.createPreferred("none")';
-
   if (getCookieValue("preferred") === 'cumberland') {
     cuPicker.classList.add("active");
     cuPicker.setAttribute('title', message);
-    cuPicker.setAttribute('onclick', remover);
-
     glPicker.classList.remove("active");
-    glPicker.setAttribute('title', "Update your preferred campus");
-    glPicker.setAttribute('onclick', 'preferred.createPreferred("gloucester")');
+    glPicker.setAttribute('title', updater);
     return true;
   } else if (getCookieValue("preferred") === 'gloucester') {
     glPicker.classList.add("active");
     glPicker.setAttribute('title', message);
-    glPicker.setAttribute('onclick', remover);
-
     cuPicker.classList.remove("active");
-    cuPicker.setAttribute('title', "Update your preferred campus");
-    cuPicker.setAttribute('onclick', 'preferred.createPreferred("cumberland")');
+    cuPicker.setAttribute('title', updater);
     return true;
   } else {
     cuPicker.classList.remove("active");
-    cuPicker.setAttribute('title', "Update your preferred campus");
-    cuPicker.setAttribute('onclick', 'preferred.createPreferred("cumberland")');
-
+    cuPicker.setAttribute('title', updater);
     glPicker.classList.remove("active");
-    glPicker.setAttribute('title', "Update your preferred campus");
-    glPicker.setAttribute('onclick', 'preferred.createPreferred("gloucester")');
+    glPicker.setAttribute('title', updater);
+    return true;
   }
 }
 
