@@ -1,5 +1,8 @@
 window.onload = () => {fixMainTabsAndId();fixSharePointSearchBox();fixMegaMenu();};
 
+let a = Array.from(document.getElementsByTagName('a'));
+let p = Array.from(document.getElementsByTagName('img'));
+
 export function fixMainTabsAndId() {
   let main = document.querySelector("main");
   main.setAttribute('tabindex', '-1');
@@ -16,9 +19,7 @@ export function fixSharePointSearchBox() {
   search.insertAdjacentHTML('beforebegin', replacement);
 }
 
-export function fixMegaMenu() {
-  let nav = document.querySelector("nav:first");
-  nav.accessibleMegaMenu({
+$("nav:first").accessibleMegaMenu({
     uuidPrefix: "menu-link",
     menuClass: "cd-primary-menu",
     topNavItemClass: "top-nav-item",
@@ -28,5 +29,18 @@ export function fixMegaMenu() {
     focusClass: "focus",
     openClass: "open",
     debug: "true"
-  });
-}
+});
+
+a.forEach(function(link) {
+    link.setAttribute('aria-label', link.innerHTML + " link");
+});
+
+p.forEach(function(picture) {
+  if(!picture.hasAttribute('alt')) {
+    if (picture.closest('div').hasAttribute('id')) {
+      picture.setAttribute('alt', picture.closest('div').getAttribute('id'));
+    } else if (picture.closest('div').hasAttribute('class')) {
+      picture.setAttribute('alt', picture.closest('div').getAttribute('class'));
+    }
+  }
+});

@@ -10,5 +10,4 @@ import './video.js';
 import './direct-links.js';
 import './left-navigation.js';
 import './sub-nav.js';
-import './toastr.min.js';
 import './toast.js';

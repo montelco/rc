@@ -44,7 +44,8 @@ module.exports = {
     new CleanWebpackPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery'
+      jQuery: 'jquery',
+      toastr: 'toastr'
     }),
   ],
   output: {

@@ -7,6 +7,7 @@ let campuses = campusSelector.innerHTML;
 const navigatorExplorer = document.querySelector("#navigationExplorer");
 let cuPicker = document.getElementById("CumberlandCampusSelector");
 let glPicker = document.getElementById("GloucesterCampusSelector");
+let loginPicker = document.getElementsByClassName("login-intent");
 let message = "Remove your preferred campus";
 let updater = "Update your preferred campus";
 let multiCampus = null;
@@ -19,29 +20,31 @@ let ip_value;
 readPreferred(sanitize(campuses));
 
 glPicker.addEventListener("click", function() {
-  if (getCookieValue("preferred") === 'cumberland' || getCookieValue("preferred") === 'none'  || getCookieValue("preferred") === 'undefined') {
-    createPreferred("gloucester");
-    return true;
-  } else if (getCookieValue("preferred") === 'gloucester') {
-    createPreferred("none");
-    return true;
+  if (getCookieValue("preferred") === 'gloucester') {
+    return createPreferred("none");
+  } else if (getCookieValue("preferred") === 'cumberland' || getCookieValue("preferred") === 'none'  || getCookieValue("preferred") === 'undefined') {
+    return createPreferred("gloucester");
   } else {
-    createPreferred("gloucester");
-    return true;
+    return createPreferred("gloucester");
   }
 });
 
 cuPicker.addEventListener("click", function() {
-  if (getCookieValue("preferred") === 'gloucester' || getCookieValue("preferred") === 'none'  || getCookieValue("preferred") === 'undefined') {
-    createPreferred("cumberland");
-    return true;
-  } else if (getCookieValue("preferred") === 'cumberland') {
-    createPreferred("none");
-    return true;
+  if (getCookieValue("preferred") === 'cumberland') {
+    return createPreferred("none");
+  } else if (getCookieValue("preferred") === 'gloucester' || getCookieValue("preferred") === 'none'  || getCookieValue("preferred") === 'undefined') {
+    return createPreferred("cumberland");
   } else {
-    createPreferred("cumberland");
-    return true;
+    return createPreferred("cumberland");
   }
+});
+
+Array.from(loginPicker).forEach(function(campus) {
+  campus.addEventListener('click', function(e) {
+    e.preventDefault();
+    createPreferred(campus.dataset.campus, expireInDays);
+    return window.location.href = campus.getAttribute('href');
+  });
 });
 
 // Remove all extraneous characters from campus input
@@ -238,8 +241,19 @@ export function createLocationTemp(campus, expiry=expireInDays) {
       return createTempPreference("userTempLocation");
     }
   } else {
-    return false;
+    let date = new Date();
+    date.setTime(date.getTime()+(expiry*24*60*60*1000));
+    let expires = "; expires="+date.toGMTString();
+    let cookieValue = "userTempLocation=none" + expires + ";path=/";
+    document.cookie = cookieValue;
+    return createTempPreference("userTempLocation");
   }
+  let date = new Date();
+  date.setTime(date.getTime()+(expiry*24*60*60*1000));
+  let expires = "; expires="+date.toGMTString();
+  let cookieValue = "userTempLocation=none" + expires + ";path=/";
+  document.cookie = cookieValue;
+  return createTempPreference("userTempLocation");
 }
 
 export function checkForValidLocation(campus, location, locationCookieName) {
@@ -255,8 +269,13 @@ export function checkForValidLocation(campus, location, locationCookieName) {
 export function createTempPreference(locationCookieName) {
   createPreferred(getCookieValue(locationCookieName), expireByIP);
   highlightPreferred();
-  changeLinks(getCookieValue("preferred"));
-  return true;
+  let tempPref = getCookieValue("preferred");
+  if (tempPref == "default") {
+    return changeLinks("default");
+  } else {
+    return changeLinks(tempPref);
+  } 
+  return changeLinks("default");
 }
 
 export function loginClick(campus) {
@@ -296,7 +315,7 @@ export function changeLinks(campus) {
     campuspicker.classList.remove('d-block');
     campuspicker.classList.add('d-none');
     return true;
-  } else if(campus == "default"){
+  } else if(campus == "default" || campus == "none"){
     let campusLogins = document.getElementById('qlCampusPicker');
     let campusButton = document.getElementById('campusLogin-link');
     campusLogins.classList.remove('d-none');
