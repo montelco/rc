@@ -7,8 +7,10 @@
 /packages/mega-site-navigation/scss/bourbon/**
 /.sass-cache/**
 /bower_components/**
-/node_modules/**
+/node_modules/*
+/dist/*
 /img/*
 font-awesome.min.css
 .babelrc
 .browserslistrc
+package-lock.json
