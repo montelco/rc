@@ -34,7 +34,8 @@
     "toastr": "^2.1.4",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "webpack-modernizr-loader": "^5.0.0"
   },
   "dependencies": {
     "@babel/core": "^7.6.0",
@@ -54,6 +55,7 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
     "terser-webpack-plugin": "^2.1.2",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "webpack-modernizr-loader": "^5.0.0"
   }
 }

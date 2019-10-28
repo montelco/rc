@@ -9,6 +9,7 @@ $(document).ready(function () {
   
   $('.alert-box').attr('id', function(i) {
      return 'alert'+(i+1);
+     // Hello World
   });
 
   $('.alert-switch').on('click', function (event) {
