@@ -1,6 +1,7 @@
 @include media(lg) {
   @supports not (-ms-high-contrast: none){
-    #whatsNew div.d-flex {
+    #whatsNew div.d-flex,
+    #ccog div.d-flex {
 
       div[id^='ct100_PlaceHolderMain'],
       div[id^='ctl00_PlaceHolderMain'],
@@ -75,7 +76,8 @@
   /* IE gets punished for existing. We're okay with giving a slightly worse experience since it's not a major piece.*/
   /* Everyone else gets nicely sized cards.*/
   @supports not (-ms-high-contrast: none){
-    #Highlights {
+    #Highlights,
+    #ccog {
       .card__body.lp {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -125,6 +127,14 @@
                   flex: 1 1 auto;
         }
       }
+    }
+  }
+}
+
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none){
+  #ccog {
+    .d-flex {
+      display: block !important;
     }
   }
 }

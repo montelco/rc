@@ -4,3 +4,20 @@
   &-md{@media (min-width: $md){-webkit-box-flex: 1;-ms-flex: 1;flex: 1;}}
   &-lg{@media (min-width: $lg){-webkit-box-flex: 1;-ms-flex: 1;flex: 1;}}
 }
+
+.justify-content-space-evenly {
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+}
+
+.justify-content-space-around {
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.justify-content-space-between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}

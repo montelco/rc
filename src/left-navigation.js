@@ -56,12 +56,12 @@ jQuery(document).ready(function($) {
     $(this).wrap('<a href="#" class="subsite-navigation__top-link"></a>');
   });
   
-  $(document).ready(function() {
-    var recentMenuItem = $(".menu-item-text").text() === "Recent";
-    recentMenuItem.each(function() {
-      $(this).parent().parent().parent().hide();
-    });
-  });
+  // $(document).ready(function() {
+  //   var recentMenuItem = $(".menu-item-text").text() === "Recent";
+  //   recentMenuItem.each(function() {
+  //     $(this).parent().parent().parent().hide();
+  //   });
+  // });
 
   $('#subsite-navigation').detach().insertAfter("#end-subnav");
 

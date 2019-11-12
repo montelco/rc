@@ -13,4 +13,5 @@
 font-awesome.min.css
 .babelrc
 .browserslistrc
+.modernizrrc.js
 package-lock.json
