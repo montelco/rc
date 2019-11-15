@@ -1,22 +1,22 @@
-window.onload = () => {fixMainTabsAndId();fixSharePointSearchBox();fixMegaMenu();};
+window.onload = () => {fixMainTabsAndId();fixSharePointSearchBox();};
 
 let a = Array.from(document.getElementsByTagName('a'));
 let p = Array.from(document.getElementsByTagName('img'));
 
-export function fixMainTabsAndId() {
+function fixMainTabsAndId() {
   let main = document.querySelector("main");
   main.setAttribute('tabindex', '-1');
   main.setAttribute('id', 'main');
   return true;
 }
 
-export function fixSharePointSearchBox() {
+function fixSharePointSearchBox() {
   let searchbox = document.querySelector("#SearchBox input");
   let replacement = "<label for='" + searchbox.getAttribute('id') + "' class='sr-only'>Search: </label>";
   searchbox.removeAttribute('accesskey');
-  search.setAttribute('aria-label', 'Search');
-  search.setAttribute('name', 'search');
-  search.insertAdjacentHTML('beforebegin', replacement);
+  searchbox.setAttribute('aria-label', 'Search');
+  searchbox.setAttribute('name', 'search');
+  searchbox.insertAdjacentHTML('beforebegin', replacement);
 }
 
 $("nav:first").accessibleMegaMenu({
@@ -35,12 +35,12 @@ a.forEach(function(link) {
     link.setAttribute('aria-label', link.innerHTML + " link");
 });
 
-p.forEach(function(picture) {
-  if(!picture.hasAttribute('alt')) {
-    if (picture.closest('div').hasAttribute('id')) {
-      picture.setAttribute('alt', picture.closest('div').getAttribute('id'));
-    } else if (picture.closest('div').hasAttribute('class')) {
-      picture.setAttribute('alt', picture.closest('div').getAttribute('class'));
-    }
-  }
-});
+// p.forEach(function(picture) {
+//   if(!picture.hasAttribute('alt')) {
+//     if (picture.closest('div').hasAttribute('id')) {
+//       picture.setAttribute('alt', picture.closest('div').getAttribute('id'));
+//     } else if (picture.closest('div').hasAttribute('class')) {
+//       picture.setAttribute('alt', picture.closest('div').getAttribute('class'));
+//     }
+//   }
+// });
