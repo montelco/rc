@@ -1,0 +1,55 @@
+{
+  "name": "RCSJ",
+  "version": "2.0.0",
+  "description": "The codebase for the Rowan College of South Jersey web application suite.",
+  "private": true,
+  "main": "bundle.js",
+  "scripts": {
+    "dev": "webpack --open --config webpack.dev.js",
+    "prod": "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/montelco/rc.git"
+  },
+  "keywords": [],
+  "browsersList": [
+    "> .05% in US",
+    "not ie <= 8"
+  ],
+  "author": "Rowan College of South Jersey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/montelco/rc/issues"
+  },
+  "homepage": "https://github.com/montelco/rc#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/register": "^7.6.0",
+    "autoprefixer": "^9.7.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-es2015": "^6.24.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "cssnano": "^4.1.10",
+    "file-loader": "^4.2.0",
+    "jquery": "^3.4.1",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "sass": "^1.23.1",
+    "sass-loader": "^8.0.0",
+    "terser-webpack-plugin": "^2.2.1",
+    "toastr": "^2.1.4",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-merge": "^4.2.2",
+    "webpack-modernizr-loader": "^5.0.0"
+  },
+  "dependencies": {
+    "jquery.cookie": "^1.4.1"
+  }
+}

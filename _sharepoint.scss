@@ -6,6 +6,24 @@
   box-sizing: content-box;
 }
 
+input{
+  font-size: 12pt;
+  &[type="text"] {
+    width: 100%;
+  }
+}
+
+div.ms-formfieldlabelcontainer span.ms-formfieldlabel {
+  font-size: 11pt;
+}
+
+.ms-formfieldvaluecontainer table {
+  margin-bottom: 0;
+  td {
+    padding: 0 !important;
+  }
+}
+
 a[id*="ExplicitLogin"][href*="www"]{
   display: none !important;
 }
@@ -21,6 +39,14 @@ a[id*="ExplicitLogin"][href*="www"]{
 #ms-designer-ribbon {
   width: 100%;
   background: #EFEFEF;
+}
+
+#Ribbon\.EditingTools\.CPEditTab\.Font\.FontColor\.Menu .ms-cui-smenu-inner {
+  position: relative;
+  #Ribbon\.EditingTools\.CPEditTab\.Font\.FontColor\.Menu\.Ms,
+  #Ribbon\.EditingTools\.CPEditTab\.Font\.FontColor\.Menu\.MsCustom {
+    display: none;
+  }
 }
 
 .ms-cui-smenu-inner {
@@ -103,6 +129,14 @@ a[id*="ExplicitLogin"][href*="www"]{
 .ms-cui-ctl-largelabel,
 .ms-cui-ctl-mediumlabel {
   font-size: 10pt;
+}
+
+.ms-cui-gallerybutton-a {
+  padding: 0;
+  div > .ms-cui-ctl-mediumlabel {
+    font-size: 8pt;
+    display: inline-block;
+  }
 }
 
 .ms-cui-groupTitle {

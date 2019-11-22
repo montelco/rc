@@ -1,0 +1,48 @@
+.calendar-bar {
+  height: auto;
+  padding: 15px;
+  margin-bottom: 0.65em;
+  display: inline-block;
+  width: 100%;
+  font-size: 1.15em;
+  border-radius: $border-radius;
+
+  .fa,
+  .cadate,
+  .cavent {
+    float: left;
+  }
+
+  .cadate{ margin-left: 0.5em }
+
+  .cavent {
+    width: auto;
+    float: right;
+    text-align:  right;
+
+    @include media(mm) {
+      width: 100%;
+      text-align:  left;
+    }
+  }
+
+  &.caheader {
+    font-weight: bold;
+    font-size: 1.65em;
+    letter-spacing: 0.075em;
+    line-height: 2;
+    background-color: $gray-600 !important;
+
+    .calendar-bar ~ & { margin-top: 1em } 
+
+    @include media(mm) { text-align: center; }
+  }
+
+  &:nth-of-type(odd) {
+    background-color: $gray-500;
+  }
+
+  &:nth-of-type(even) {
+    background-color: $gray-400;
+  }
+}

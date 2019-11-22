@@ -6,5 +6,12 @@
 /packages/mega-site-navigation/scss/.sass-cache/**
 /packages/mega-site-navigation/scss/bourbon/**
 /.sass-cache/**
+/bower_components/**
+/node_modules/*
+/dist/*
 /img/*
 font-awesome.min.css
+.babelrc
+.browserslistrc
+.modernizrrc.js
+package-lock.json

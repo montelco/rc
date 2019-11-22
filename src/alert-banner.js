@@ -1,3 +1,6 @@
+import {getCookieValue} from './getCookieValue.js';
+import {setCookieValue} from './setCookieValue.js';
+
 $(document).ready(function () {
   if($(".alert-box").length > 0){
     $("#alerts").css({
@@ -70,17 +73,15 @@ $(".alert-left-arrow").on('click', function () {
   hideNavIfOne();
   function closeBox(){  
     var closeBox = $('#alert1').remove();
-    $.cookie('closeBox', "true", {
-      expires: 365,
-      path: '/'});
-    $.cookie('closeBox');
+    setCookieValue('closeBox', "true", 365);
+    getCookieValue('closeBox');
     countAlerts();
     hideNavIfOne();
     if ($("#alert2").length > 0) {
       $(".alert-box:first").show();
     }
   }
-  if($.cookie('closeBox') === "true"){
+  if(getCookieValue('closeBox') === "true"){
     hideAllButFirst();
     closeBox();
   }
@@ -89,14 +90,12 @@ $(".alert-left-arrow").on('click', function () {
   });    
   function closeBox2(){     
     var closeBox2 = $('#alert2').remove();
-    $.cookie('Box2-closed', "true", {
-      expires: 1,
-      path: '/'});
-    $.cookie('Box2-closed');
+    setCookieValue('Box2-closed', "true", 1);
+    getCookieValue('Box2-closed');
     countAlerts();
     hideNavIfOne();
   }
-  if($.cookie('Box2-closed') === "true") {
+  if(getCookieValue('Box2-closed') === "true") {
     hideAllButFirst();
     closeBox2();
   }
@@ -105,14 +104,12 @@ $(".alert-left-arrow").on('click', function () {
   });
   function closeBox3(){     
     var closeBox3 = $('#alert3').remove();
-    $.cookie('Box3-closed', "true", {
-      expires: 1,
-      path: '/'});
-    $.cookie('Box3-closed');
+    setCookieValue('Box3-closed', "true", 1);
+    getCookieValue('Box3-closed');
     countAlerts();
     hideNavIfOne();    
   }
-  if($.cookie('Box3-closed') === "true") {
+  if(getCookieValue('Box3-closed') === "true") {
     hideAllButFirst();
     closeBox3();
   }
@@ -120,23 +117,3 @@ $(".alert-left-arrow").on('click', function () {
     closeBox3();
   });
 });
-
-// $(function () {
-//   var timer = function () {
-//     if ($(".alert-box:visible").next().length !== 0) $(".alert-box:visible").next().show().prev().hide();
-//     else {
-//       $(".alert-box:visible").hide();
-//       $(".alert-box:first").show();
-//     }
-//   };
-//   var timerID = null;
-//   if (!$('.alert-box').length === 1) {
-//     // timerID = setInterval(timer, 10000);
-//   }
-//   $('.alert-box').hover(function (ev) {
-//     clearInterval(timerID);
-//   }, function (ev) {
-//     // timerID = setInterval(timer, 10000);
-//   });
-// });
-

@@ -57,6 +57,7 @@ $pink:    #e83e8c !default;
 $red:     #dc3545 !default;
 $orange:  #fd7e14 !default;
 $yellow:  #ebc944 !default;
+$gold:    #ffc600 !default;
 $coal:    #373d3f !default;
 $green:   #28a745 !default;
 $teal:    #20c997 !default;
@@ -160,10 +161,10 @@ $spacers: map-merge(
   ),
   $spacers
 );
-
+$shadow: -0.25rem 0.25rem 0.75em rgba(0,0,0,0.16);
 
 // Types of font, line-height, and color for body text, headings, and more.
-$font-family-sans-serif:      "Segoe UI",-apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-sans-serif:      "Inter","Segoe UI",-apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
 $font-size-base:              1rem !default;
@@ -205,34 +206,26 @@ $pc-link-visited-decoration:   underline !default;
 $border-width:                1px !default;
 $border-color:                $gray-300 !default;
 $border-radius:               4px !default;
-
 $table-cell-padding:          .75rem !default;
 $table-cell-padding-sm:       .125rem !default;
-
 $table-color:                 $body-color !default;
 $table-bg:                    null !default;
 $table-accent-bg:             rgba($black, .05) !default;
 $table-hover-color:           $table-color !default;
 $table-hover-bg:              rgba($black, .075) !default;
 $table-active-bg:             $table-hover-bg !default;
-
 $table-border-width:          $border-width !default;
 $table-border-color:          $border-color !default;
-
 $table-head-bg:               $gray-200 !default;
 $table-head-color:            $gray-700 !default;
-
 $table-dark-color:            $white !default;
 $table-dark-bg:               $gray-800 !default;
 $table-dark-accent-bg:        rgba($white, .05) !default;
 $table-dark-hover-color:      $table-dark-color !default;
 $table-dark-hover-bg:         rgba($white, .075) !default;
 $table-dark-border-color:     lighten($table-dark-bg, 7.5%) !default;
-
 $table-striped-order:         odd !default;
-
 $table-caption-color:         $text-muted !default;
-
 $table-bg-level:              -9 !default;
 $table-border-level: -6 !default;
 
