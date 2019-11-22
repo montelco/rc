@@ -49,5 +49,7 @@
     "webpack-merge": "^4.2.2",
     "webpack-modernizr-loader": "^5.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jquery.cookie": "^1.4.1"
+  }
 }

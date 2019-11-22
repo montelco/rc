@@ -19,6 +19,7 @@ if (vTrimControl) {
     if (video.paused == true) {
       video.play();
       vTrimControl.classList.remove('pause');
+      setCookieValue("video-state", "un-paused", 7);
     } else {
       video.pause();
       vTrimControl.classList.add('pause');

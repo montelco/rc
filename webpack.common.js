@@ -68,6 +68,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
+      'jqCookie': 'jquery.cookie',
       jQuery: 'jquery',
       toastr: 'toastr'
     }),

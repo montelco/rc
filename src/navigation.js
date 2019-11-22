@@ -267,6 +267,66 @@ jQuery(document).ready(function($) {
             } 
         }
     }
+    function stickyHeader(){
+        var header = $('header');
+        var search = $('div.can-hide');
+        var toggle = $('a.cd-search-trigger');
+        var isDesktop = checkWindowWidth();
+        var lastScrollTop = 0;
+        var lastScrollTopA = 0;
+        if (!isDesktop) {
+            if(!hasScrolledPage){
+                $(document.body).on('scroll touchmove', function() {
+                    $(window).on('scroll', function() {
+                        st = $(window).scrollTop();
+                        if(st > 0  && !hasScrolledPage) {
+                            search.addClass('d-mm-none');
+                            toggle.removeClass('d-mm-none');
+                            hasScrolledPage = true;
+                        }
+                    });
+                    $(window).on('touchmove', function() {
+                        st = $(window).scrollTop();
+                        if(st > 0 && !hasScrolledPage) {
+                            search.addClass('d-mm-none');
+                            toggle.removeClass('d-mm-none');
+                            hasScrolledPage = true;
+                            
+                        }
+                    });
+
+                });
+                var iev=0;
+                var ieold = (/MSIE (\d+\.\d+);/.test(navigator.userAgent));
+                var trident = !!navigator.userAgent.match(/Trident\/7.0/);
+                var rv=navigator.userAgent.indexOf("rv:11.0");
+
+                if (ieold) iev=new Number(RegExp.$1);
+                if (navigator.appVersion.indexOf("MSIE 10") != -1) iev=10;
+                if (trident&&rv!=-1) iev=11;
+
+                if(typeof InstallTrigger !== 'undefined' || iev == 11) {
+                    $(window).on('scroll', function() {
+                        st = $(this).scrollTop();
+                        if(st > 0  && !hasScrolledPage) {
+                            search.addClass('d-mm-none');
+                            toggle.removeClass('d-mm-none');
+                            hasScrolledPage = true;
+                        }
+                    });
+                }
+                else {
+                    $('body').on('mousewheel', function(e){
+                        if(e.originalEvent.wheelDelta < 0  && !hasScrolledPage) {
+                            search.addClass('d-mm-none');
+                            toggle.removeClass('d-mm-none');
+                            hasScrolledPage = true;
+                        }
+                    });
+                }
+            } 
+        }
+    }
     function checkForImageResize(){
         // var hero = $(".no_overlay_hero").find(".ms-siteicon-img");
         // if (hero.attr('src').indexOf('_thumb') > -1) {

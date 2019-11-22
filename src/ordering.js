@@ -1,9 +1,9 @@
-jQuery(document).ready(function($) {
+$(document).ready(function() {
 
   var shouldSort = [ 
    { '#Calendar .card__body a': '#Calendar .card__body' },
    { '.tp-banner-container ul li': '.tp-banner-container ul' },
-   { '#Highlights .row.mb-32 .col-md-4': '#Highlights .row.mb-32' }
+   { '#Highlights .row.mb-32 .col-md-4': '#Highlights .row.mb-32' },
    { '#orderable .tile': '#orderable' }
   ];
 
