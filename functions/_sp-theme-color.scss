@@ -1,8 +1,10 @@
 @mixin sp-theme-color($themes, $n-tints: 5) {
   @each $theme, $value in $themes {
     $i: index(($themes), ($theme $value));
+    .ms-rteForeColor-#{$i}\-0 {
+      color: $value;
+    }
     .ms-rteThemeForeColor-#{$i} {
-
       color: $value;
       @for $n-tint from 1 through $n-tints {
         &-#{$n-tint} {
@@ -14,12 +16,12 @@
         }
       }
     }
-    .ms-rteForeColor-#{$i},
-    .ms-rteForeColor-#{$i}\-0 {
-      color: $value;
+    
+    .ms-rteBackColor-#{$i}\-0 {
+      background-color: $value;
     }
-    .ms-rteThemeBackColor-#{$i} {
 
+    .ms-rteThemeBackColor-#{$i} {
       background-color: $value;
       @for $n-tint from 1 through $n-tints {
         &-#{$n-tint} {
@@ -30,10 +32,6 @@
           }
         }
       }
-    }
-    .ms-rteBackColor-#{$i},
-    .ms-rteBackColor-#{$i}\-0 {
-      background-color: $value;
     }
   }
 }

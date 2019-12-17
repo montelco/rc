@@ -3,8 +3,8 @@ jQuery('.tp-banner').show().revolution(
 {
 dottedOverlay:"none",
 delay:16000,
-startwidth:1900,
-startheight:650,
+startwidth:1920,
+startheight:1080,
 hideThumbs:50,
 lazyLoad:"off",
 
@@ -12,12 +12,12 @@ thumbWidth:100,
 thumbHeight:50,
 thumbAmount:5,
 
-navigationType:"bullet",
+navigationType:"none",
 navigationArrows:"none",
 navigationStyle:"preview2",
 
-touchenabled:"on",
-onHoverStop:"on",
+touchenabled:"off",
+onHoverStop:"off",
 
 swipe_velocity: 0.7,
 swipe_min_touches: 1,
@@ -57,7 +57,7 @@ stopAtSlide:-1,
 
 shuffle:"off",
 
-autoHeight:"off",           
+autoHeight:"on",           
 forceFullWidth:"off",           
 
 

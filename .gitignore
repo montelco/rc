@@ -11,6 +11,8 @@
 /dist/*
 /img/*
 font-awesome.min.css
+compiled.min.css
+compiled.min.css.map
 .babelrc
 .browserslistrc
 .modernizrrc.js
