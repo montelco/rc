@@ -1,5 +1,7 @@
+import {getCookieValue} from './getCookieValue.js';
+
 jQuery(document).ready(function() {
-  if($("#dir-active").length > 0 && $('#p-link').length > 0 && $.cookie('preferred') === "gloucester") {
+  if($("#dir-active").length > 0 && $('#p-link').length > 0 && getCookieValue('preferred') === "gloucester") {
     var button = $("#d-link");
     button.show();
     $('#p-link').remove();
@@ -7,7 +9,7 @@ jQuery(document).ready(function() {
     var contents = $("#dir-active");
     contents.detach();
     contents.insertAfter('#dl-end');
-  } else if ($("#dir-active").length > 0 && $('#p-link').length > 0 && $.cookie('preferred') === "none"){
+  } else if ($("#dir-active").length > 0 && $('#p-link').length > 0 && getCookieValue('preferred') === "none"){
     $('#p-link').remove();
     console.log('in maintenance mode and no preference');
     var contents = $("#dir-active");
