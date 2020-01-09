@@ -201,11 +201,11 @@ export async function getIP() {
     throw e;
   } finally {
     let location = checkForLocationMatch(ip_value, externalRanges);
-    if (location !== null) {
+    if (location !== null && location !== undefined && location !== "none") {
       return createLocationTemp(location, expireByIP);
     } else {
       changeLinks("default");
-      return checkThreshold(campus);
+      return checkThreshold(campuses);
     }
   }
 }
@@ -217,6 +217,8 @@ export function checkForLocationMatch(ip, validRanges=externalRanges) {
         return key;
       }
     }
+    console.log("no campus detected");
+    return "none";
   } catch(e) {
     console.log(e);
     return null;
@@ -236,17 +238,17 @@ export function createLocationTemp(campus, expiry=expireInDays) {
       let date = new Date();
       date.setTime(date.getTime()+(expiry*24*60*60*1000));
       let expires = "; expires="+date.toGMTString();
-      let cookieValue = "userTempLocation=none" + expires + ";path=/";
+      let cookieValue = "userTempLocation=offCampus" + expires + ";path=/";
       document.cookie = cookieValue;
-      return createTempPreference("userTempLocation");
+      return;
     }
   } else {
     let date = new Date();
     date.setTime(date.getTime()+(expiry*24*60*60*1000));
     let expires = "; expires="+date.toGMTString();
-    let cookieValue = "userTempLocation=none" + expires + ";path=/";
+    let cookieValue = "userTempLocation=offCampus" + expires + ";path=/";
     document.cookie = cookieValue;
-    return createTempPreference("userTempLocation");
+    return;
   }
   let date = new Date();
   date.setTime(date.getTime()+(expiry*24*60*60*1000));

@@ -1,7 +1,7 @@
-import {getCookieValue} from './getCookieValue.js';
+import { getCookieValue } from './getCookieValue.js';
 
 jQuery(document).ready(function() {
-  if($("#dir-active").length > 0 && $('#p-link').length > 0 && getCookieValue('preferred') === "gloucester") {
+  if ($("#dir-active").length > 0 && $('#p-link').length > 0 && getCookieValue('preferred') === "gloucester") {
     var button = $("#d-link");
     button.show();
     $('#p-link').remove();
