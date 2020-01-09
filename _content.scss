@@ -661,6 +661,39 @@ section.home.sas {
   }
 }
 
+section.home.open-house {
+  @include media(mo) {
+    background-image: url(https://www.rcsj.edu/OpenHouse-site/Gloucester-site/PublishingImages/oh-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: top center !important;
+    height: 72vh;
+  }
+
+  @include media(mm) {
+    background-image: url(https://www.rcsj.edu/OpenHouse-site/Gloucester-site/PublishingImages/oh-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: top center !important;
+    height: 72vh;
+  }
+}
+
+.open-house-map {
+  padding: 3em 0;
+  background: linear-gradient(hsla(212, 33.8%, 26.1%, 0.85),hsla(27.4, 41.2%, 16.7%, 0.85)),url(https://www.rcsj.edu/PublishingImages/adfs_export-bg-rcsj.jpg) no-repeat center;
+   background-size: cover;
+  height: 100%;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.open-house-pattern {
+  background: #eee;
+  background-image: url(https://www.rcsj.edu/OpenHouse-site/Gloucester-site/PublishingImages/gplay.png);
+  background-repeat: repeat; 
+}
+
 section.home {
   background-size: cover;
   position: relative;
