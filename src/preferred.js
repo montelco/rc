@@ -87,20 +87,21 @@ export function addToCampusCount (campus) {
   let cookie = parseInt(getCookieValue(campus));
   cookie++;
   let date = new Date();
-  console.log('new value will be ' + cookie + ' for ' + campus);
   date.setTime(date.getTime()+(expireInDays*24*60*60*1000));
   let expires = "; expires="+date.toGMTString();
   let cookieValue = campus + "=" + cookie + expires + ";path=/";
-  console.log(cookieValue);
   return document.cookie = cookieValue;
 }
 
 // If the campus count is equal to or greater than the threshold, prompt a user to select, otherwise check the existince and/or increment the count
 export function checkThreshold (campus) {
-  if (getCookieValue(campus) >= threshold) {
+  let isMulti = multipleCampusesChecker(campus);
+  if (getCookieValue(campus) >= threshold && isMulti == 0) {
+    console.log("Pop!");
     let toast = toastPopped(campus.charAt(0).toUpperCase() + campus.slice(1));
     return;
   } else {
+    console.log("Continue to increment.");
     checkIfExists(sanitize(campuses), multipleCampusesChecker(sanitize(campuses)));
   }
 }
@@ -160,7 +161,6 @@ export function doesNavigatorActionExist(preferred) {
     let URL = navigationActionButton.href;
     if (URL != null && intent.includes('1')) {
       window.location.replace(URL);
-      // return console.log(URL);
     }
   }
 }
@@ -205,7 +205,7 @@ export async function getIP() {
       return createLocationTemp(location, expireByIP);
     } else {
       changeLinks("default");
-      return checkThreshold(campuses);
+      return checkThreshold(sanitize(campuses));
     }
   }
 }
@@ -217,10 +217,8 @@ export function checkForLocationMatch(ip, validRanges=externalRanges) {
         return key;
       }
     }
-    console.log("no campus detected");
     return "none";
   } catch(e) {
-    console.log(e);
     return null;
   }
 }
