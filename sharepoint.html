@@ -30,6 +30,12 @@
   </script>
   <!-- <script src="js/alert-banner.js" defer="defer">
   </script> -->
+  <script>
+    setTimeout(function () {
+        document.getElementById("bgvid").play();
+        document.getElementById("")
+      }, 15000);
+  </script>
 </head>
 <body>
   <div id="pickerDialogue" class="cd-main-content lightbox modal" style="display: none;">
@@ -479,7 +485,19 @@
         <div class="home-hero">
           <h1>Two Campuses. <br class="d-block d-md-none"/> One College.<br/>Greater Possibilities.</h1>
           <section id="vTrimControl"></section>
-          <video autoplay="" controls="" id="bgvid" loop="" muted="" playsinline="" src="../banner.mp4" type="video/mp4"></video>
+          <picture id="poster">
+            <source
+              media="(max-width: 575px)" srcset="../anthony-mobile.jpg"
+              alt="Register for Summer">
+            <source
+              media="(max-width: 1499px)" srcset="../anthony-tabler.jpg"
+              alt="Register for Summer">
+            <source
+              media="(min-width: 1500px)" srcset="../anthony-poster.jpg"
+              alt="Register for Summer">
+            <img src="../anthony-poster.jpg" alt="Register for Summer">
+          </picture>
+          <video controls="" id="bgvid" loop="" muted="" playsinline="" src="../banner.mp4" type="video/mp4"></video>
         </div>
       </section>
       <section class="light">

@@ -73,15 +73,15 @@ $(".alert-left-arrow").on('click', function () {
   hideNavIfOne();
   function closeBox(){  
     var closeBox = $('#alert1').remove();
-    setCookieValue('closeBox', "true", 365);
-    getCookieValue('closeBox');
+    setCookieValue('Box1-closed', "true", 1);
+    getCookieValue('Box1-closed');
     countAlerts();
     hideNavIfOne();
     if ($("#alert2").length > 0) {
       $(".alert-box:first").show();
     }
   }
-  if(getCookieValue('closeBox') === "true"){
+  if(getCookieValue('Box1-closed') === "true"){
     hideAllButFirst();
     closeBox();
   }
