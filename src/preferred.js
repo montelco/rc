@@ -1,12 +1,13 @@
 require("@babel/polyfill");
 import {getCookieValue} from './getCookieValue.js';
 
-// Variable Declarations
 const campusSelector = document.querySelector("#appliesTo");
 let campuses = campusSelector.innerHTML;
 const navigatorExplorer = document.querySelector("#navigationExplorer");
 let cuPicker = document.getElementById("CumberlandCampusSelector");
 let glPicker = document.getElementById("GloucesterCampusSelector");
+let setPref= document.getElementById("setPreferred");
+let noPref = document.getElementById("noPreferred");
 let loginPicker = document.getElementsByClassName("login-intent");
 let message = "Remove your preferred campus";
 let updater = "Update your preferred campus";
@@ -47,13 +48,11 @@ Array.from(loginPicker).forEach(function(campus) {
   });
 });
 
-// Remove all extraneous characters from campus input
 export function sanitize(values) {
   let cleaned = values.replace(/(\r\n|\n|\r)/gm,"").split(' ').join('').toLowerCase();
   return cleaned;
 }
 
-// Does the page apply to multiple campuses
 export function multipleCampusesChecker(values) {
   if (values.includes(';')) {
     return multiCampus = 1;
@@ -62,7 +61,6 @@ export function multipleCampusesChecker(values) {
   }
 }
 
-// If a page is campus-specific, check if incrementing cookie exists
 export function checkIfExists (campus, isMulti){
   if (!isMulti) {
     let check = document.cookie.indexOf(campus);
@@ -76,13 +74,11 @@ export function checkIfExists (campus, isMulti){
   }
 }
 
-// Create a new counter for the given campus
 export function createCampusCookie(campus) {
   let cookieValue = campus + "=1";
   return document.cookie = cookieValue;
 }
 
-// Add to the counter for a user's preference
 export function addToCampusCount (campus) {
   let cookie = parseInt(getCookieValue(campus));
   cookie++;
@@ -93,20 +89,26 @@ export function addToCampusCount (campus) {
   return document.cookie = cookieValue;
 }
 
-// If the campus count is equal to or greater than the threshold, prompt a user to select, otherwise check the existince and/or increment the count
 export function checkThreshold (campus) {
   let isMulti = multipleCampusesChecker(campus);
   if (getCookieValue(campus) >= threshold && isMulti == 0) {
-    console.log("Pop!");
     let toast = toastPopped(campus.charAt(0).toUpperCase() + campus.slice(1));
+    if(setPref) {
+      setPref.addEventListener("click", function () {
+        preference(true, sanitize(campus));
+      });
+    }
+    if (noPref) {
+      noPref.addEventListener("click", function () {
+        preference(false);
+      });
+    }
     return;
   } else {
-    console.log("Continue to increment.");
     checkIfExists(sanitize(campuses), multipleCampusesChecker(sanitize(campuses)));
   }
 }
 
-// Check if in editor mode, if so, do nothing; if a preference is set, if so, highlight the preference and redirect if possible; and if a user is on a campus, temporarily set their preference.
 export function readPreferred(campus) {
   let preferred = document.cookie.indexOf('preferred');
   let location = document.cookie.indexOf('userTempLocation');
@@ -329,10 +331,6 @@ export function changeLinks(campus) {
   }
 }
 
-export function swapLogo() {
-}
-
 export function toastPopped(campus) {
-  toastr['info']('<p>Would you like to set ' + campus + ' as your preferred campus?<br/><b><a href="/CampusDefault" target="_blank">(You can change this at any time.)</a></b></p><div class="button-container"><button type="button" id="setPreferred" onclick="preference(true, \'' + sanitize(campus) + '\')" class="btn btn-primary">Set Preferred</button><button type="button" id="noPreferred" class="btn" onclick="preference(false)" style="margin: 0 8px 0 8px">No Thanks</button></div>');
+  toastr['info']('<p>Would you like to set ' + campus + ' as your preferred campus?<br/><b><a href="/CampusDefault" target="_blank">(You can change this at any time.)</a></b></p><div class="button-container"><button type="button" id="setPreferred" class="btn btn-primary">Set Preferred</button><button type="button" id="noPreferred" class="btn" onclick="preference(false)" style="margin: 0 8px 0 8px">No Thanks</button></div>');
 }
-

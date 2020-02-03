@@ -3,10 +3,25 @@ import {setCookieValue} from './setCookieValue.js';
 
 const video = document.getElementById('bgvid');
 const vTrimControl = document.getElementById('vTrimControl');
+let poster = document.querySelector("#main-home #poster");
 let present = isVideoThere(video);
 let playState = getCookieValue('video-state');
 
 window.onload = () => {
+  if (poster) {
+    poster.classList.add("fadeOutAnimation");
+  }
+
+  if (vTrimControl) {
+    vTrimControl.classList.add("fadeInAnimation");
+  }
+
+  if (present && playState !== "paused") {
+    setTimeout(function () {
+      document.querySelector("#main-home #bgvid").play();
+    }, 6000);
+  }
+
   if (present && playState == "paused") {
     video.pause();
     vTrimControl.classList.add('pause');
@@ -35,5 +50,4 @@ export function isVideoThere(video) {
   } else {
     return false;
   }
-  return false;
 }

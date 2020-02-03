@@ -30,12 +30,6 @@
   </script>
   <!-- <script src="js/alert-banner.js" defer="defer">
   </script> -->
-  <script>
-    setTimeout(function () {
-        document.getElementById("bgvid").play();
-        document.getElementById("")
-      }, 15000);
-  </script>
 </head>
 <body>
   <div id="pickerDialogue" class="cd-main-content lightbox modal" style="display: none;">
@@ -93,6 +87,10 @@
                     <a href="/Internships" class="last">Internships</a>
                   </div>
                 </div>
+              </div>
+              <div class="pd-sm quicklinks d-block d-sm-none col-6">
+                <div class="d-inline-block">
+                  <a href="/Apply">Apply Now</a>
               </div>
           </div>
       </section>
@@ -276,7 +274,7 @@
                 </li>
 
                 <li class="has-children top-nav-item">
-                  <a href="h/Academics">Degrees & Career Training</a>
+                  <a href="h/Academics">Degrees & Certificates</a>
                   <ul class="cd-secondary-nav is-hidden sub-nav">
                     <li class="go-back"><a href="#">Menu</a></li>
                     <li class="see-all"><a href="/Future">Apply Now</a></li>
@@ -481,23 +479,18 @@
       </div>
   </header>
     <main class="cd-main-content">
-      <section class="home">
-        <div class="home-hero">
-          <h1>Two Campuses. <br class="d-block d-md-none"/> One College.<br/>Greater Possibilities.</h1>
+      <section id="main-home">
+        <section class="home-hero home">
+          <div class="hero__message">
+            <h1>Pursue your opportunity this Spring</h1>
+            <!-- <h2>Classes start 2/24 & 3/23</h2> -->
+            <a href="/courses?utm_source=Website&utm_medium=homepage-video&utm_campaign=spring-registration" class="gold action_button" aria-label="Pursue Yours » link">Register Now »</a>
+            <!-- <a href="#" class="pico action_button" aria-label="Pursue Yours » link">Spring Open House »</a> -->
+          </div>
           <section id="vTrimControl"></section>
-          <picture id="poster">
-            <source
-              media="(max-width: 575px)" srcset="../anthony-mobile.jpg"
-              alt="Register for Summer">
-            <source
-              media="(max-width: 1499px)" srcset="../anthony-tabler.jpg"
-              alt="Register for Summer">
-            <source
-              media="(min-width: 1500px)" srcset="../anthony-poster.jpg"
-              alt="Register for Summer">
-            <img src="../anthony-poster.jpg" alt="Register for Summer">
-          </picture>
-          <video controls="" id="bgvid" loop="" muted="" playsinline="" src="../banner.mp4" type="video/mp4"></video>
+          <section id="poster">
+          </section>
+          <video controls="" id="bgvid" class="poster" loop="" muted="" playsinline="" preload="auto" src="https://www.rcsj.edu/PublishingImages/HomePage-Video/banner/banner.mp4" type="video/mp4"></video>
         </div>
       </section>
       <section class="light">

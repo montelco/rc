@@ -11,15 +11,23 @@ header + main {
     bottom: 3%;
     color: $white;
     right: 1%;
-    display: block;
     background-repeat: no-repeat;
     background-size: contain;
     filter: invert(1);
     cursor: pointer;
     opacity: 0.85;
-    
-    @include media(mm) {
-      display: none;
+    display: none;
+
+    @include media(lg) {
+      display: block;
+      visibility: hidden;
+    }
+
+    &.fadeInAnimation {
+      @include media(lg) {
+        animation: fadeIn 1s normal forwards ease-in-out;
+        animation-delay: 6s;
+      }
     }
 
     &.pause {
@@ -699,54 +707,212 @@ section.home {
   position: relative;
   height: 72vh;
   overflow: hidden;
+  background: rgba(20,20,20,0.34);
 
-  @include media(mo) {
-    background-image: url(/PublishingImages/HomePage-Video/video-replacement-bg.jpg);
-    background-repeat: no-repeat;
-    background-position: top center !important;
-    height: 72vh;
-  }
+  // @include media(mo) {
+  //   background-image: url(/PublishingImages/HomePage-Video/video-replacement-bg.jpg);
+  //   background-repeat: no-repeat;
+  //   background-position: top center !important;
+  //   height: 72vh;
+  // }
 
-  @include media(mm) {
-    background-image: url(/PublishingImages/HomePage-Video/video-replacement-bg.jpg);
-    background-repeat: no-repeat;
-    background-position: top center !important;
-    height: 72vh;
-  }
+  // @include media(mm) {
+  //   background-image: url(/PublishingImages/HomePage-Video/video-replacement-bg.jpg);
+  //   background-repeat: no-repeat;
+  //   background-position: top center !important;
+  //   height: 72vh;
+  // }
 
-  h1{
+  .home-hero {height: 100%;}
+
+  .hero__message{
     text-align: center;
     left: 0;
     margin: auto;
-        margin-top: auto;
+    margin-top: auto;
     margin-top: -100px;
     position: absolute;
     top: 50%;
     width: 100%;
-    color: #fff;
-    font-size: 4rem;
+
     @include media(mm) {
-      font-size: 1.75rem;
-      top: 25%;
-      color: #eab600;
-      text-shadow: 0px 7px 7px rgba(20,20,20,.12);
+      transform: translateY(-25%);
+    }
+    
+    h1 {
+      font-weight: 700;
+      letter-spacing: 2px;
+      line-height: 1.3em;
+      text-transform: capitalize;
+      margin-bottom: 20px;
+      text-shadow: 10px 10px 10px rgba(20,20,20,0.34);
+      color: #fff;
+      font-size: 4em;
+      @include media(mm) {
+        font-size: 1.75rem;
+        top: 25%;
+        text-shadow: 0px 7px 7px rgba(20,20,20,.12);
+      }
+      @include media(mo) {
+        font-size: 2.5rem;
+      }
+    }
+    
+    h2 {
+      font-weight: 500;
+      letter-spacing: 1px;
+      line-height: 1.2em;
+      text-transform: capitalize;
+      margin: 0px auto 20px;
+      text-shadow: 10px 10px 10px rgba(20,20,20,0.34);
+      color: #fff;
+      font-size: 2em;
+      width: 70vw;
+      @include media(mm) {
+        font-size: 1.35rem;
+        top: 25%;
+        text-shadow: 0px 7px 7px rgba(20,20,20,.12);
+        width: 90vw;
+      }
+      @include media(mo) {
+        font-size: 1.85rem;
+        width: 70vw;
+      }
     }
 
-    @include media(mo) {
-      font-size: 2.5rem;
+    .action_button {
+      line-height: 1rem;
+      display: inline-block;
+      border-radius: $border-radius;
+      padding: .5em;
+      display: inline-block;
+      font-weight: 600;
+      font-size: 17pt;
+      color: $gray-900;
+      background: $gray-200;
+      box-shadow: 0px 5px 22px rgba(25,25,25,0.25);
+      text-shadow: none;
+
+      @include media(mo) {
+        font-size: 14pt;
+        margin-bottom: 0.5em;
+      }
+
+      @include media(mm) {
+        font-size: 15pt;
+        margin-bottom: 0.5em;
+      }
+
+      &.gold {
+        color: $gray-900;
+        background: $yellow;
+        
+        &:hover{
+          background: darken($yellow, 5%);
+        }
+        &:focus{
+          background: darken($yellow, 10%);
+        }
+      }
+
+      &.blue {
+        color: $ltBlue;
+        background: $blue;
+        
+        &:hover{
+          background: darken($blue, 5%);
+        }
+        &:focus{
+          background: darken($blue, 10%);
+        }
+      }
+
+      &.orange {
+        color: $black;
+        background: $orange;
+        
+        &:hover{
+          background: darken($orange, 5%);
+        }
+        &:focus{
+          background: darken($orange, 10%);
+        }
+      }
+
+      &.queen {
+        color: $ltBlue;
+        background: $qnBlue;
+        
+        &:hover{
+          background: darken($qnBlue, 5%);
+        }
+        &:focus{
+          background: darken($qnBlue, 10%);
+        }
+      }
+
+      &.pico {
+        color: $ltBlue;
+        background: $pcBlue;
+        
+        &:hover{
+          background: darken($pcBlue, 5%);
+        }
+        &:focus{
+          background: darken($pcBlue, 10%);
+        }
+      }
     }
 
-    font-style: italic;
-    font-weight: bold;
-    letter-spacing: 1px;
-    line-height: 1.3em;
-    text-transform: capitalize;
-    margin-bottom: 40px;
-    text-shadow: 10px 10px 10px rgba(20,20,20,0.34);
+  }
+}
+
+#main-home #poster.fadeOutAnimation {
+  visibility: visible;
+
+  @include media(lg) {
+    animation: fadeOut 1s normal forwards ease-in-out;
+    animation-delay: 6s;
+  }
+}
+
+@keyframes fadeOut{
+    0%   {opacity: 1;}
+    100% {opacity: 0; visibility: hidden;}
+}
+
+@keyframes fadeIn{
+    0%   {opacity: 0;}
+    100% {opacity: 1; visibility: visible;}
+}
+
+#poster {
+  z-index: -99;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%,-50%);
+  object-fit: cover;
+  background-size: cover;
+  background-image: url(https://www.rcsj.edu/PublishingImages/backgrounds/homepage_01232020_desktop.jpg);
+
+  @include media(mo) {
+    background-image: url(https://www.rcsj.edu/PublishingImages/backgrounds/homepage_01232020_tablet.jpg);
+  }
+
+  @include media(mm) {
+    background-image: url(https://www.rcsj.edu/PublishingImages/backgrounds/homepage_01232020_mobile.jpg);
   }
 }
 
 video#bgvid {
+  z-index: -100;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -759,7 +925,6 @@ video#bgvid {
   transform: translate(-50%, -50%);
   background-color: #666;
   background-size: cover;
-  z-index: -100;
 
   @include media(mo) {
     display: none !important;
