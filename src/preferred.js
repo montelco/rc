@@ -332,5 +332,5 @@ export function changeLinks(campus) {
 }
 
 export function toastPopped(campus) {
-  toastr['info']('<p>Would you like to set ' + campus + ' as your preferred campus?<br/><b><a href="/CampusDefault" target="_blank">(You can change this at any time.)</a></b></p><div class="button-container"><button type="button" id="setPreferred" class="btn btn-primary">Set Preferred</button><button type="button" id="noPreferred" class="btn" onclick="preference(false)" style="margin: 0 8px 0 8px">No Thanks</button></div>');
+  toastr['info']('<p>Would you like to set ' + campus + ' as your preferred campus?<br/><b><a href="/CampusDefault" target="_blank">(You can change this at any time.)</a></b></p><div class="button-container"><button type="button" id="setPreferred" class="btn btn-primary">Set Preferred</button><button type="button" id="noPreferred" class="btn" style="margin: 0 8px 0 8px">No Thanks</button></div>');
 }
