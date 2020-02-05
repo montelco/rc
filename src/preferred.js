@@ -6,8 +6,6 @@ let campuses = campusSelector.innerHTML;
 const navigatorExplorer = document.querySelector("#navigationExplorer");
 let cuPicker = document.getElementById("CumberlandCampusSelector");
 let glPicker = document.getElementById("GloucesterCampusSelector");
-let setPref= document.getElementById("setPreferred");
-let noPref = document.getElementById("noPreferred");
 let loginPicker = document.getElementsByClassName("login-intent");
 let message = "Remove your preferred campus";
 let updater = "Update your preferred campus";
@@ -93,16 +91,6 @@ export function checkThreshold (campus) {
   let isMulti = multipleCampusesChecker(campus);
   if (getCookieValue(campus) >= threshold && isMulti == 0) {
     let toast = toastPopped(campus.charAt(0).toUpperCase() + campus.slice(1));
-    if(setPref) {
-      setPref.addEventListener("click", function () {
-        preference(true, sanitize(campus));
-      });
-    }
-    if (noPref) {
-      noPref.addEventListener("click", function () {
-        preference(false);
-      });
-    }
     return;
   } else {
     checkIfExists(sanitize(campuses), multipleCampusesChecker(sanitize(campuses)));

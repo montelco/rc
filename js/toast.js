@@ -1,4 +1,5 @@
 toastr.options = {
+  "onShown": function () {setPref.addEventListener("click", function () {preference(true, sanitize(campus));});noPref.addEventListener("click", function () {preference(false);});},
   "closeButton": true,
   "newestOnTop": false,
   "progressBar": false,
