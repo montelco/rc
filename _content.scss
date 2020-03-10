@@ -358,6 +358,7 @@ header + main {
 }
 
 @import 'legacy/calendar';
+@import 'accordion';
 
 .article {
   padding: 1rem 0;
@@ -650,6 +651,41 @@ header + main {
     &:focus {
       background: darken($pcBlue, 10%) !important;
     }
+    &.blue {
+      background: $blue !important;
+
+      &:hover {
+        background: darken($blue, 5%) !important;
+      }
+      &:focus {
+        background: darken($blue, 10%) !important;
+      }
+    }
+    &.qnBlue {
+      background: $qnBlue !important;
+
+      &:hover {
+        background: darken($qnBlue, 5%) !important;
+      }
+      &:focus {
+        background: darken($qnBlue, 10%) !important;
+      }
+    }
+  }
+}
+
+.careers li{
+  position: relative;
+  font-size: 17pt;
+  list-style-type: none;
+
+  &::before {
+    content: '✓';
+    font-family: fontAwesome;
+    position: absolute;
+    top: 0.25em;
+    left: -20px;
+    line-height: 1em;
   }
 }
 

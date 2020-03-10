@@ -14,3 +14,4 @@ import './direct-links.js';
 import './left-navigation.js';
 import './sub-nav.js';
 import './toast.js';
+import './accordion.js';

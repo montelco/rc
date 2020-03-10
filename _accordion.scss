@@ -1,0 +1,43 @@
+p.accordion {
+  background-color: $gray-200;
+  color: $gray-900;
+  cursor: pointer;
+  padding: 1.5rem;
+  width: 100%;
+  text-align: left;
+  border: solid 1px $gray-900;
+  border-radius: 4px;
+  outline: none;
+  transition: 0.4s;
+  margin-bottom:1em;
+
+  &:hover {background-color: $gray-400;}
+
+  &:after {
+    content: '\2795'; 
+    font-size: 12pt;
+    color: $gray-900;
+    float: right;
+    margin-left: 0.75rem;
+  }
+
+  &.active {
+    background-color: $gray-400;
+
+    &:after { content: "\2796"; }
+  }
+}
+
+div.panel {
+  padding: 0 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.4s ease-in-out;
+  opacity: 0;
+  margin-bottom:2vh;
+
+  &.show {
+    opacity: 1;
+    max-height: 900vh;
+  }
+}
