@@ -1,18 +1,33 @@
 document.addEventListener("DOMContentLoaded", function (event) {
-  
-  var acc = document.getElementsByClassName("accordion");
-  var panel = document.getElementsByClassName('panel');
 
-  for (var i = 0; i < acc.length; i++) {
-    acc[i].onclick = function () {
-      var setClasses = !this.classList.contains('active');
-      setClass(acc, 'active', 'remove');
-      setClass(panel, 'show', 'remove');
+  let acc = document.getElementsByClassName("accordion");
+  let panel = document.getElementsByClassName('panel');
+  let touchmoved = false;
 
-      if (setClasses) {
-        this.classList.toggle("active");
-        this.nextElementSibling.classList.toggle("show");
+  for (let i = 0; i < acc.length; i++) {
+
+    acc[i].setAttribute("tabindex", 0);
+
+    acc[i].addEventListener('click', function (event) {
+      return expand(this);
+    });
+    
+    acc[i].addEventListener('keydown', function (event) {
+      if (event.key === "Enter" || event.key === "Tab") {
+        expand(this);
+        return;
       }
+    });
+  }
+
+  function expand(open) {
+    let setClasses = !open.classList.contains('active');
+    setClass(acc, 'active', 'remove');
+    setClass(panel, 'show', 'remove');
+
+    if (setClasses) {
+      open.classList.toggle("active");
+      open.nextElementSibling.classList.toggle("show");
     }
   }
 
