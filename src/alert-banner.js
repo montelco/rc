@@ -1,5 +1,5 @@
-import {getCookieValue} from './getCookieValue.js';
-import {setCookieValue} from './setCookieValue.js';
+import {getwithExpiry} from './getWithExpiry.js';
+import {setWithExpiry} from './setWithExpiry.js';
 
 $(document).ready(function () {
   if($(".alert-box").length > 0){
@@ -73,8 +73,8 @@ $(".alert-left-arrow").on('click', function () {
   hideNavIfOne();
   function closeBox(){  
     var closeBox = $('#alert1').remove();
-    setCookieValue('Box1-closed', "true", 1);
-    getCookieValue('Box1-closed');
+    setWithExpiry('Box1-closed', "true", 1);
+    getWithExpiry('Box1-closed');
     countAlerts();
     hideNavIfOne();
     if ($("#alert2").length > 0) {

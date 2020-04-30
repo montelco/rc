@@ -2,6 +2,25 @@ header + main {
   background: $white;
 }
 
+#modernCont {
+  background: white;
+  #sm{
+    @include media(mm) {
+      display: block;
+    }
+    @include media(md) {
+      display: none;
+    } 
+  }
+  #fr{
+    @include media(mm) {
+      display: none;
+    }
+    @include media(md) {
+      display: block;
+    } 
+  }
+}
 .home-hero{
   #vTrimControl{
     background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSIyMHB4IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyMCAyMCIgd2lkdGg9IjIwcHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48dGl0bGUvPjxkZXNjLz48ZGVmcy8+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSI+PGcgZmlsbD0iIzAwMDAwMCIgaWQ9Ikljb25zLUFWIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwgLTg1LjAwMDAwMCkiPjxnIGlkPSJwYXVzZS1jaXJjbGUtZmlsbCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsIDg1LjAwMDAwMCkiPjxwYXRoIGQ9Ik0xMCwwIEM0LjUsMCAwLDQuNSAwLDEwIEMwLDE1LjUgNC41LDIwIDEwLDIwIEMxNS41LDIwIDIwLDE1LjUgMjAsMTAgQzIwLDQuNSAxNS41LDAgMTAsMCBMMTAsMCBaIE05LDE0IEw3LDE0IEw3LDYgTDksNiBMOSwxNCBMOSwxNCBaIE0xMywxNCBMMTEsMTQgTDExLDYgTDEzLDYgTDEzLDE0IEwxMywxNCBaIiBpZD0iU2hhcGUiLz48L2c+PC9nPjwvZz48L3N2Zz4=');
