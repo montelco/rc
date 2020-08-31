@@ -23,6 +23,8 @@ $wl: 1500px;
    @media only screen and (min-width: $lg) and (max-width: $xl) {@content;}
   } @else if $canvas == xl {
    @media only screen and (max-width: $xl) {@content;}
+  } @else if $canvas == xlx {
+   @media only screen and (min-width: $xl) {@content;}
   } @else if $canvas == nml {
     @media only screen and (min-width: $md) and (max-width: $xl) {@content;}
   } @else if $canvas == mx {

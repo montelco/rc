@@ -4,7 +4,8 @@
   fill: currentColor; 
 }
 
-a.classic {
+a.classic,
+.normal-links a {
   color: $link-color;
   text-decoration: $link-hover-decoration;
   background-color: transparent;

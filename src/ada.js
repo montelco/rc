@@ -1,3 +1,5 @@
+import { anchorTags } from './headers.js';
+
 window.onload = () => {fixMainTabsAndId();fixSharePointSearchBox();};
 
 let a = Array.from(document.getElementsByTagName('a'));

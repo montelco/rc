@@ -24,163 +24,39 @@
     }
 
     &.red {
-        color: scale-color($red, $lightness: 1%) !important;
-        border-color: scale-color($red, $lightness: 10%);
-        background: scale-color($red, $lightness: 87%);
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {color: scale-color($red, $lightness: 1%) !important;}
-
-        a {
-            color: scale-color($red, $lightness: 1%) !important;
-            @include hover-focus-active {
-                color: scale-color($red, $lightness: 1%) !important;
-            }
-        }
+        @include callout-type($red, -35%, 90%)
     }
 
     &.blue {
-        color: scale-color($blue, $lightness: 1%) !important;
-        border-color: scale-color($blue, $lightness: 10%);
-        background: scale-color($blue, $lightness: 87%);
+        @include callout-type($blue, -15%, 85%)
+    }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {color: scale-color($blue, $lightness: 1%) !important;}
-
-        a {
-            color: scale-color($blue, $lightness: 1%) !important;
-            @include hover-focus-active {
-                color: scale-color($blue, $lightness: 1%) !important;
-            }
-        }
+    &.purple {
+        @include callout-type($purple, -25%, 85%)
     }
 
     &.yellow {
-        color: scale-color($yellow, $lightness: 1%) !important;
-        border-color: scale-color($yellow, $lightness: 10%);
-        background: scale-color($yellow, $lightness: 87%);
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {color: scale-color($yellow, $lightness: 1%) !important;}
-
-        a {
-            color: scale-color($yellow, $lightness: 1%) !important;
-            @include hover-focus-active {
-                color: scale-color($yellow, $lightness: 1%) !important;
-            }
-        }
+        @include callout-type($yellow, -62%, 92%)
     }
     
     &.green {
-        color: scale-color($green, $lightness: 1%) !important;
-        border-color: scale-color($green, $lightness: 10%);
-        background: scale-color($green, $lightness: 87%);
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {color: scale-color($green, $lightness: 1%) !important;}
-
-        a {
-            color: scale-color($green, $lightness: 1%) !important;
-            @include hover-focus-active {
-                color: scale-color($green, $lightness: 1%) !important;
-            }
-        }
+        @include callout-type($green, -40%, 90%)
     }
     
     &.black {
-        color: scale-color($gray-700, $lightness: 1%) !important;
-        border-color: scale-color($gray-700, $lightness: 10%);
-        background: scale-color($gray-700, $lightness: 87%);
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {color: scale-color($gray-700, $lightness: 1%) !important;}
-
-        a {
-            color: scale-color($gray-700, $lightness: 1%) !important;
-            @include hover-focus-active {
-                color: scale-color($gray-700, $lightness: 1%) !important;
-            }
-        }
+        @include callout-type($gray-700, -40%, 65%)
     }
     
     &.grey {
-        color: scale-color($gray-400, $lightness: 1%) !important;
-        border-color: scale-color($gray-400, $lightness: 10%);
-        background: scale-color($gray-400, $lightness: 87%);
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {color: scale-color($gray-400, $lightness: 1%) !important;}
-
-        a {
-            color: scale-color($gray-400, $lightness: 1%) !important;
-            @include hover-focus-active {
-                color: scale-color($gray-400, $lightness: 1%) !important;
-            }
-        }
+        @include callout-type($gray-400, -75%, 55%)
     }
 
     &.orange {
-        color: scale-color($orange, $lightness: 1%) !important;
-        border-color: scale-color($orange, $lightness: 10%);
-        background: scale-color($orange, $lightness: 87%);
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {color: scale-color($orange, $lightness: 1%) !important;}
-
-        a {
-            color: scale-color($orange, $lightness: 1%) !important;
-            @include hover-focus-active {
-                color: scale-color($orange, $lightness: 1%) !important;
-            }
-        }
+        @include callout-type($orange, -48%, 90%)
     }
     
     &.cyan {
-        color: scale-color($cyan, $lightness: 1%) !important;
-        border-color: scale-color($cyan, $lightness: 10%);
-        background: scale-color($cyan, $lightness: 87%);
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {color: scale-color($cyan, $lightness: 1%) !important;}
-
-        a {
-            color: scale-color($cyan, $lightness: 1%) !important;
-            @include hover-focus-active {
-                color: scale-color($cyan, $lightness: 1%) !important;
-            }
-        }
+        @include callout-type($cyan, -35%, 89%)
     }
 
     &.bt-only {
@@ -194,5 +70,4 @@
     &.btb {
         border-width: 4px 0 4px 0 ;
     }
-    
 }

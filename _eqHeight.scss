@@ -223,3 +223,26 @@
     }
   }
 }
+
+@include media(lg) {
+  .negative {
+    margin: -2em 0;
+    z-index: 10;
+
+    &-top-only {
+      margin-top: -2em;
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+
+    &-bottom-only {
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: -2em;
+    }
+
+  }
+
+}

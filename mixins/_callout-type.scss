@@ -1,0 +1,20 @@
+@mixin callout-type($callout-color, $typography, $field) {
+  color: scale-color($callout-color, $lightness: $typography) !important;
+  border-color: scale-color($callout-color, $lightness: $typography);
+  background: scale-color($callout-color, $lightness: $field);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {color: scale-color($callout-color, $lightness: $typography) !important;}
+
+  a {
+    color: scale-color($callout-color, $lightness: $typography) !important;
+
+    @include hover-focus-active {
+      color: scale-color($callout-color, $lightness: $typography) !important;
+    }
+  }
+}

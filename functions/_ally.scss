@@ -1,0 +1,107 @@
+@function strip-unit($value) {
+  @return ($value / ($value * 0 + 1));
+}
+
+@function luminance($color) {
+  $red: nth($linear-channel-values, red($color) + 1);
+  $green: nth($linear-channel-values, green($color) + 1);
+  $blue: nth($linear-channel-values, blue($color) + 1);
+  $calculation: .2126 * $red + .7152 * $green + .0722 * $blue;
+  @return $calculation;
+}
+
+@function color-contrast($fg, $bg) {
+  $luminance1: luminance($fg) + 0.05;
+  $luminance2: luminance($bg) + 0.05;
+  $ratio: $luminance1 / $luminance2;
+  @if $luminance2 > $luminance1 {
+    $ratio: 1 / $ratio;
+  }
+  $ratio: round($ratio * 100) / 100;
+  @return $ratio;
+}
+
+@function validate-font-size($size) {
+  @if unit($size) == 'em' or unit($size) == 'rem' or unit($size) == 'px' or unit($size) == 'pt' or unit($size) == '' {
+    @if unit($size) == 'em' or unit($size) == 'rem' {
+      @return strip-unit($size * 16);
+    } @else if unit($size) == 'px' {
+    
+      @return strip-unit($size);
+    } @else if unit($size) == 'pt' {
+      @return strip-unit($size * 1.3333);
+    } @else if unit($size) == '' {
+      @return $size;
+    }
+  } @else {
+    @error 'validate-font-size(): An unexpected font size unit was supplied.';
+  }
+}
+
+@function get-ratio($level: 'AA', $size: 16, $bold: false) {
+  $ratio: 4.5;
+  @if $level == 'AAA' {
+    $ratio: 7;
+  }
+  $size: validate-font-size($size);
+  @if $size < 24 {  
+    @if $size >= 19 and $bold == true {
+      @if $level == 'AAA' {
+        $ratio: 4.5;
+      } @else {
+        $ratio: 3;
+      }
+    }
+  } @else {
+    $ratio: 3;
+    @if $level == 'AAA' {
+      $ratio: 4.5;
+    }
+  }
+  @return $ratio;
+}
+
+@function light-or-dark($color) {
+  $light-contrast: color-contrast($color, $white);
+  $dark-contrast: color-contrast($color, $black);
+  @if $light-contrast > $dark-contrast {
+    @return "dark";
+  } @else {
+    @return "light";
+  }
+}
+
+@function most-legible-color($color) {
+  $color-lod: light-or-dark($color);
+  @if ($color-lod == "dark") {
+    @return $white;
+  } @else {
+    @return $black;
+  }
+}
+
+@function a11y($fg, $bg, $level: 'AA', $size: 16, $bold: false) {
+  $font-size: validate-font-size($size);
+  $ratio: get-ratio($level, $font-size, $bold);
+  $original-contrast: color-contrast($fg, $bg);
+  @if $original-contrast >= $ratio {
+  
+    @return $fg;
+  } @else {
+    $fg-lod: light-or-dark($fg);
+    $bg-lod: light-or-dark($bg);
+    $step: 2%;
+  
+    @if $fg-lod == 'light' and $bg-lod == 'light' {
+    
+      $step: - $step;
+    } @else if $fg-lod == 'dark' and $bg-lod == 'light' {
+    
+      $step: - $step;
+    }
+    @while color-contrast($fg, $bg) < $ratio {
+      $fg: scale-color($fg, $lightness: $step, $saturation: $step/2);
+    }
+    @return $fg;
+  }
+}

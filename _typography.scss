@@ -59,3 +59,38 @@ main .ms-rtestate-field {
 .textBlack {
   color: $coal !important;
 }
+
+.black {
+  color: black;
+}
+
+.accent-text {
+  color: $gray-600;
+}
+
+.ls-1 {
+  letter-spacing: 0.1em;
+}
+
+.ls-2 {
+  letter-spacing: 0.2em;
+}
+
+.ls-3 {
+  letter-spacing: 0.3em;
+}
+
+.ml-4 {
+  margin-left: 1em;
+}
+
+.w-8 {
+  width: 8em;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+.tip {
+  margin-top: 5em;
+}
