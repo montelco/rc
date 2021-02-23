@@ -4,10 +4,15 @@ jQuery(document).ready(function() {
   checkWidth();
   label();
 
-  var header = $("a.ms-siteicon-a");
-  var url = header.attr('href');
-  var home = url.replace(/-site/g, '');
-  $("a.ms-siteicon-a").addClass('controlHomeLink').attr('href', home);
+  if ($("#findYourProgram").length > 0) {
+    // do nothing
+  } else {
+    var header = $("a.ms-siteicon-a");
+    var url = header.attr('href');
+    var home = url.replace(/-site/g, '');
+    $("a.ms-siteicon-a").addClass('controlHomeLink').attr('href', home);
+  }
+  
 
   $(window).on('resize', function() {
     checkWidth();

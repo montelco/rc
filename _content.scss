@@ -993,14 +993,14 @@ section.home {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url(https://www.rcsj.edu/PublishingImages/backgrounds/RCSJ_Illustrated-Home_3840x2160_ver5-ALT_JULY2020-01.jpg);
+  background-image: url(https://www.rcsj.edu/PublishingImages/backgrounds/homepage_01042021_desktop.jpg);
 
   @include media(mo) {
-    background-image: url(https://www.rcsj.edu/PublishingImages/backgrounds/RCSJ_Illustrated-Home_1248x1749_ver5_ALT_JULY2020-01.jpg);
+    background-image: url(https://www.rcsj.edu/PublishingImages/backgrounds/homepage_01042021_tablet.jpg);
   }
 
   @include media(mm) {
-    background-image: url(https://www.rcsj.edu/PublishingImages/backgrounds/RCSJ_Illustrated-Home_777x1392_ver5_ALT_JULY2020-01.jpg);
+    background-image: url(https://www.rcsj.edu/PublishingImages/backgrounds/homepage_01042021_mobile.jpg);
   }
 }
 
@@ -1161,4 +1161,7 @@ video#bgvid {
   }
 }
 
+#findYourProgram {
+  @import 'programfinder';
+}
 

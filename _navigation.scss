@@ -56,6 +56,13 @@ nav.subsite {
   }
 }
 
+#programPickerPage {
+  #subsite-navigation a h1 span,
+  #subsite-navigation a h1 span svg{
+    display: inline;
+  }
+}
+
 li.subnav__topLevel-listItems a,
 a.subsite-navigation__top-link .menu-item-text,
 .ms-core-listMenu-item:link {
